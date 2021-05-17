@@ -8,7 +8,9 @@ from utilities import path_of_file
 # named `calculator`, which should be an instance of the ase.calculator.Calculator,
 # a subclass of this, or a compatible class implementing the calculator interface.
 
-calculator = Potential('IP SW', param_filename=(path_of_file(__file__)+"/ip.parms.SW.xml"))
+calculator = Potential(
+    "IP SW", param_filename=(path_of_file(__file__) + "/ip.parms.SW.xml")
+)
 no_checkpoint = True
 
-name = 'SW'
+name = "SW"
