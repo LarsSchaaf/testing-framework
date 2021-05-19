@@ -1,0 +1,20 @@
+node27
+Cutoff MD - Locality Testing
+quippy
+Done on Edvins 110 strucutre
+18/05/2021 23:09:36
+--------------------------------------------------------
+New prefix test
+using kpts: [3, 3, 3]
+Running on 1 nodes
+Dipol correction on
+kpts[[0 1 2]] = 1
+Isolated atom evalutation
+2
+['             z_valence', '"1.300000000000000E+001"\n']
+2
+['             z_valence', '"1.300000000000000E+001"\n']
+2 (array([13]), {'In': 13})
+2
+['             z_valence', '"1.300000000000000E+001"\n']
+PE: -1968.1339825867185

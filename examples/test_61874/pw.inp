@@ -1,0 +1,47 @@
+&CONTROL
+  calculation='scf',
+  prefix='calc',
+  pseudo_dir='/home/lls34/programs/QuantumExpresso/pseudopotentials/use_pot',
+  outdir='.',
+  tprnfor=.true.,
+  tstress=.true.,
+  wf_collect=.true.,
+  etot_conv_thr=1d0,
+  forc_conv_thr=0.0019446903957408628d00,
+/
+&SYSTEM
+  ibrav=0,
+  celldm(1)=1.8897261245650618d0,
+  nat=1,
+  ntyp=1,
+  ecutwfc=65.0d00,
+  ecutrho=520.0d00,
+  nbnd=26,
+  occupations='smearing',
+  smearing='gaussian',
+  degauss=0.007349864494991328d00,
+  nspin=2,
+  starting_magnetization(1)=0.7692307692307693d00,
+  input_dft='PBE',
+  nosym=.false.,
+  noinv=.false.,
+  nosym_evc=.false.,
+  no_t_rev=.false.,
+/
+&ELECTRONS
+  diagonalization='david',
+  conv_thr=7.3498644949913266e-09,
+  mixing_beta=0.5d00,
+  mixing_ndim=10,
+  electron_maxstep=500,
+/
+CELL_PARAMETERS alat
+    3.430628950000000d0     0.000000000000000d0     0.000000000000000d0
+    0.237433098326491d0     3.422402740239258d0     0.000000000000000d0
+   -1.834031023848527d0    -1.711201369825988d0     2.340370711670459d0
+ATOMIC_SPECIES
+In1 114.818d00 In.UPF
+ATOMIC_POSITIONS {crystal}
+In1      0.000000000000000d0     0.000000000000000d0     0.000000000000000d0
+K_POINTS automatic
+10 10 11  0 0 0 

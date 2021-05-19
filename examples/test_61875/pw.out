@@ -1,0 +1,373 @@
+
+     Program PWSCF v.6.7MaX starts on 18May2021 at 23: 9:39 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     Reading input from pw.inp
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+     Presently no symmetry can be used with electric field
+
+     Message from routine cell_base_init:
+     DEPRECATED: use true lattice parameter, not A to a.u. conversion factor
+     file In.UPF: wavefunction(s)  5S renormalized
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     gamma-point specific algorithms are used
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum       22745   11371   2845              2078829   734807   91821
+
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       1.8897  a.u.
+     unit-cell volume          =   10380.9193 (a.u.)^3
+     number of atoms/cell      =            1
+     number of atomic types    =            1
+     number of electrons       =        13.00
+     number of Kohn-Sham states=           26
+     kinetic-energy cutoff     =      65.0000  Ry
+     charge density cutoff     =     520.0000  Ry
+     scf convergence threshold =      7.3E-09
+     mixing beta               =       0.5000
+     number of iterations used =           10  plain     mixing
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+
+     celldm(1)=   1.889726  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (  12.417693   0.000000   0.000000 )  
+               a(2) = (   0.859426  12.387917   0.000000 )  
+               a(3) = (  -7.836498  -7.311668  10.000000 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  0.080530 -0.005587  0.059023 )  
+               b(2) = ( -0.000000  0.080724  0.059023 )  
+               b(3) = (  0.000000  0.000000  0.100000 )  
+
+
+     PseudoPot. # 1 for In read from file:
+     /home/lls34/programs/QuantumExpresso/pseudopotentials/use_pot/In.UPF
+     MD5 check sum: b236236d7d320b3bac520569a9051741
+     Pseudo is Ultrasoft + core correction, Zval = 13.0
+     Generated using "atomic" code by A. Dal Corso  v.5.0.99 svn rev. 10869
+     Using radial grid of 1241 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+        In1           13.00   114.81800     In( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           In1 tau(   1) = (   2.7203105   2.5381245   5.0000000  )
+
+     number of k points=     1  Gaussian smearing, width (Ry)=  0.0073
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   2.0000000
+
+     Dense  grid:  1039415 G-vectors     FFT dimensions: ( 180, 180, 216)
+
+     Smooth grid:   367404 G-vectors     FFT dimensions: ( 125, 125, 144)
+
+     Estimated max dynamical RAM per process >       3.88 GB
+
+     Initial potential from superposition of free atoms
+
+     starting charge   12.99628, renormalised to   13.00000
+
+     negative rho (up, down):  2.005E-04 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0012 Ry au,         -0.0030 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+     Starting wfcs are    9 randomized atomic wfcs +   17 random wfcs
+
+     total cpu time spent up to now is       42.8 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations = 12.0
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     Davidson diagonalization with overlap
+     c_bands:  2 eigenvalues not converged
+     ethr =  1.86E-07,  avg # of iterations = 20.0
+
+     negative rho (up, down):  7.615E-06 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0015 Ry au,         -0.0039 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      105.9 secs
+
+     total energy              =    -144.66296313 Ry
+     estimated scf accuracy    <       0.00001929 Ry
+
+     iteration #  2     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  1.48E-07,  avg # of iterations = 16.0
+
+     negative rho (up, down):  1.146E-06 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0017 Ry au,         -0.0044 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      130.7 secs
+
+     total energy              =    -144.66297071 Ry
+     estimated scf accuracy    <       0.00000016 Ry
+
+     iteration #  3     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  1.21E-09,  avg # of iterations =  4.0
+
+     negative rho (up, down):  3.264E-07 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0017 Ry au,         -0.0044 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      156.7 secs
+
+     total energy              =    -144.66297119 Ry
+     estimated scf accuracy    <       0.00000016 Ry
+
+     iteration #  4     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  1.21E-09,  avg # of iterations =  1.0
+
+     negative rho (up, down):  1.303E-07 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0019 Ry au,         -0.0048 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      178.9 secs
+
+     total energy              =    -144.66297171 Ry
+     estimated scf accuracy    <       0.00000007 Ry
+
+     iteration #  5     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  5.54E-10,  avg # of iterations =  3.0
+
+     negative rho (up, down):  3.767E-08 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0019 Ry au,         -0.0047 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      202.0 secs
+
+     total energy              =    -144.66297175 Ry
+     estimated scf accuracy    <       0.00000001 Ry
+
+     iteration #  6     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  9.20E-11,  avg # of iterations =  2.0
+
+     negative rho (up, down):  1.723E-08 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0019 Ry au,         -0.0047 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      223.3 secs
+
+     total energy              =    -144.66297174 Ry
+     estimated scf accuracy    <          8.5E-09 Ry
+
+     iteration #  7     ecut=    65.00 Ry     beta= 0.50
+     Davidson diagonalization with overlap
+     ethr =  6.52E-11,  avg # of iterations =  2.0
+
+     negative rho (up, down):  1.011E-08 0.000E+00
+
+     Adding external electric field
+
+     Computed dipole along edir(3) : 
+        Dipole               -0.0019 Ry au,         -0.0047 Debye
+        Dipole field         -0.0000 Ry au, 
+
+        Potential amp.        0.0001 Ry
+        Total length         27.0080 bohr
+
+
+     total cpu time spent up to now is      244.8 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 45911 PWs)   bands (ev):
+
+   -18.3434 -18.3432 -18.3426 -18.3419 -18.3418  -7.9344  -2.2420  -2.2415
+    -2.2410  -0.3492   0.7770   0.8794   0.9698   1.0118   1.0863   1.0943
+     1.2196   1.2941   1.3519   1.3547   1.3818   1.7226   1.8353   1.9328
+     2.3192   2.5549
+
+     the Fermi energy is    -2.3099 ev
+
+!    total energy              =    -144.66297173 Ry
+     estimated scf accuracy    <          8.1E-10 Ry
+     smearing contrib. (-TS)   =      -0.00779093 Ry
+     internal energy E=F+TS    =    -144.65518080 Ry
+
+     The total energy is F=E-TS. E is the sum of the following terms:
+     one-electron contribution =    -160.23106495 Ry
+     hartree contribution      =      85.28145073 Ry
+     xc contribution           =     -47.38278093 Ry
+     ewald contribution        =     -22.32278564 Ry
+     electric field correction =       0.00000000 Ry
+
+     convergence has been achieved in   7 iterations
+
+     negative rho (up, down):  1.011E-08 0.000E+00
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  1   force =     0.00000000    0.00000000    0.00000000
+
+     Total force =     0.000000     Total SCF correction =     0.000003
+
+     Writing output data file ./calc.save/
+
+     init_run     :     39.61s CPU     42.67s WALL (       1 calls)
+     electrons    :    174.80s CPU    202.40s WALL (       1 calls)
+     forces       :     29.20s CPU     31.26s WALL (       1 calls)
+
+     Called by init_run:
+     wfcinit      :      1.75s CPU      1.84s WALL (       1 calls)
+     potinit      :     14.42s CPU     15.55s WALL (       1 calls)
+     hinit0       :     19.15s CPU     19.39s WALL (       1 calls)
+
+     Called by electrons:
+     c_bands      :     64.08s CPU     64.61s WALL (       8 calls)
+     sum_band     :     45.69s CPU     57.06s WALL (       8 calls)
+     v_of_rho     :     33.33s CPU     39.05s WALL (       8 calls)
+     newd         :     29.69s CPU     41.02s WALL (       8 calls)
+     mix_rho      :      6.60s CPU      6.90s WALL (       8 calls)
+
+     Called by c_bands:
+     init_us_2    :      0.22s CPU      0.23s WALL (      17 calls)
+     regterg      :     63.75s CPU     64.27s WALL (       8 calls)
+
+     Called by *egterg:
+     rdiaghg      :      0.06s CPU      0.06s WALL (      67 calls)
+     h_psi        :     60.11s CPU     60.33s WALL (      69 calls)
+     s_psi        :      0.26s CPU      0.26s WALL (      69 calls)
+     g_psi        :      0.15s CPU      0.15s WALL (      60 calls)
+
+     Called by h_psi:
+     h_psi:calbec :      0.41s CPU      0.43s WALL (      69 calls)
+     vloc_psi     :     59.30s CPU     59.46s WALL (      69 calls)
+     add_vuspsi   :      0.26s CPU      0.28s WALL (      69 calls)
+
+     General routines
+     calbec       :      0.56s CPU      0.58s WALL (      81 calls)
+     fft          :     26.12s CPU     26.22s WALL (      96 calls)
+     ffts         :      1.11s CPU      1.11s WALL (      16 calls)
+     fftw         :     52.71s CPU     52.78s WALL (    1076 calls)
+     interpolate  :      3.07s CPU      3.29s WALL (       8 calls)
+
+     Parallel routines
+
+     PWSCF        :   4m 3.76s CPU   4m39.05s WALL
+
+
+   This run was terminated on:  23:14:18  18May2021            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
+# python dir           : /home/lls34/GitHub/10_QE_Interface/ase-espresso/espresso
+# espresso dir         : /opt/womble/qe-6.7/bin
+# pseudo dir           : /home/lls34/programs/QuantumExpresso/pseudopotentials/use_pot
+# ase-espresso version : 0.3.3
+
+

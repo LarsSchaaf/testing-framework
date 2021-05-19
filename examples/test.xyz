@@ -1,0 +1,3 @@
+1
+Lattice="12.41769310974468 0.0 0.0 0.8594258930608617 12.387917068746344 0.0 -7.836497930447403 -7.311668024612237 10.0" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:initial_magmoms:R:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}}" energy=-1968.1339825867185 pbc="T T T"
+In       2.72031054       2.53812452       5.00000000        0      10.00000000       0.00000000       0.00000000       0.00000000
