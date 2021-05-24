@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ -pe smp 16 # number of cores requested
+#$ -pe smp 32 # number of cores requested
 #$ -l h_rt=72:00:00  # time requested in HH:MM:SS format
 #$ -S /bin/bash      # shell to run the job ingit s
 #$ -N bulk_In           # name of job (will appear in output of qstat)

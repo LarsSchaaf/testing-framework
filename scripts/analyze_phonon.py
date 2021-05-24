@@ -17,6 +17,9 @@ print(
 )
 data = read_properties(models, tests, args.test_set)
 
+
+# print("data", data)
+
 ref_model_name = default_analysis_settings["ref_model"]
 
 
@@ -239,7 +242,9 @@ for model_name in models:
                 "phonons_BAND_PATH-" + model_name + "-" + bulk_struct_test + ".pdf"
             )
 
-fig_DOS.savefig("phonons_DOS-" + model_name + ".pdf")
+print("done")
+print("ls2-phonons_DOS-" + model_name + ".pdf")
+fig_DOS.savefig("ls2-phonons_DOS-" + model_name + ".pdf")
 pyplot.clf()
 
 print("")
