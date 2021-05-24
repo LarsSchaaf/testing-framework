@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ -pe smp 16 # number of cores requested
+#$ -pe smp 32 # number of cores requested
 #$ -l h_rt=72:00:00  # time requested in HH:MM:SS format
 #$ -S /bin/bash      # shell to run the job ingit s
 #$ -N bulk_In           # name of job (will appear in output of qstat)
@@ -28,11 +28,13 @@ conda activate phd-code
 cd /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/example_models/In2O3/run_dir
 
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In 
-python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_Ia3
+# python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_Ia3
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_Pbca
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_Pbcn
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_R3c
-# python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/phonons_In2O3_Ia3
+python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/phonons_In2O3_Ia3
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_it1_50s ../../../../tests/In2O3/phonons_In2O3_Ia3
+#
 
 
 
