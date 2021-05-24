@@ -3,6 +3,8 @@
 This script is based on the phonon analysis script writen by Cas + modified by lls34
 Cas developped it for Si, lls34 used it for Indium Oxide.
 
+Run using  `python ../../../scripts/analyze_phonons_vDOS.py -s In2O3`
+
 """
 
 #!/usr/bin/env python
@@ -16,9 +18,11 @@ import matplotlib.pyplot as plt
 import phonopy
 import ase.units
 
-(args, models, tests, default_analysis_settings) = analyze_start(["phonon_bulks"])
+(args, models, tests, default_analysis_settings) = analyze_start(["phonons_In2O3_Ia3"])
 data = read_properties(models, tests, args.test_set)
 ref_model_name = default_analysis_settings["ref_model"]
+
+print(data.keys())
 
 
 def analyze_phonons(m_data):
@@ -60,6 +64,7 @@ def analyze_phonons(m_data):
         band_n = [20]
         lat = at0.get_cell().get_bravais_lattice()
         special_points = lat.get_special_points()
+        print("special points:", special_points)
         path_pts = []
         path_labels = []
         pt = []
@@ -110,14 +115,16 @@ def analyze_phonons(m_data):
         }
 
 
-if ref_model_name in data and "phonon_bulks" in data[ref_model_name]:
-    for (bulk_i, bulk_struct_test) in enumerate(data[ref_model_name]["phonon_bulks"]):
+if ref_model_name in data and "phonons_In2O3_Ia3" in data[ref_model_name]:
+    for (bulk_i, bulk_struct_test) in enumerate(
+        data[ref_model_name]["phonons_In2O3_Ia3"]
+    ):
         print("analyze ref model", ref_model_name, bulk_struct_test)
-        analyze_phonons(data[ref_model_name]["phonon_bulks"][bulk_struct_test])
+        analyze_phonons(data[ref_model_name]["phonons_In2O3_Ia3"][bulk_struct_test])
 bulk_struct_tests = []
 for model_name in models:
-    if model_name in data and "phonon_bulks" in data[model_name]:
-        for bulk_struct_test in data[model_name]["phonon_bulks"]:
+    if model_name in data and "phonons_In2O3_Ia3" in data[model_name]:
+        for bulk_struct_test in data[model_name]["phonons_In2O3_Ia3"]:
             if bulk_struct_test not in bulk_struct_tests:
                 bulk_struct_tests.append(bulk_struct_test)
 # fig_DOS = pyplot.figure()
@@ -138,8 +145,8 @@ colors = ["red", "blue", "red", "green", "cyan"]
 
 # Renaming for paper
 D = {}
-D["CASTEP_ASE"] = "DFT"
-D["GAP"] = "GAP"
+D["DFT_QE"] = "DFT"
+D["GAP_it1_50s"] = "GAP"
 # D[ace_name] = "ACE"
 
 D["pACE_B3_N4_13_rid_1.05_mlearn"] = "ACE(mlearn)"
@@ -166,10 +173,10 @@ for (j, model_name) in enumerate(models):
         continue
     print("analyze model", model_name)
     for (bulk_i, bulk_struct_test) in enumerate(bulk_struct_tests):
-        if "phonon_bulks" not in data[model_name]:
+        if "phonons_In2O3_Ia3" not in data[model_name]:
             continue
         try:
-            ref_model_data = data[ref_model_name]["phonon_bulks"][bulk_struct_test]
+            ref_model_data = data[ref_model_name]["phonons_In2O3_Ia3"][bulk_struct_test]
             THz_per_invcm = ase.units._c * 1.0e-10 * 100
             print(ref_model_data["DOS"]["val"])
             print(ref_model_data["DOS"]["freq"] / THz_per_invcm)  # THz_per_invcm)
@@ -181,7 +188,7 @@ for (j, model_name) in enumerate(models):
         except:
             ref_model_data = None
         try:
-            model_data = data[model_name]["phonon_bulks"][bulk_struct_test]
+            model_data = data[model_name]["phonons_In2O3_Ia3"][bulk_struct_test]
         except:
             continue
         print("analyze model-bulk", model_name, bulk_struct_test)
@@ -262,6 +269,6 @@ ax_DOS.set_xlabel("DOS (THz⁻¹)")
 # ax_BP.set_ylim(-0.2, 4.0)
 # ax_DOS.legend()
 f.tight_layout()
-f.savefig("ls3-phonon_bulks_BAND_PATH-PAPER4.pdf")
-# fig_BP.savefig("phonon_bulks_BAND_PATH-PAPER.pdf")
+f.savefig("ls9-phonons_In2O3_Ia3_BAND_PATH-PAPER4.pdf")
+# fig_BP.savefig("phonons_In2O3_Ia3_BAND_PATH-PAPER.pdf")
 pyplot.clf()
