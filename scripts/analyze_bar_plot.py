@@ -39,7 +39,7 @@ for model in models:
     all_data[model]["point_defect_Si_diamond_interstitial_tetr"] = point_defect_data[model]["point_defect_Si_diamond_interstitial_tetr"]["defects"]["Z_14"]["Ef"]
     all_data[model]["point_defect_Si_diamond_vacancy"] = point_defect_data[model]["point_defect_Si_diamond_vacancy"]["defects"]["ind_0_Z_14"]["Ef"]
     all_data[model]["point_defect_Si_diamond_interstitial_hex"] = point_defect_data[model]["point_defect_Si_diamond_interstitial_hex"]["defects"]["Z_14"]["Ef"]
-    #print()
+    # print()
     all_data[model]["point_defect_Si_diamond_interstitial_dumb"] = point_defect_data[model]["point_defect_Si_diamond_interstitial_dumb"]["dumbbell_interstitial_energy"]
 
 latex_dict = {

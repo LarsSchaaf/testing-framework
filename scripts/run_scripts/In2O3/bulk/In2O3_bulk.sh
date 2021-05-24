@@ -32,7 +32,8 @@ cd /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-frame
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_Pbca
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_Pbcn
 # python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/bulk_In2O3_R3c
-python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/phonons_In2O3_Ia3
+# python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/phonons_In2O3_Ia3
+python ../../../scripts/run-model-test.py  -Nl In2O3 DFT_QE ../../../../tests/In2O3/phonons_In2O3_Ia3_relaxed
 # python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_it1_50s ../../../../tests/In2O3/phonons_In2O3_Ia3
 #
 
