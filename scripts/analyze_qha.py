@@ -44,3 +44,4 @@ axs[2].set_ylabel("Thermal Expansion [1E-6/K]")
 axs[2].set_xlabel("Temperature [K]")
 plt.legend()
 plt.savefig("./qha.pdf")
+
