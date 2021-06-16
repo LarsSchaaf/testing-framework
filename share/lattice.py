@@ -117,7 +117,7 @@ def calc_E_vs_V(
     log.debug("Runs for decreasing Volume: ")
 
     for i in range(0, n_steps[0] - 1, -1):
-        log.info(f"    Increased volume {i}/{n_steps[0]}")
+        log.info(f"Decreased volume {i}/{n_steps[0]}")
         V_cur = scaled_bulk.get_volume()
 
         # Increase volume with scaled atoms
@@ -126,7 +126,7 @@ def calc_E_vs_V(
             scale_atoms=True,
         )
         # ase.io.write(sys.stdout, scaled_bulk, format="extxyz")
-        print("trying to relax i", i)
+        # print("trying to relax i", i)
         try:
             if hasattr(model, "fix_cell_dependence"):
                 model.fix_cell_dependence(scaled_bulk)
@@ -169,7 +169,7 @@ def calc_E_vs_V(
             0,
             (
                 scaled_bulk.get_volume() / len(scaled_bulk),
-                scaled_bulk.get_potential_energy() / len(bulk),
+                scaled_bulk.get_potential_energy(force_consistent=True) / len(bulk),
                 list(scaled_bulk.get_stress()),
             ),
         )
@@ -217,7 +217,7 @@ def calc_E_vs_V(
         E_vs_V.append(
             (
                 scaled_bulk.get_volume() / len(scaled_bulk),
-                scaled_bulk.get_potential_energy() / len(bulk),
+                scaled_bulk.get_potential_energy(force_consistent=True) / len(bulk),
                 list(scaled_bulk.get_stress()),
             )
         )
