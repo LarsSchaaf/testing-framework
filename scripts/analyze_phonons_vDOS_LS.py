@@ -12,33 +12,61 @@ import numpy as np
 from analyze_utils import *
 import matplotlib
 
-matplotlib.use("PDF")
-from matplotlib import pyplot
 import matplotlib.pyplot as plt
 import phonopy
 import ase.units
 import sys, os
+
+# 1. Define Variables
+
+THz = True
 
 if len(sys.argv) < 4:
     TEST_NAME = "phonons_In2O3_R3c"
     TEST_NAME = "phonons_In2O3_Ia3"
 else:
     TEST_NAME = sys.argv[3]
-# TEST_NAME = "phonons_In2O3_Ia3_relaxed"
 
+REF_MODEL_NAME = "DFT_QE"  # default_analysis_settings["ref_model"]
+
+# Renaming things on plot
+MODEL_NAMES = {
+    "DFT_QE": "DFT",
+    "GAP_it1_50s": "GAP",
+    "pACE_B3_N4_13_rid_1.05_mlearn": "ACE(mlearn)",
+}
+
+BAND_PATH_NAMES = {
+    "G": "$\\Gamma$",
+}
+
+# Only plot specific models
+if True:
+    SEL_MODELS = ["DFT_QE"]  # ["GAP_inA_50s", "GAP_itB_1_a_2", "DFT_QE"]
+else:
+    SEL_MODELS = None
+
+# Load all needed dta
 
 (args, models, tests, default_analysis_settings) = analyze_start([TEST_NAME])
-data = read_properties(models, tests, args.test_set)
-ref_model_name = "DFT_QE"  # default_analysis_settings["ref_model"]
+DATA = read_properties(models, tests, args.test_set)
 
-print(f"Data keys: {data.keys()}")
-print(f"RefModel: {data[ref_model_name]}")
+# Add all others as just their name
+MODEL_NAMES = {**dict(zip(models, models)), **MODEL_NAMES}
+
+print(f"Data keys: {DATA.keys()}")
+print(f"RefModel: {DATA[REF_MODEL_NAME]}")
 
 
-def analyze_phonons(m_data):
+def analyze_phonons(m_data, THz=False):
 
     # Unit Conversion
-    THz_per_invcm = ase.units._c * 1.0e-10
+    if THz:
+        THz_per_invcm = ase.units._c * 1.0e-10
+    else:
+        THz_per_invcm = 1
+
+    # Create atoms object for phonopy
     at0 = ase.atoms.Atoms(
         symbols=m_data["symb"],
         scaled_positions=np.asarray(m_data["scaled_pos"]),
@@ -71,7 +99,8 @@ def analyze_phonons(m_data):
     PHdos = phonons.get_total_dos_dict()["total_dos"]
     # contains by columns the frequencies in cm^{-1} and the vDOS
     # the vDOS ins in units of "number of states/(unit cell x frequency[cm^{-1}])"
-    # i.e. if you integrate the vDOS throughout frequency, it will be 3N, where N is the number of atoms in the unit cell
+    # i.e. if you integrate the vDOS throughout frequency, it will be 3N, where N is
+    # the number of atoms in the unit cell
     m_data["DOS"] = {"freq": frequencies, "val": PHdos}
 
     # band path
@@ -143,17 +172,22 @@ def analyze_phonons(m_data):
         print("No band path found in data")
 
 
-if ref_model_name in data and TEST_NAME in data[ref_model_name]:
-    for (bulk_i, bulk_struct_test) in enumerate(data[ref_model_name][TEST_NAME]):
-        print("analyze ref model", ref_model_name, bulk_struct_test)
-        analyze_phonons(data[ref_model_name][TEST_NAME][bulk_struct_test])
+# Do Ref model first
+# This is done because of coloring scheme
+
+if REF_MODEL_NAME in DATA and TEST_NAME in DATA[REF_MODEL_NAME]:
+    for (bulk_i, bulk_struct_test) in enumerate(DATA[REF_MODEL_NAME][TEST_NAME]):
+        print("analyze ref model", REF_MODEL_NAME, bulk_struct_test)
+        analyze_phonons(DATA[REF_MODEL_NAME][TEST_NAME][bulk_struct_test])
 bulk_struct_tests = []
 for model_name in models:
-    if model_name in data and TEST_NAME in data[model_name]:
-        for bulk_struct_test in data[model_name][TEST_NAME]:
+    if model_name in DATA and TEST_NAME in DATA[model_name]:
+        for bulk_struct_test in DATA[model_name][TEST_NAME]:
             if bulk_struct_test not in bulk_struct_tests:
                 bulk_struct_tests.append(bulk_struct_test)
 
+
+# Create Plot
 f, (ax_BP, ax_DOS) = plt.subplots(
     1, 2, gridspec_kw={"width_ratios": [5, 1]}, sharey=True, figsize=(6, 4)
 )
@@ -161,63 +195,43 @@ f, (ax_BP, ax_DOS) = plt.subplots(
 # Selecting colors -> Change this to colorplot object
 colors = ["red", "blue", "red", "green", "cyan"]
 
-# Renaming for paper
-D = {}
-D["DFT_QE"] = "DFT"
-D["GAP_it1_50s"] = "GAP"
-D["pACE_B3_N4_13_rid_1.05_mlearn"] = "ACE(mlearn)"
 
-# Add all others as just their name
-D = {**dict(zip(models, models)), **D}
+if SEL_MODELS is not None:
+    models = SEL_MODELS
 
-k = 0
 
-# Renaming ticks dict
-# D_tick_normal = dict(
-#     zip(model_data["BAND_PATH"]["labels"], model_data["BAND_PATH"]["labels"])
-# )
-D_tick = {
-    "G": "$\\Gamma$",
-    ".": ".",
-    "X": "X",
-    "L": "L",
-    "K": "K",
-    "R": "R",
-    "M": "M",
-    "N": "N",
-    "H": "H",
-    "A": "A",
-    "P": "P",
-    "Z": "Z",
-}
+if THz:
+    THz_per_invcm = ase.units._c * 1.0e-10 * 100
+else:
+    THz_per_invcm = 1
 
-# models = ["DFT_QE"]  # ["GAP_inA_50s", "GAP_itB_1_a_2", "DFT_QE"]
+k = 0  # Some sort of counter
 for (j, model_name) in enumerate(models):
-    if model_name == ref_model_name and len(models) > 1:
+    if model_name == REF_MODEL_NAME and len(models) > 1:
         continue
     print("analyze model", model_name)
     for (bulk_i, bulk_struct_test) in enumerate(bulk_struct_tests):
-        if TEST_NAME not in data[model_name]:
+        if TEST_NAME not in DATA[model_name]:
             continue
         try:
-            ref_model_data = data[ref_model_name][TEST_NAME][bulk_struct_test]
-            THz_per_invcm = ase.units._c * 1.0e-10 * 100
+            ref_model_data = DATA[REF_MODEL_NAME][TEST_NAME][bulk_struct_test]
+            # THz_per_invcm = ase.units._c * 1.0e-10 * 100
             print(ref_model_data["DOS"]["val"])
-            print(ref_model_data["DOS"]["freq"] / THz_per_invcm)  # THz_per_invcm)
+            print(ref_model_data["DOS"]["freq"] / THz_per_invcm)
             ax_DOS.plot(
                 ref_model_data["DOS"]["val"],
                 ref_model_data["DOS"]["freq"] / THz_per_invcm,
                 color="black",
-            )  # * THz_per_invcm)
+            )
         except:
             ref_model_data = None
         try:
-            model_data = data[model_name][TEST_NAME][bulk_struct_test]
+            model_data = DATA[model_name][TEST_NAME][bulk_struct_test]
         except:
             continue
         print("analyze model-bulk", model_name, bulk_struct_test)
         analyze_phonons(model_data)
-        THz_per_invcm = ase.units._c * 1.0e-10 * 100
+        # THz_per_invcm = ase.units._c * 1.0e-10 * 100
         ax_DOS.plot(
             model_data["DOS"]["val"],
             ref_model_data["DOS"]["freq"] / THz_per_invcm,
@@ -230,18 +244,18 @@ for (j, model_name) in enumerate(models):
                     ref_model_data["BAND_PATH"]["frequencies"][:, i] * 0.01,
                     "-",
                     color="black",
-                    label=D[ref_model_name] if k == 0 else None,
+                    label=MODEL_NAMES[REF_MODEL_NAME] if k == 0 else None,
                 )
                 k += 1
         if "BAND_PATH" in model_data:
             for i in range(model_data["BAND_PATH"]["frequencies"].shape[1]):
-                print(f"D keys: {D.keys()}")
+                print(f"D keys: {MODEL_NAMES.keys()}")
                 ax_BP.plot(
                     model_data["BAND_PATH"]["positions"],
                     model_data["BAND_PATH"]["frequencies"][:, i] * 0.01,
                     "-",
                     color=colors[j % len(colors)],
-                    label=D[model_name] if i == 0 else None,
+                    label=MODEL_NAMES[model_name] if i == 0 else None,
                 )  ##############################
             ax_BP.set_xticks(
                 [
@@ -254,17 +268,21 @@ for (j, model_name) in enumerate(models):
                 ]
             )
 
-            D_tick = {
+            BAND_PATH_NAMES = {
                 **dict(
                     zip(
                         model_data["BAND_PATH"]["labels"],
                         model_data["BAND_PATH"]["labels"],
                     )
                 ),
-                **D_tick,
+                **BAND_PATH_NAMES,
             }
             ax_BP.set_xticklabels(
-                [D_tick[l] for l in model_data["BAND_PATH"]["labels"] if l != "."]
+                [
+                    BAND_PATH_NAMES[l]
+                    for l in model_data["BAND_PATH"]["labels"]
+                    if l != "."
+                ]
             )
             print(model_data["BAND_PATH"]["labels"])
             ax_BP.set_xlim(
@@ -284,6 +302,10 @@ for (j, model_name) in enumerate(models):
                         ax_BP.plot(
                             [p, p], ylim, "-", color="black", label=None, linewidth=0.5
                         )
+
+# Plotting Settings
+
+
 # print(ref_model_data['DOS'].keys())
 # THz_per_invcm = ase.units._c * 1.0e-10 * 100
 # print(ref_model_data['DOS']['val'])
@@ -292,19 +314,22 @@ for (j, model_name) in enumerate(models):
 # ax_BP.set_xlabel("BZ point")
 # ax_BP.set_ylim(ylim)
 # ax_BP.set_title(bulk_struct_test)
+
+# ax_DOS.set_xlabel("freq (cm$^{-1}$)")
+# ax_DOS.set_ylabel("DOS (arb. units)")
+# ylim = ax_DOS.get_ylim()
+# ax_BP.set_ylim(-0.2, 4.0)
+# ax_DOS.legend()
 ax_BP.legend(loc="upper right")
 ax_BP.axhline(color="black", linewidth=0.5)
 ax_BP.set_ylabel("Frequency (THz)")
 ax_BP.set_xlabel("BZ point")
 ax_BP.legend(loc="lower right")
 ax_DOS.set_xlabel("DOS (THz⁻¹)")
-# ax_DOS.set_xlabel("freq (cm$^{-1}$)")
-# ax_DOS.set_ylabel("DOS (arb. units)")
-# ylim = ax_DOS.get_ylim()
-# ax_BP.set_ylim(-0.2, 4.0)
-# ax_DOS.legend()
 f.tight_layout()
 
+
+# Save Figure
 for i in range(1000):
     fname = f"../plots/{TEST_NAME}_vDOS_{i}.pdf"
     if os.path.exists(fname):
@@ -312,5 +337,5 @@ for i in range(1000):
     print(f"saved: {fname}")
     f.savefig(fname)
     break
-# fig_BP.savefig("phonons_In2O3_Ia3_BAND_PATH-PAPER.pdf")
-pyplot.clf()
+
+plt.clf()

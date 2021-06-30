@@ -240,11 +240,14 @@ def do_lattice(
 
     import model
 
+    log.info(f"Starting do_latice for {model.name}")
+
     bulk = ase.io.read(test_dir + "/bulk.xyz", format="extxyz")
 
     results_dict = {}
 
-    print("relax bulk")
+    log.info(f"    Relax bulk as is first!")
+
     # relax the initial unit cell and atomic positions
     (orig_cell, new_cell) = (None, None)
     while (
@@ -274,15 +277,16 @@ def do_lattice(
         else:
             break
 
-    print("final relaxed bulk")
+    fname = os.path.join("..", run_root + "-relaxed.xyz")
+    log.info(f"    Relaxed structure: {fname}")
     ase.io.write(sys.stdout, bulk, format="extxyz")
-    ase.io.write(os.path.join("..", run_root + "-relaxed.xyz"), bulk, format="extxyz")
+    ase.io.write(fname, bulk, format="extxyz")
 
-    print("calculating E vs. V")
+    log.info("Calculating E vs. V")
     E_vs_V = calc_E_vs_V(bulk, dV=dV, n_steps=n_steps, tol=tol)
     results_dict.update({"E_vs_V": E_vs_V})
 
-    print("calculating elastic constants")
+    log.info("Calculating elastic constants")
 
     if hasattr(model, "fix_cell_dependence"):
         model.fix_cell_dependence(bulk)
