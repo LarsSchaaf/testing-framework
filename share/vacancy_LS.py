@@ -16,7 +16,6 @@ def do_one_vacancy(
     relax_symm_break=0.0,
     nn_cutoff=0.0,
     tol=1.0e-2,
-    dummy=False,
 ):
 
     # do unrelaxed (without perturbations)
@@ -25,8 +24,7 @@ def do_one_vacancy(
 
     label = "%s_ind_%d_Z_%d" % (name, vac_i, bulk_supercell.get_atomic_numbers()[vac_i])
     unrelaxed_filename = run_root + "-%s-unrelaxed.xyz" % label
-    print(f"unrelaxed filename: {unrelaxed_filename }")
-    ase.io.write(os.path.join("../", unrelaxed_filename), vac, format="extxyz")
+    ase.io.write(os.path.join("..", unrelaxed_filename), vac, format="extxyz")
     evaluate(vac)
     unrelaxed_vac_pe = vac.get_potential_energy()
 
@@ -52,43 +50,42 @@ def do_one_vacancy(
     del vac[vac_i]
     vac_pos = vac.positions[vac_i]
 
-    if not dummy:
-        vac = relax_config(
-            vac,
-            relax_pos=True,
-            relax_cell=False,
-            tol=tol,
-            save_traj=True,
-            config_label=label,
-            from_base_model=True,
-            save_config=True,
-            try_restart=True,
-        )
-        relaxed_filename = run_root + "-%s-relaxed.xyz" % label
-        ase.io.write(os.path.join("..", relaxed_filename), vac, format="extxyz")
+    vac = relax_config(
+        vac,
+        relax_pos=True,
+        relax_cell=False,
+        tol=tol,
+        save_traj=True,
+        config_label=label,
+        from_base_model=True,
+        save_config=True,
+        try_restart=True,
+    )
+    relaxed_filename = run_root + "-%s-relaxed.xyz" % label
+    ase.io.write(os.path.join("..", relaxed_filename), vac, format="extxyz")
 
-        # already has calculator from relax_configs
-        vac_pe = vac.get_potential_energy()
-        if len(set(bulk_supercell.get_atomic_numbers())) == 1:
-            Ebulk = float(len(vac)) / float(len(bulk_supercell)) * bulk_supercell_pe
-        else:
-            Ebulk = bulk_supercell_pe
-        Ef0 = unrelaxed_vac_pe - Ebulk
-        Ef = vac_pe - Ebulk
-        print("got vacancy", label, "cell energy", vac_pe, "n_atoms", len(vac))
-        print("got bulk energy", Ebulk, " (scaled to (N-1)/N if single component)")
-        return (
-            label,
-            unrelaxed_filename,
-            Ef0,
-            relaxed_filename,
-            Ef,
-            int(bulk_supercell.get_atomic_numbers()[vac_i]),
-            vac_pos,
-        )
+    # already has calculator from relax_configs
+    vac_pe = vac.get_potential_energy()
+    if len(set(bulk_supercell.get_atomic_numbers())) == 1:
+        Ebulk = float(len(vac)) / float(len(bulk_supercell)) * bulk_supercell_pe
+    else:
+        Ebulk = bulk_supercell_pe
+    Ef0 = unrelaxed_vac_pe - Ebulk
+    Ef = vac_pe - Ebulk
+    print("got vacancy", label, "cell energy", vac_pe, "n_atoms", len(vac))
+    print("got bulk energy", Ebulk, " (scaled to (N-1)/N if single component)")
+    return (
+        label,
+        unrelaxed_filename,
+        Ef0,
+        relaxed_filename,
+        Ef,
+        int(bulk_supercell.get_atomic_numbers()[vac_i]),
+        vac_pos,
+    )
 
 
-def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
+def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2):
     """
     Calculate all vacancies of a given atoms object
 
@@ -108,36 +105,30 @@ def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
 
     name = os.path.splitext(os.path.split(fname)[-1])[0]
 
-    if "bulk_struct_test" in bulk_supercell.info.keys():
-        bulk = rescale_to_relaxed_bulk(bulk_supercell)
-    else:
-        bulk = bulk_supercell
-        print("Not rescaling because `bulk_struct_test` missing from ats.info")
+    bulk = rescale_to_relaxed_bulk(bulk_supercell)
     # relax bulk supercell positions in case it's only approximate (as it must be for different models), but stick
     # to relaxed bulk's lattice constants as set by rescale_to_relaxed_bulk
+    bulk_supercell = relax_config(
+        bulk_supercell,
+        relax_pos=True,
+        relax_cell=False,
+        tol=tol,
+        save_traj=True,
+        config_label="rescaled_bulk",
+        from_base_model=True,
+        save_config=True,
+    )
 
-    # ??
-    # bulk_supercell = relax_config(
-    #     bulk_supercell,
-    #     relax_pos=True,
-    #     relax_cell=False,
-    #     tol=tol,
-    #     save_traj=True,
-    #     config_label="rescaled_bulk",
-    #     from_base_model=True,
-    #     save_config=True,
-    # )
-
-    # ase.io.write(
-    #     os.path.join("..", run_root + "-rescaled-bulk.xyz"),
-    #     bulk_supercell,
-    #     format="extxyz",
-    # )
+    ase.io.write(
+        os.path.join("..", run_root + "-rescaled-bulk.xyz"),
+        bulk_supercell,
+        format="extxyz",
+    )
 
     print("got bulk primitive cell ", bulk.get_cell())
     print("got rescaled bulk_supercell cell ", bulk_supercell.get_cell())
 
-    if True:  # bulk_supercell.info["vacancies"] == "inequivalent":
+    if bulk_supercell.info["vacancies"] == "inequivalent":
         sym_data = spglib.get_symmetry_dataset(bulk_supercell, symprec=0.001)
         prim_vacancy_list = np.unique(sym_data["equivalent_atoms"])
         print("orig cell vacancy_list", prim_vacancy_list)
@@ -186,7 +177,7 @@ def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
     evaluate(bulk_supercell)
     bulk_supercell_pe = bulk_supercell.get_potential_energy()
     properties = {
-        # "bulk_struct_test": bulk_supercell.info["bulk_struct_test"],
+        "bulk_struct_test": bulk_supercell.info["bulk_struct_test"],
         "bulk_E_per_atom": bulk_supercell_pe / len(bulk_supercell),
         "defects": {},
     }
@@ -218,7 +209,6 @@ def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
             relax_symm_break,
             nn_cutoff,
             tol,
-            dummy,
         )
 
         properties["defects"][label] = {
@@ -237,7 +227,7 @@ def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
     return properties
 
 
-def vacancy_all_xyz(direct, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
+def vacancy_all_xyz(direct, nn_cutoff=0.0, tol=1.0e-2):
     """
     Analyses all files in direcotry
 
@@ -255,4 +245,4 @@ def vacancy_all_xyz(direct, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
 
         print(f"Xyz file {i}/{len(fnames)}")
 
-        do_all_vacancies(fname, nn_cutoff, tol, dummy)
+        do_all_vacancies(fname, nn_cutoff, tol)
