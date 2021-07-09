@@ -1,0 +1,11 @@
+node31
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+09/07/2021 13:27:13
+--------------------------------------------------------
+model: GAP_itB_3_b_7_virials2
+args:
+Analysing Model@ GAP_itB_3_b_7_virials2
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+../In2O3-model-GAP_itB_3_b_7_virials2-test-phonons_In2O3_R3c-properties.json already exists and is not empty, not rerunning test

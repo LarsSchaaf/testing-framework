@@ -4,6 +4,8 @@ import numpy as np
 import phonopy
 import ase.units
 
+file_label = "xyz"
+
 
 def do_phonons(bulk_struct_tests, n_supercell, band_paths=None, dx=0.01):
     if band_paths is not None and len(band_paths) != len(bulk_struct_tests):
@@ -60,7 +62,7 @@ def do_phonons(bulk_struct_tests, n_supercell, band_paths=None, dx=0.01):
             raise RuntimeError("Failed to map orig and displaced atom positions")
         at0_sc = at0_sc[mapping]
 
-        # ase.io.write("UNDISPL.{}".format(file_label), at0_sc)
+        ase.io.write("UNDISPL.{}".format(file_label), at0_sc)
 
         # create displaced cells
         sys.stderr.write("Creating {} displacements\n".format(len(displ_supercells)))
@@ -73,7 +75,7 @@ def do_phonons(bulk_struct_tests, n_supercell, band_paths=None, dx=0.01):
                 numbers=displ_config.get_atomic_numbers(),
             )
             at_sets.append(at)
-            # ase.io.write("DISPL_{}.{}".format(displ_i, file_label), at)
+            ase.io.write("DISPL_{}.{}".format(displ_i, file_label), at)
 
         ####################################################################################################
         all_forces = []

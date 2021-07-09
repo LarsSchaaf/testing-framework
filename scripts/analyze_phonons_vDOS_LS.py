@@ -19,7 +19,9 @@ import sys, os
 
 # 1. Define Variables
 
-THz = True
+THz = True  # False
+
+# If true we devide it away so we are donig it in /cm
 
 if len(sys.argv) < 4:
     TEST_NAME = "phonons_In2O3_R3c"
@@ -49,8 +51,9 @@ else:
 # Load all needed dta
 
 (args, models, tests, default_analysis_settings) = analyze_start([TEST_NAME])
-DATA = read_properties(models, tests, args.test_set)
 
+
+DATA = read_properties(models, tests, args.test_set)
 # Add all others as just their name
 MODEL_NAMES = {**dict(zip(models, models)), **MODEL_NAMES}
 
@@ -59,12 +62,26 @@ print(f"RefModel: {DATA[REF_MODEL_NAME]}")
 
 
 def analyze_phonons(m_data, THz=False):
+    """
+    Takes data from m_data and adds 'DOS', 'BAND_PATH' keys with required information
 
+    Uses phonopy to add DOS and BAND_PATH arguments from data stored in the .json file
+    after running the analysis tool
+
+    Args:
+        m_data (dict): the results fron a phonon run for one specfic model
+        THz (bool, optional): Wether to have units in THz or in cm^-1. True means using
+            THz as units. Defaults to False.
+
+    Raises:
+        RuntimeError:
+        RuntimeError:
+    """
     # Unit Conversion
     if THz:
-        THz_per_invcm = ase.units._c * 1.0e-10
+        THz_per_invcm = ase.units._c * 1.0e-10 / 100
     else:
-        THz_per_invcm = 1
+        THz_per_invcm = 1 / 100
 
     # Create atoms object for phonopy
     at0 = ase.atoms.Atoms(
@@ -178,7 +195,7 @@ def analyze_phonons(m_data, THz=False):
 if REF_MODEL_NAME in DATA and TEST_NAME in DATA[REF_MODEL_NAME]:
     for (bulk_i, bulk_struct_test) in enumerate(DATA[REF_MODEL_NAME][TEST_NAME]):
         print("analyze ref model", REF_MODEL_NAME, bulk_struct_test)
-        analyze_phonons(DATA[REF_MODEL_NAME][TEST_NAME][bulk_struct_test])
+        analyze_phonons(DATA[REF_MODEL_NAME][TEST_NAME][bulk_struct_test], THz=THz)
 bulk_struct_tests = []
 for model_name in models:
     if model_name in DATA and TEST_NAME in DATA[model_name]:
@@ -201,7 +218,9 @@ if SEL_MODELS is not None:
 
 
 if THz:
-    THz_per_invcm = ase.units._c * 1.0e-10 * 100
+    THz_per_invcm = 1 / (ase.units._c * 1.0e-10)
+    THz_per_invcm = ase.units._c * 1.0e-10
+
 else:
     THz_per_invcm = 1
 
@@ -230,7 +249,7 @@ for (j, model_name) in enumerate(models):
         except:
             continue
         print("analyze model-bulk", model_name, bulk_struct_test)
-        analyze_phonons(model_data)
+        analyze_phonons(model_data, THz=THz)
         # THz_per_invcm = ase.units._c * 1.0e-10 * 100
         ax_DOS.plot(
             model_data["DOS"]["val"],

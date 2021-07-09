@@ -6,6 +6,9 @@ import numpy as np
 import spglib
 from glob import glob
 
+TODIR = ".."
+TODIR = "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/tests/In2O3/batch_vacancy_In2O3/unrelaxed"
+
 
 def do_one_vacancy(
     bulk_supercell,
@@ -24,9 +27,14 @@ def do_one_vacancy(
     del vac[vac_i]
 
     label = "%s_ind_%d_Z_%d" % (name, vac_i, bulk_supercell.get_atomic_numbers()[vac_i])
+
     unrelaxed_filename = run_root + "-%s-unrelaxed.xyz" % label
-    print(f"unrelaxed filename: {unrelaxed_filename }")
-    ase.io.write(os.path.join("../", unrelaxed_filename), vac, format="extxyz")
+    print(
+        f"unrelaxed filename: {unrelaxed_filename}",
+        run_root,
+        os.path.join("..", unrelaxed_filename),
+    )
+    ase.io.write(os.path.join(TODIR, unrelaxed_filename), vac, format="extxyz")
     evaluate(vac)
     unrelaxed_vac_pe = vac.get_potential_energy()
 
@@ -86,6 +94,8 @@ def do_one_vacancy(
             int(bulk_supercell.get_atomic_numbers()[vac_i]),
             vac_pos,
         )
+    else:
+        return [None] * 7
 
 
 def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
@@ -201,37 +211,41 @@ def do_all_vacancies(fname, nn_cutoff=0.0, tol=1.0e-2, dummy=False):
             relax_symm_break = bulk_supercell.info["relax_symm_break_{}".format(vac_i)]
         except:
             relax_symm_break = 0.0
-        (
-            label,
-            unrelaxed_filename,
-            Ef0,
-            relaxed_filename,
-            Ef,
-            vac_Z,
-            vac_pos,
-        ) = do_one_vacancy(
-            bulk_supercell,
-            bulk_supercell_pe,
-            vac_i,
-            name,
-            relax_radial,
-            relax_symm_break,
-            nn_cutoff,
-            tol,
-            dummy,
-        )
 
-        properties["defects"][label] = {
-            "Ef0": Ef0,
-            "Ef": Ef,
-            "unrelaxed_filename": unrelaxed_filename,
-            "relaxed_filename": relaxed_filename,
-            "atom_ind": int(vac_i),
-            "Z": int(vac_Z),
-            "vac_pos": vac_pos.tolist(),
-        }
-        if len(set(bulk_supercell.get_atomic_numbers())) > 1:
-            properties["defects"][label]["dmu"] = [1, vac_Z]
+        try:
+            (
+                label,
+                unrelaxed_filename,
+                Ef0,
+                relaxed_filename,
+                Ef,
+                vac_Z,
+                vac_pos,
+            ) = do_one_vacancy(
+                bulk_supercell,
+                bulk_supercell_pe,
+                vac_i,
+                name,
+                relax_radial,
+                relax_symm_break,
+                nn_cutoff,
+                tol,
+                dummy,
+            )
+        except Exception as e:
+            print(f"Error: {e}")
+        if not dummy:
+            properties["defects"][label] = {
+                "Ef0": Ef0,
+                "Ef": Ef,
+                "unrelaxed_filename": unrelaxed_filename,
+                "relaxed_filename": relaxed_filename,
+                "atom_ind": int(vac_i),
+                "Z": int(vac_Z),
+                "vac_pos": vac_pos.tolist(),
+            }
+            if len(set(bulk_supercell.get_atomic_numbers())) > 1:
+                properties["defects"][label]["dmu"] = [1, vac_Z]
 
     print("returning properties", properties)
     return properties

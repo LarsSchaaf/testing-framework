@@ -1,0 +1,1510 @@
+node9
+Bulk In - Vacancy
+testing-framework
+Vacancy
+28/06/2021 22:25:57
+--------------------------------------------------------
+model: GAP_itB_2_b_6_virials2
+args:
+Analysing Model@ GAP_itB_2_b_6_virials2
+[lattice   ] Starting do_latice for GAP_itB_2_b_6_virials2
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Mon Jun 28 22:26:03 2021 ######
+Model GAP_itB_2_b_6_virials2, Test bulk_In2O3_Ia3
+Test run at 2021-06-28 22:26
+
+model file: ../../models/GAP_itB_2_b_6_virials2/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itB_2_b_6_virials2"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/bulk_In2O3_Ia3/test.py
+============================================================
+import os.path
+import lattice
+
+# The primitive unit cell was used for this
+properties = lattice.do_lattice(os.path.abspath(os.path.dirname(__file__)), "cubic")
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/virials/itB_2_b_6_virials2/gap_fit/gap.xml
+INFO:lattice:Starting do_latice for GAP_itB_2_b_6_virials2
+[lattice   ]     Relax bulk as is first!
+INFO:lattice:    Relax bulk as is first!
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-bulk-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.01 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:13   -45151.901701       0.0205       0.0029
+PreconLBFGS:   1  22:26:15   -45151.904110       0.0177       0.0001
+PreconLBFGS:   2  22:26:16   -45151.904522       0.0122       0.0004
+PreconLBFGS:   3  22:26:17   -45151.904938       0.0134       0.0004
+PreconLBFGS:   4  22:26:18   -45151.905232       0.0165       0.0001
+PreconLBFGS:   5  22:26:19   -45151.905482       0.0123       0.0003
+PreconLBFGS:   6  22:26:20   -45151.905613       0.0027       0.0000
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/optimize/precon/lbfgs.py:132: UserWarning: The system is likely too small to benefit from the standard preconditioner, hence it is disabled. To re-enable preconditioning, call`PreconLBFGS` by explicitly providing the kwarg `precon`
+  warnings.warn('The system is likely too small to benefit from ' +
+[lattice   ]     Relaxed structure: ../In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-relaxed.xyz
+symmetry at end of relaxation at desired tol 0.01
+ase.spacegroup.symmetrize: prec 0.01 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+INFO:lattice:    Relaxed structure: ../In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-relaxed.xyz
+[lattice   ] Calculating E vs. V
+40
+Lattice="8.911588700634951 6.98466275677488e-10 -6.060402694273452e-16 -2.9705295675368375 8.401926401586362 -1.2097800183372603e-09 -2.9705295665490565 -4.200963200094719 7.2762817053074835" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45151.90561343428 stress="1.880781213520243e-05 -2.890788142162051e-13 2.9595463689239284e-13 -2.890788142162051e-13 1.880781110438943e-05 -1.1587618686146294e-13 2.9595463689239284e-13 -1.1587618686146294e-13 1.8807810109164177e-05" free_energy=-45151.90561343428 pbc="T T T"
+In      -4.25491387       3.00867845       5.70323862        0      -0.00052798       0.00037334      -0.00064664
+In       7.22544343       1.19228476       1.57304308        1       0.00052798      -0.00037334       0.00064664
+In       1.28438429      -0.90819684       5.21118393        2       0.00052798      -0.00037334       0.00064664
+In      -1.48526478      -2.10048160       3.63814085        3       0.00000000      -0.00000000      -0.00000000
+In      -1.28438430       4.05891925       3.39211350        4      -0.00052798       0.00037334       0.00064664
+In       4.65667484      -2.86663449       5.45721128        5      -0.00052798      -0.00074667      -0.00000000
+In      -1.28438430       1.33432871       5.45721128        6      -0.00052798      -0.00074667       0.00000000
+In      -1.68614527       7.06759769       1.81907042        7       0.00052798       0.00074667      -0.00000000
+In       4.25491386       0.14204396       3.88416820        8       0.00052798      -0.00037334      -0.00064664
+In      -1.48526479       4.20096320      -0.00000000        9      -0.00000000      -0.00000000      -0.00000000
+In       4.25491386       6.44348876       0.24602734       10       0.00052798      -0.00037334      -0.00064664
+In      -1.28438430      -2.24252555       7.03025436       11      -0.00052798       0.00037334       0.00064664
+In       4.25491386       2.86663449       1.81907042       12       0.00052798       0.00074667      -0.00000000
+In       1.68614527       5.10916005       2.06509777       13      -0.00052798       0.00037334      -0.00064664
+In       4.45579435       0.00000000      -0.00000000       14      -0.00000000      -0.00000000      -0.00000000
+In       1.48526478       2.10048160       3.63814085       15       0.00000000       0.00000000       0.00000000
+O        0.87521810       4.20123018       3.95934683       16       0.00056176      -0.00097738       0.00244608
+O       -2.09531147       3.42876145       5.29637707       17       0.00056176       0.00260706      -0.00037660
+O       -0.43604771       2.25548480       0.05227014       18       0.00172373       0.00178543       0.00104651
+O       -0.87521810      -0.77193477       1.97944220       19      -0.00056176       0.00162968       0.00206948
+O        3.93110445       5.00307615       1.92717206       20       0.00227071      -0.00102548       0.00102297
+O        2.00995468       2.93303972       1.65823622       21      -0.00227071      -0.00139866      -0.00037660
+O        2.00995468       6.27099964       0.26893584       22      -0.00227071       0.00037318       0.00139957
+O       -2.27184070       5.96072626       3.69041099       23      -0.00110874      -0.00222029       0.00104651
+O        3.40657728       1.94547840       7.22401156       24      -0.00172373      -0.00178543      -0.00104651
+O        5.24237026      -1.75976306       3.58587070       25       0.00110874       0.00222029      -0.00104651
+O        6.37710684       3.27349128       1.71096879       26      -0.00172373       0.00179902      -0.00102297
+O        3.66921843       2.31610815       3.90707669       27      -0.00110874       0.00201645       0.00139957
+O        0.69868887       4.32605520       6.95507572       28      -0.00110874       0.00020384      -0.00244608
+O        2.27184070      -0.12509199       0.32120598       29       0.00110874      -0.00020384       0.00244608
+O       -3.40657728       0.92747193       5.56531291       30       0.00172373      -0.00179902       0.00102297
+O        5.06584103       0.77220175       1.97990463       31      -0.00056176      -0.00260706       0.00037660
+O        0.96057489       1.26792349       5.61804548       32       0.00227071       0.00139866       0.00037660
+O        3.40657728      -1.01800647       5.61758306       33      -0.00172373      -0.00001359       0.00206948
+O        2.09531147      -0.00026698       3.31693487       34      -0.00056176       0.00097738      -0.00244608
+O        0.96057489      -2.07003643       7.00734586       35       0.00227071      -0.00037318      -0.00139957
+O       -0.69868887       1.88485506       3.36920501       36       0.00110874      -0.00201645      -0.00139957
+O       -0.96057489      -0.80211295       5.34910964       37      -0.00227071       0.00102548      -0.00102297
+O       -0.43604771       5.21896968       1.65869864       38       0.00172373       0.00001359      -0.00206948
+O        3.84574766       4.97289797       5.29683950       39       0.00056176      -0.00162968      -0.00206948
+INFO:lattice:Calculating E vs. V
+[lattice   ] Starting calc_E_vs_V for GAP_itB_2_b_6_virials2
+DEBUG:lattice:Starting calc_E_vs_V for GAP_itB_2_b_6_virials2
+[lattice   ] Runs for decreasing Volume: 
+DEBUG:lattice:Runs for decreasing Volume: 
+[lattice   ] Decreased volume 0/-10
+INFO:lattice:Decreased volume 0/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_000-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_000-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_000-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:21   -45151.905613       0.0027       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -1/-10
+INFO:lattice:Decreased volume -1/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-01-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-01-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-01-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:21   -45151.738762       0.0673       0.0000
+PreconLBFGS:   1  22:26:22   -45151.743350       0.0316       0.0000
+PreconLBFGS:   2  22:26:23   -45151.744598       0.0308       0.0000
+PreconLBFGS:   3  22:26:25   -45151.745347       0.0159       0.0000
+PreconLBFGS:   4  22:26:26   -45151.745743       0.0111       0.0000
+PreconLBFGS:   5  22:26:26   -45151.745809       0.0092       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -2/-10
+INFO:lattice:Decreased volume -2/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-02-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-02-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-02-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:27   -45151.223828       0.0776       0.0000
+PreconLBFGS:   1  22:26:28   -45151.229722       0.0428       0.0000
+PreconLBFGS:   2  22:26:29   -45151.231146       0.0309       0.0000
+PreconLBFGS:   3  22:26:30   -45151.231716       0.0177       0.0000
+PreconLBFGS:   4  22:26:30   -45151.231921       0.0104       0.0000
+PreconLBFGS:   5  22:26:32   -45151.232011       0.0129       0.0000
+PreconLBFGS:   6  22:26:33   -45151.232066       0.0056       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -3/-10
+INFO:lattice:Decreased volume -3/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-03-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-03-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-03-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:33   -45150.308496       0.0694       0.0000
+PreconLBFGS:   1  22:26:35   -45150.313046       0.0472       0.0000
+PreconLBFGS:   2  22:26:36   -45150.314482       0.0226       0.0000
+PreconLBFGS:   3  22:26:37   -45150.314785       0.0091       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -4/-10
+INFO:lattice:Decreased volume -4/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-04-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-04-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-04-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:38   -45148.919706       0.0586       0.0000
+PreconLBFGS:   1  22:26:39   -45148.922670       0.0440       0.0000
+PreconLBFGS:   2  22:26:40   -45148.923843       0.0089       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -5/-10
+INFO:lattice:Decreased volume -5/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-05-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-05-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-05-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:41   -45146.969400       0.0641       0.0000
+PreconLBFGS:   1  22:26:42   -45146.971963       0.0448       0.0000
+PreconLBFGS:   2  22:26:43   -45146.973434       0.0066       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -6/-10
+INFO:lattice:Decreased volume -6/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-06-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-06-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-06-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:44   -45144.372803       0.0825       0.0000
+PreconLBFGS:   1  22:26:45   -45144.377455       0.0723       0.0000
+PreconLBFGS:   2  22:26:46   -45144.379892       0.0059       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -7/-10
+INFO:lattice:Decreased volume -7/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-07-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-07-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-07-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:47   -45141.060710       0.1075       0.0000
+PreconLBFGS:   1  22:26:49   -45141.069215       0.1264       0.0000
+PreconLBFGS:   2  22:26:50   -45141.073822       0.0224       0.0000
+PreconLBFGS:   3  22:26:51   -45141.074383       0.0124       0.0000
+PreconLBFGS:   4  22:26:53   -45141.074536       0.0093       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -8/-10
+INFO:lattice:Decreased volume -8/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-08-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-08-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-08-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:26:53   -45136.923910       0.1279       0.0000
+PreconLBFGS:   1  22:26:55   -45136.930763       0.1191       0.0000
+PreconLBFGS:   2  22:26:56   -45136.936708       0.0255       0.0000
+PreconLBFGS:   3  22:26:58   -45136.937391       0.0138       0.0000
+PreconLBFGS:   4  22:27:00   -45136.937545       0.0125       0.0000
+PreconLBFGS:   5  22:27:00   -45136.937611       0.0055       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -9/-10
+INFO:lattice:Decreased volume -9/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-09-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-09-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-09-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:01   -45131.803669       0.1516       0.0000
+PreconLBFGS:   1  22:27:02   -45131.809455       0.0808       0.0000
+PreconLBFGS:   2  22:27:03   -45131.814557       0.1030       0.0000
+PreconLBFGS:   3  22:27:03   -45131.818329       0.0850       0.0000
+PreconLBFGS:   4  22:27:04   -45131.819635       0.0392       0.0000
+PreconLBFGS:   5  22:27:04   -45131.820055       0.0226       0.0000
+PreconLBFGS:   6  22:27:05   -45131.820402       0.0239       0.0000
+PreconLBFGS:   7  22:27:06   -45131.820674       0.0173       0.0000
+PreconLBFGS:   8  22:27:07   -45131.820769       0.0074       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -10/-10
+INFO:lattice:Decreased volume -10/-10
+[lattice   ]     - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-10-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-E_vs_V_-10-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_-10-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:08   -45125.545625       0.1840       0.0000
+PreconLBFGS:   1  22:27:10   -45125.553338       0.0740       0.0000
+PreconLBFGS:   2  22:27:12   -45125.559278       0.1335       0.0000
+PreconLBFGS:   3  22:27:14   -45125.562301       0.0394       0.0000
+PreconLBFGS:   4  22:27:17   -45125.564999       0.0038       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Runs for increasing Volume: 
+DEBUG:lattice:Runs for increasing Volume: 
+[lattice   ]     Increased volume 1/10
+DEBUG:lattice:    Increased volume 1/10
+40
+Lattice="8.985241534084363 7.04238986021362e-10 -6.110490938387084e-16 -2.9950805120254174 8.471366958898681 -1.219778653731494e-09 -2.9950805110294727 -4.2356834787451065 7.336418991999567" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 pbc="T T T"
+In      -4.29008004       3.03354469       5.75037496        0
+In       7.28516055       1.20213880       1.58604402        1
+In       1.29499952      -0.91570294       5.25425352        2
+In      -1.49754026      -2.11784174       3.66820949        3
+In      -1.29499953       4.09246556       3.42014877        4
+In       4.69516150      -2.89032676       5.50231424        5
+In      -1.29499953       1.34535672       5.50231424        6
+In      -1.70008099       7.12601024       1.83410474        7
+In       4.29008003       0.14321793       3.91627022        8
+In      -1.49754026       4.23568348      -0.00000000        9
+In       4.29008003       6.49674315       0.24806072       10
+In      -1.29499953      -2.26105966       7.08835827       11
+In       4.29008003       2.89032676       1.83410475       12
+In       1.70008099       5.15138643       2.08216547       13
+In       4.49262077       0.00000000      -0.00000000       14
+In       1.49754025       2.11784174       3.66820949       15
+O        0.88245163       4.23595267       3.99207019       16
+O       -2.11262888       3.45709961       5.34015077       17
+O       -0.43965158       2.27412602       0.05270215       18
+O       -0.88245163      -0.77831468       1.99580197       19
+O        3.96359439       5.04442577       1.94309982       20
+O        2.02656663       2.95728081       1.67194127       21
+O        2.02656663       6.32282843       0.27115855       22
+O       -2.29061710       6.00999070       3.72091164       23
+O        3.43473209       1.96155747       7.28371684       24
+O        5.28569760      -1.77430721       3.61550734       25
+O        6.42981260       3.30054615       1.72510967       26
+O        3.69954393       2.33525040       3.93936804       27
+O        0.70446342       4.36180934       7.01255829       28
+O        2.29061709      -0.12612586       0.32386070       29
+O       -3.43473209       0.93513733       5.61130932       30
+O        5.10770939       0.77858387       1.99626822       31
+O        0.96851388       1.27840267       5.66447771       32
+O        3.43473209      -1.02642013       5.66401147       33
+O        2.11262888      -0.00026918       3.34434879       34
+O        0.96851388      -2.08714495       7.06526044       35
+O       -0.70446342       1.90043308       3.39705094       36
+O       -0.96851389      -0.80874228       5.39331916       37
+O       -0.43965158       5.26210361       1.67240752       38
+O        3.87753214       5.01399817       5.34061701       39
+trying to relax i 1
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_01-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:18   -45151.753248       0.0543       0.0000
+PreconLBFGS:   1  22:27:19   -45151.757058       0.0270       0.0000
+PreconLBFGS:   2  22:27:20   -45151.757594       0.0255       0.0000
+PreconLBFGS:   3  22:27:21   -45151.758301       0.0295       0.0000
+PreconLBFGS:   4  22:27:22   -45151.759365       0.0174       0.0000
+PreconLBFGS:   5  22:27:23   -45151.759843       0.0126       0.0000
+PreconLBFGS:   6  22:27:25   -45151.759976       0.0095       0.0000
+[lattice   ]     Increased volume 2/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="8.98524153408439 7.042377898414135e-10 -2.3400103886693154e-16 -2.9950805120254254 8.471366958898713 -1.2197751578020352e-09 -2.9950805110294847 -4.235683478745118 7.336418991999595" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45151.75997630628 stress="0.020861680305037753 -1.0130968519065521e-13 -2.536856546554921e-13 -1.0130968519065521e-13 0.020861680304250438 7.120058393235412e-14 -2.536856546554921e-13 7.120058393235412e-14 0.020861680304689077" free_energy=-45151.75997630628 pbc="T T T"
+In      -4.28797314       3.03205489       5.75295537        0       0.00548233      -0.00387659       0.00671445
+In       7.28305365       1.20362860       1.58346362        1      -0.00548233       0.00387659      -0.00671445
+In       1.29289263      -0.91421314       5.25167311        2      -0.00548233       0.00387659      -0.00671445
+In      -1.49754026      -2.11784174       3.66820949        3       0.00000000      -0.00000000       0.00000000
+In      -1.29289263       4.09097576       3.41756836        4       0.00548233      -0.00387659      -0.00671445
+In       4.69726839      -2.88734716       5.50231424        5       0.00548233       0.00775318       0.00000000
+In      -1.29289263       1.34833632       5.50231424        6       0.00548233       0.00775318      -0.00000000
+In      -1.70218788       7.12303064       1.83410474        7      -0.00548233      -0.00775318      -0.00000000
+In       4.28797314       0.14470773       3.91885062        8      -0.00548233       0.00387659       0.00671445
+In      -1.49754026       4.23568348      -0.00000000        9       0.00000000       0.00000000      -0.00000000
+In       4.28797314       6.49823294       0.25064113       10      -0.00548233       0.00387659       0.00671445
+In      -1.29289263      -2.26254946       7.08577786       11       0.00548233      -0.00387659      -0.00671445
+In       4.28797314       2.88734716       1.83410475       12      -0.00548233      -0.00775318       0.00000000
+In       1.70218788       5.14989663       2.08474587       13       0.00548233      -0.00387659       0.00671445
+In       4.49262077       0.00000000      -0.00000000       14      -0.00000000       0.00000000      -0.00000000
+In       1.49754025       2.11784174       3.66820949       15      -0.00000000      -0.00000000       0.00000000
+O        0.89301899       4.23804560       3.98644035       16       0.00021544       0.00599330       0.00595135
+O       -2.10206152       3.45117756       5.34115316       17       0.00021544       0.00215737      -0.00816602
+O       -0.43973925       2.27573822       0.04065484       18       0.00775634      -0.00317485       0.00106965
+O       -0.89301900      -0.78214380       1.99117453       19      -0.00021544       0.00815067      -0.00221468
+O        3.95448858       5.04129937       1.95051969       20       0.00196217      -0.00753310      -0.00328433
+O        2.03567244       2.94929182       1.67294366       21      -0.00196217      -0.00092224      -0.00816602
+O        2.03567244       6.32769102       0.27757602       22      -0.00196217      -0.00661087       0.00488169
+O       -2.29216632       6.00953596       3.70886433       23       0.00557873      -0.00625446       0.00106965
+O        3.43481976       1.95994527       7.29576415       24      -0.00775634       0.00317485      -0.00106965
+O        5.28724683      -1.77385247       3.62755465       25      -0.00557873       0.00625446      -0.00106965
+O        6.42990027       3.29091897       1.71768980       26      -0.00775634      -0.00066108       0.00328433
+O        3.69799470       2.32504450       3.94578551       27       0.00557873       0.00405358       0.00488169
+O        0.70291419       4.37246999       7.01818813       28       0.00557873       0.00220088      -0.00595135
+O        2.29216632      -0.13678651       0.31823086       29      -0.00557873      -0.00220088       0.00595135
+O       -3.43481976       0.94476451       5.61872918       30       0.00775634       0.00066108      -0.00328433
+O        5.09714203       0.78450592       1.99526583       31      -0.00021544      -0.00215737       0.00816602
+O        0.95940807       1.28639166       5.66347532       32       0.00196217       0.00092224       0.00816602
+O        3.43481976      -1.01518075       5.65938402       33      -0.00775634      -0.00251377      -0.00221468
+O        2.10206151      -0.00236211       3.34997863       34      -0.00021544      -0.00599330      -0.00595135
+O        0.95940807      -2.09200754       7.05884297       35       0.00196217       0.00661087      -0.00488169
+O       -0.70291420       1.91063899       3.39063347       36      -0.00557873      -0.00405358      -0.00488169
+O       -0.95940807      -0.80561588       5.38589930       37      -0.00196217       0.00753310       0.00328433
+O       -0.43973925       5.25086424       1.67703496       38       0.00775634       0.00251377       0.00221468
+O        3.88809951       5.01782729       5.34524446       39       0.00021544      -0.00815067       0.00221468
+DEBUG:lattice:    Increased volume 2/10
+40
+Lattice="9.057706288757771 7.099173721296578e-10 -2.3588822551745005e-16 -3.019235430255241 8.53968738479891 -1.2296124790617377e-09 -3.019235429251268 -4.2698436916895375 7.395586216433096" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45151.75997630628 stress="0.020861680305037753 -1.0130968519065521e-13 -2.536856546554921e-13 -1.0130968519065521e-13 0.020861680304250438 7.120058393235412e-14 -2.536856546554921e-13 7.120058393235412e-14 0.020861680304689077" free_energy=-45151.75997630628 pbc="T T T"
+In      -4.32255507       3.05650800       5.79935218        0       0.00548233      -0.00387659       0.00671445
+In       7.34179049       1.21333570       1.59623403        1      -0.00548233       0.00387659      -0.00671445
+In       1.30331963      -0.92158615       5.29402714        2      -0.00548233       0.00387659      -0.00671445
+In      -1.50961772      -2.13492184       3.69779311        3       0.00000000      -0.00000000       0.00000000
+In      -1.30331964       4.12396892       3.44513059        4       0.00548233      -0.00387659      -0.00671445
+In       4.73515122      -2.91063322       5.54668966        5       0.00548233       0.00775318       0.00000000
+In      -1.30331964       1.35921047       5.54668966        6       0.00548233       0.00775318      -0.00000000
+In      -1.71591580       7.18047692       1.84889655        7      -0.00548233      -0.00775318      -0.00000000
+In       4.32255506       0.14587477       3.95045562        8      -0.00548233       0.00387659       0.00671445
+In      -1.50961772       4.26984369      -0.00000000        9       0.00000000       0.00000000      -0.00000000
+In       4.32255506       6.55064031       0.25266251       10      -0.00548233       0.00387659       0.00671445
+In      -1.30331964      -2.28079662       7.14292370       11       0.00548233      -0.00387659      -0.00671445
+In       4.32255506       2.91063323       1.84889655       12      -0.00548233      -0.00775318       0.00000000
+In       1.71591579       5.19142985       2.10155907       13       0.00548233      -0.00387659       0.00671445
+In       4.52885314       0.00000000      -0.00000000       14      -0.00000000       0.00000000      -0.00000000
+In       1.50961771       2.13492185       3.69779311       15      -0.00000000      -0.00000000       0.00000000
+O        0.90022107       4.27222486       4.01859045       16       0.00021544       0.00599330       0.00595135
+O       -2.11901436       3.47901084       5.38422884       17       0.00021544       0.00215737      -0.00816602
+O       -0.44328569       2.29409174       0.04098271       18       0.00775634      -0.00317485       0.00106965
+O       -0.90022107      -0.78845169       2.00723308       19      -0.00021544       0.00815067      -0.00221468
+O        3.98638099       5.08195676       1.96625036       20       0.00196217      -0.00753310      -0.00328433
+O        2.05208986       2.97307746       1.68643573       21      -0.00196217      -0.00092224      -0.00816602
+O        2.05208986       6.37872299       0.27981463       22      -0.00196217      -0.00661087       0.00488169
+O       -2.31065233       6.05800205       3.73877582       23       0.00557873      -0.00625446       0.00106965
+O        3.46252112       1.97575196       7.35460350       24      -0.00775634       0.00317485      -0.00106965
+O        5.32988776      -1.78815835       3.65681039       25      -0.00557873       0.00625446      -0.00106965
+O        6.48175655       3.31745979       1.73154274       26      -0.00775634      -0.00066108       0.00328433
+O        3.72781853       2.34379567       3.97760774       27       0.00557873       0.00405358       0.00488169
+O        0.70858310       4.40773337       7.07478886       28       0.00557873       0.00220088      -0.00595135
+O        2.31065233      -0.13788967       0.32079735       29      -0.00557873      -0.00220088       0.00595135
+O       -3.46252112       0.95238391       5.66404347       30       0.00775634       0.00066108      -0.00328433
+O        5.13824978       0.79083285       2.01135737       31      -0.00021544      -0.00215737       0.00816602
+O        0.96714556       1.29676623       5.70915048       32       0.00196217       0.00092224       0.00816602
+O        3.46252112      -1.02336805       5.70502619       33      -0.00775634      -0.00251377      -0.00221468
+O        2.11901435      -0.00238116       3.37699576       34      -0.00021544      -0.00599330      -0.00595135
+O        0.96714557      -2.10887930       7.11577158       35       0.00196217       0.00661087      -0.00488169
+O       -0.70858310       1.92604803       3.41797847       36      -0.00557873      -0.00405358      -0.00488169
+O       -0.96714557      -0.81211307       5.42933585       37      -0.00196217       0.00753310       0.00328433
+O       -0.44328569       5.29321174       1.69056002       38       0.00775634       0.00251377       0.00221468
+O        3.91945650       5.05829538       5.38835313       39       0.00021544      -0.00815067       0.00221468
+trying to relax i 2
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_02-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:25   -45151.337883       0.0533       0.0000
+PreconLBFGS:   1  22:27:26   -45151.342458       0.0288       0.0000
+PreconLBFGS:   2  22:27:27   -45151.343235       0.0293       0.0000
+PreconLBFGS:   3  22:27:28   -45151.344227       0.0370       0.0000
+PreconLBFGS:   4  22:27:29   -45151.346754       0.0206       0.0000
+PreconLBFGS:   5  22:27:30   -45151.347304       0.0114       0.0000
+PreconLBFGS:   6  22:27:31   -45151.347426       0.0065       0.0000
+[lattice   ]     Increased volume 3/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.057706288757826 7.099167690482946e-10 5.580162614698304e-15 -3.01923543025526 8.539687384798956 -1.2296139952501903e-09 -3.019235429251289 -4.269843691689561 7.395586216433133" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45151.34742584072 stress="0.03924657566439846 -5.168428748370563e-13 2.8526618096912157e-13 -5.168428748370563e-13 0.039246575663711585 -8.903506287482648e-14 2.8526618096912157e-13 -8.903506287482648e-14 0.039246575663705895" free_energy=-45151.34742584072 pbc="T T T"
+In      -4.31784584       3.05317807       5.80511978        0       0.00377877      -0.00267200       0.00462803
+In       7.33708126       1.21666563       1.59046643        1      -0.00377877       0.00267200      -0.00462803
+In       1.29861040      -0.91825622       5.28825954        2      -0.00377877       0.00267200      -0.00462803
+In      -1.50961772      -2.13492184       3.69779311        3       0.00000000       0.00000000       0.00000000
+In      -1.29861041       4.12063899       3.43936298        4       0.00377877      -0.00267200      -0.00462803
+In       4.73986045      -2.90397337       5.54668966        5       0.00377877       0.00534399       0.00000000
+In      -1.29861041       1.36587032       5.54668966        6       0.00377877       0.00534399       0.00000000
+In      -1.72062503       7.17381706       1.84889655        7      -0.00377877      -0.00534399      -0.00000000
+In       4.31784583       0.14920470       3.95622323        8      -0.00377877       0.00267200       0.00462803
+In      -1.50961772       4.26984369      -0.00000000        9       0.00000000       0.00000000       0.00000000
+In       4.31784583       6.55397024       0.25843012       10      -0.00377877       0.00267200       0.00462803
+In      -1.29861041      -2.28412654       7.13715609       11       0.00377877      -0.00267200      -0.00462803
+In       4.31784583       2.90397337       1.84889655       12      -0.00377877      -0.00534399      -0.00000000
+In       1.72062502       5.18809992       2.10732667       13       0.00377877      -0.00267200       0.00462803
+In       4.52885314       0.00000000      -0.00000000       14       0.00000000       0.00000000      -0.00000000
+In       1.50961771       2.13492185       3.69779311       15       0.00000000       0.00000000      -0.00000000
+O        0.91599603       4.27511818       4.01384449       16      -0.00084556       0.00094483       0.00587937
+O       -2.10323940       3.47345406       5.38409613       17      -0.00084556       0.00461927      -0.00375793
+O       -0.44053851       2.29774698       0.02489430       18       0.00496403       0.00051127       0.00335733
+O       -0.91599603      -0.79111515       2.00235441       19       0.00084556       0.00556410       0.00212144
+O        3.97588369       5.07533158       1.97746010       20       0.00463694      -0.00362574      -0.00123589
+O        2.06258717       2.96005695       1.68630302       21      -0.00463694      -0.00074256      -0.00375793
+O        2.06258716       6.38511832       0.29115708       22      -0.00463694      -0.00288319       0.00252204
+O       -2.31318280       6.05419357       3.72268741       23       0.00117265      -0.00485056       0.00335733
+O        3.45977393       1.97209671       7.37069191       24      -0.00496403      -0.00051127      -0.00335733
+O        5.33241823      -1.78434987       3.67289880       25      -0.00117265       0.00485056      -0.00335733
+O        6.47900936       3.30535444       1.72033300       26      -0.00496403       0.00316317       0.00123589
+O        3.72528806       2.33176694       3.98895019       27       0.00117265       0.00533282       0.00252204
+O        0.70605263       4.42357058       7.07953482       28       0.00117265      -0.00048226      -0.00587937
+O        2.31318280      -0.15372688       0.31605139       29      -0.00117265       0.00048226       0.00587937
+O       -3.45977394       0.96448926       5.67525321       30       0.00496403      -0.00316317      -0.00123590
+O        5.12247483       0.79638964       2.01149008       31       0.00084556      -0.00461927       0.00375793
+O        0.95664826       1.30978675       5.70928319       32       0.00463694       0.00074256       0.00375793
+O        3.45977393      -1.00760745       5.70014752       33      -0.00496403      -0.00265190       0.00212144
+O        2.10323940      -0.00527448       3.38174172       34       0.00084556      -0.00094483      -0.00587937
+O        0.95664826      -2.11527463       7.10442913       35       0.00463694       0.00288319      -0.00252204
+O       -0.70605263       1.93807676       3.40663602       36      -0.00117265      -0.00533282      -0.00252204
+O       -0.95664826      -0.80548788       5.41812611       37      -0.00463694       0.00362574       0.00123590
+O       -0.44053851       5.27745115       1.69543869       38       0.00496403       0.00265190      -0.00212144
+O        3.93523146       5.06095885       5.39323180       39      -0.00084556      -0.00556410      -0.00212144
+DEBUG:lattice:    Increased volume 3/10
+40
+Lattice="9.129029747303111 7.155068950287169e-10 5.624102712139901e-15 -3.0430099164422924 8.606931786390492 -1.2392963938642612e-09 -3.0430099154304155 -4.303465892479738 7.4538215764801405" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45151.34742584072 stress="0.03924657566439846 -5.168428748370563e-13 2.8526618096912157e-13 -5.168428748370563e-13 0.039246575663711585 -8.903506287482648e-14 2.8526618096912157e-13 -8.903506287482648e-14 0.039246575663705895" free_energy=-45151.34742584072 pbc="T T T"
+In      -4.35184602       3.07721983       5.85083127        0       0.00377877      -0.00267200       0.00462803
+In       7.39485593       1.22624606       1.60299030        1      -0.00377877       0.00267200      -0.00462803
+In       1.30883610      -0.92548688       5.32990109        2      -0.00377877       0.00267200      -0.00462803
+In      -1.52150496      -2.15173294       3.72691079        3       0.00000000       0.00000000       0.00000000
+In      -1.30883611       4.15308631       3.46644570        4       0.00377877      -0.00267200      -0.00462803
+In       4.77718373      -2.92684024       5.59036618        5       0.00377877       0.00534399       0.00000000
+In      -1.30883611       1.37662565       5.59036618        6       0.00377877       0.00534399       0.00000000
+In      -1.73417381       7.23030614       1.86345539        7      -0.00377877      -0.00534399      -0.00000000
+In       4.35184602       0.15037959       3.98737587        8      -0.00377877       0.00267200       0.00462803
+In      -1.52150496       4.30346589      -0.00000000        9       0.00000000       0.00000000       0.00000000
+In       4.35184602       6.60557843       0.26046508       10      -0.00377877       0.00267200       0.00462803
+In      -1.30883611      -2.30211253       7.19335649       11       0.00377877      -0.00267200      -0.00462803
+In       4.35184602       2.92684025       1.86345539       12      -0.00377877      -0.00534399      -0.00000000
+In       1.73417381       5.22895278       2.12392048       13       0.00377877      -0.00267200       0.00462803
+In       4.56451487       0.00000000      -0.00000000       14       0.00000000       0.00000000      -0.00000000
+In       1.52150496       2.15173295       3.72691079       15       0.00000000       0.00000000      -0.00000000
+O        0.92320889       4.30878191       4.04545087       16      -0.00084556       0.00094483       0.00587937
+O       -2.11980102       3.50080522       5.42649233       17      -0.00084556       0.00461927      -0.00375793
+O       -0.44400746       2.31584023       0.02509033       18       0.00496403       0.00051127       0.00335733
+O       -0.92320890      -0.79734466       2.01812163       19       0.00084556       0.00556410       0.00212144
+O        4.00719115       5.11529647       1.99303130       20       0.00463694      -0.00362574      -0.00123589
+O        2.07882868       2.98336544       1.69958154       21      -0.00463694      -0.00074256      -0.00375793
+O        2.07882868       6.43539692       0.29344975       22      -0.00463694      -0.00288319       0.00252204
+O       -2.33139759       6.10186634       3.75200112       23       0.00117265      -0.00485056       0.00335733
+O        3.48701737       1.98762567       7.42873124       24      -0.00496403      -0.00051127      -0.00335733
+O        5.37440750      -1.79840045       3.70182045       25      -0.00117265       0.00485056      -0.00335733
+O        6.53002729       3.33138193       1.73387949       26      -0.00496403       0.00316317       0.00123589
+O        3.75462224       2.35012806       4.02036054       27       0.00117265       0.00533282       0.00252204
+O        0.71161233       4.45840328       7.13528149       28       0.00117265      -0.00048226      -0.00587937
+O        2.33139759      -0.15493738       0.31854008       29      -0.00117265       0.00048226       0.00587937
+O       -3.48701737       0.97208397       5.71994208       30       0.00496403      -0.00316317      -0.00123590
+O        5.16281094       0.80266068       2.02732924       31       0.00084556      -0.00461927       0.00375793
+O        0.96418123       1.32010045       5.75424003       32       0.00463694       0.00074256       0.00375793
+O        3.48701737      -1.01554170       5.74503242       33      -0.00496403      -0.00265190       0.00212144
+O        2.11980102      -0.00531601       3.40837070       34       0.00084556      -0.00094483      -0.00587937
+O        0.96418123      -2.13193102       7.16037182       35       0.00463694       0.00288319      -0.00252204
+O       -0.71161233       1.95333783       3.43346103       36      -0.00117265      -0.00533282      -0.00252204
+O       -0.96418124      -0.81183057       5.46079027       37      -0.00463694       0.00362574       0.00123590
+O       -0.44400746       5.31900760       1.70878915       38       0.00496403       0.00265190      -0.00212144
+O        3.96621881       5.10081056       5.43569994       39      -0.00084556      -0.00556410      -0.00212144
+trying to relax i 3
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_03-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:31   -45150.692790       0.0684       0.0000
+PreconLBFGS:   1  22:27:33   -45150.698050       0.0283       0.0000
+PreconLBFGS:   2  22:27:34   -45150.699103       0.0318       0.0000
+PreconLBFGS:   3  22:27:35   -45150.700300       0.0396       0.0000
+PreconLBFGS:   4  22:27:36   -45150.703876       0.0258       0.0000
+PreconLBFGS:   5  22:27:37   -45150.704333       0.0158       0.0000
+PreconLBFGS:   6  22:27:37   -45150.704547       0.0070       0.0000
+[lattice   ]     Increased volume 4/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.129029747303118 7.155076571976511e-10 7.373305591836085e-15 -3.0430099164422924 8.606931786390493 -1.2392957848480374e-09 -3.0430099154304218 -4.303465892479741 7.45382157648015" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45150.70454720675 stress="0.05460878457076765 -4.024010907743682e-14 3.3600820922834647e-13 -4.024010907743682e-14 0.05460878456932621 -2.2828019613373795e-13 3.3600820922834647e-13 -2.2828019613373795e-13 0.05460878457022154" free_energy=-45150.70454720675 pbc="T T T"
+In      -4.34441105       3.07196251       5.85993721        0      -0.00281157       0.00198808      -0.00344345
+In       7.38742096       1.23150338       1.59388436        1       0.00281157      -0.00198808       0.00344345
+In       1.30140113      -0.92022956       5.32079515        2       0.00281157      -0.00198808       0.00344345
+In      -1.52150496      -2.15173294       3.72691079        3      -0.00000000      -0.00000000      -0.00000000
+In      -1.30140113       4.14782899       3.45733975        4      -0.00281157       0.00198808       0.00344345
+In       4.78461870      -2.91632560       5.59036618        5      -0.00281157      -0.00397616       0.00000000
+In      -1.30140113       1.38714029       5.59036618        6      -0.00281157      -0.00397616       0.00000000
+In      -1.74160879       7.21979150       1.86345539        7       0.00281157       0.00397616       0.00000000
+In       4.34441105       0.15563691       3.99648182        8       0.00281157      -0.00198808      -0.00344345
+In      -1.52150496       4.30346589      -0.00000000        9       0.00000000      -0.00000000       0.00000000
+In       4.34441105       6.61083575       0.26957103       10       0.00281157      -0.00198808      -0.00344345
+In      -1.30140113      -2.30736985       7.18425054       11      -0.00281157       0.00198808       0.00344345
+In       4.34441105       2.91632561       1.86345539       12       0.00281157       0.00397616       0.00000000
+In       1.74160878       5.22369546       2.13302642       13      -0.00281157       0.00198808      -0.00344345
+In       4.56451487       0.00000000      -0.00000000       14      -0.00000000       0.00000000       0.00000000
+In       1.52150496       2.15173295       3.72691079       15       0.00000000       0.00000000      -0.00000000
+O        0.94167598       4.31183867       4.04245388       16       0.00106512      -0.00691646       0.00005697
+O       -2.10133394       3.49668136       5.42534359       17       0.00106512       0.00350757       0.00596135
+O       -0.43885783       2.32113323       0.00763111       18      -0.00285890       0.00628227       0.00115543
+O       -0.94167598      -0.79841175       2.01397590       19      -0.00106512      -0.00340889       0.00601832
+O        3.99714745       5.10628347       2.00634478       20       0.00295193       0.00407598       0.00486289
+O        2.08887238       2.96732913       1.69843281       21      -0.00295193      -0.00217339       0.00596135
+O        2.08887238       6.44242024       0.30791197       22      -0.00295193       0.00624938      -0.00109846
+O       -2.33467134       6.09524689       3.73454190       23      -0.00687594       0.00060131       0.00115543
+O        3.48186774       1.98233267       7.44619046       24       0.00285890      -0.00628227      -0.00115543
+O        5.37768125      -1.79178099       3.71927967       25       0.00687594      -0.00060131      -0.00115543
+O        6.52487765       3.31890830       1.72056600       26       0.00285890       0.00414177      -0.00486289
+O        3.75134849       2.33831766       4.03482276       27      -0.00687594       0.00069998      -0.00109846
+O        0.70833858       4.47683313       7.13827848       28      -0.00687594      -0.00130129      -0.00005697
+O        2.33467134      -0.17336724       0.31554309       29       0.00687594       0.00130129       0.00005697
+O       -3.48186774       0.98455760       5.73325557       30      -0.00285890      -0.00414177       0.00486289
+O        5.14434385       0.80678453       2.02847798       31      -0.00106512      -0.00350757      -0.00596135
+O        0.95413753       1.33613677       5.75538876       32       0.00295193       0.00217339      -0.00596135
+O        3.48186774      -0.99777507       5.74088669       33       0.00285890       0.00214050       0.00601832
+O        2.10133394      -0.00837278       3.41136769       34      -0.00106512       0.00691646      -0.00005697
+O        0.95413753      -2.13895434       7.14590960       35       0.00295193      -0.00624938       0.00109846
+O       -0.70833858       1.96514823       3.41899881       36       0.00687594      -0.00069998       0.00109846
+O       -0.95413754      -0.80281757       5.44747679       37      -0.00295193      -0.00407598      -0.00486289
+O       -0.43885783       5.30124096       1.71293489       38      -0.00285890      -0.00214050      -0.00601832
+O        3.98468589       5.10187765       5.43984567       39       0.00106512       0.00340889      -0.00601832
+DEBUG:lattice:    Increased volume 4/10
+40
+Lattice="9.199255812791103 7.21011778553632e-10 7.430025556135487e-15 -3.0664186049434763 8.673141555885465 -1.2488292039905735e-09 -3.066418603923822 -4.336570777221723 7.511160918847863" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45150.70454720675 stress="0.05460878457076765 -4.024010907743682e-14 3.3600820922834647e-13 -4.024010907743682e-14 0.05460878456932621 -2.2828019613373795e-13 3.3600820922834647e-13 -2.2828019613373795e-13 0.05460878457022154" free_energy=-45150.70454720675 pbc="T T T"
+In      -4.37783091       3.09559392       5.90501542        0      -0.00281157       0.00198808      -0.00344345
+In       7.44424951       1.24097686       1.60614549        1       0.00281157      -0.00198808       0.00344345
+In       1.31141230      -0.92730853       5.36172595        2       0.00281157      -0.00198808       0.00344345
+In      -1.53320930      -2.16828539       3.75558046        3      -0.00000000      -0.00000000      -0.00000000
+In      -1.31141231       4.17973662       3.48393572        4      -0.00281157       0.00198808       0.00344345
+In       4.82142490      -2.93875976       5.63337069        5      -0.00281157      -0.00397616       0.00000000
+In      -1.31141231       1.39781102       5.63337069        6      -0.00281157      -0.00397616       0.00000000
+In      -1.75500630       7.27533054       1.87779023        7       0.00281157       0.00397616       0.00000000
+In       4.37783091       0.15683416       4.02722519        8       0.00281157      -0.00198808      -0.00344345
+In      -1.53320930       4.33657078      -0.00000000        9       0.00000000      -0.00000000       0.00000000
+In       4.37783091       6.66169033       0.27164473       10       0.00281157      -0.00198808      -0.00344345
+In      -1.31141231      -2.32511955       7.23951618       11      -0.00281157       0.00198808       0.00344345
+In       4.37783091       2.93875976       1.87779023       12       0.00281157       0.00397616       0.00000000
+In       1.75500630       5.26387931       2.14943496       13      -0.00281157       0.00198808      -0.00344345
+In       4.59962790       0.00000000      -0.00000000       14      -0.00000000       0.00000000       0.00000000
+In       1.53320930       2.16828539       3.75558046       15       0.00000000       0.00000000      -0.00000000
+O        0.94891992       4.34500797       4.07355090       16       0.00106512      -0.00691646       0.00005697
+O       -2.11749868       3.52357997       5.46707865       17       0.00106512       0.00350757       0.00596135
+O       -0.44223379       2.33898880       0.00768981       18      -0.00285890       0.00628227       0.00115543
+O       -0.94891993      -0.80455362       2.02946863       19      -0.00106512      -0.00340889       0.00601832
+O        4.02789594       5.14556412       2.02177881       20       0.00295193       0.00407598       0.00486289
+O        2.10494126       2.99015564       1.71149819       21      -0.00295193      -0.00217339       0.00596135
+O        2.10494126       6.49197926       0.31028062       22      -0.00295193       0.00624938      -0.00109846
+O       -2.35263106       6.14213525       3.76327027       23      -0.00687594       0.00060131       0.00115543
+O        3.50865239       1.99758198       7.50347110       24       0.00285890      -0.00628227      -0.00115543
+O        5.41904966      -1.80556447       3.74789064       25       0.00687594      -0.00060131      -0.00115543
+O        6.57507099       3.34443937       1.73380164       26       0.00285890       0.00414177      -0.00486289
+O        3.78020615       2.35630543       4.06586108       27      -0.00687594       0.00069998      -0.00109846
+O        0.71378755       4.51127166       7.19319047       28      -0.00687594      -0.00130129      -0.00005697
+O        2.35263105      -0.17470088       0.31797044       29       0.00687594       0.00130129       0.00005697
+O       -3.50865239       0.99213141       5.77735927       30      -0.00285890      -0.00414177       0.00486289
+O        5.18391728       0.81299081       2.04408227       31      -0.00106512      -0.00350757      -0.00596135
+O        0.96147734       1.34641515       5.79966273       32       0.00295193       0.00217339      -0.00596135
+O        3.50865239      -1.00545056       5.78504909       33       0.00285890       0.00214050       0.00601832
+O        2.11749868      -0.00843719       3.43761002       34      -0.00106512       0.00691646      -0.00005697
+O        0.96147734      -2.15540848       7.20088029       35       0.00295193      -0.00624938       0.00109846
+O       -0.71378755       1.98026535       3.44529983       36       0.00687594      -0.00069998       0.00109846
+O       -0.96147734      -0.80899334       5.48938210       37      -0.00295193      -0.00407598      -0.00486289
+O       -0.44223379       5.34202134       1.72611183       38      -0.00285890      -0.00214050      -0.00601832
+O        4.01533853       5.14112440       5.48169228       39       0.00106512       0.00340889      -0.00601832
+trying to relax i 4
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_04-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:38   -45149.861699       0.0658       0.0000
+PreconLBFGS:   1  22:27:39   -45149.867243       0.0281       0.0000
+PreconLBFGS:   2  22:27:40   -45149.868389       0.0301       0.0000
+PreconLBFGS:   3  22:27:41   -45149.869581       0.0352       0.0000
+PreconLBFGS:   4  22:27:42   -45149.872680       0.0281       0.0000
+PreconLBFGS:   5  22:27:43   -45149.873074       0.0226       0.0000
+PreconLBFGS:   6  22:27:44   -45149.873456       0.0112       0.0000
+PreconLBFGS:   7  22:27:45   -45149.873642       0.0029       0.0000
+[lattice   ]     Increased volume 5/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.199255812791113 7.210089250230798e-10 1.1850386852454925e-14 -3.066418604943479 8.673141555885474 -1.2488351174062155e-09 -3.0664186039238297 -4.336570777221722 7.511160918847872" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=8 energy=-45149.87364174311 stress="0.0669604421677005 -1.8903218647981832e-13 2.3845877910433573e-14 -1.8903218647981832e-13 0.0669604421684239 -1.5669608450051935e-13 2.3845877910433573e-14 -1.5669608450051935e-13 0.06696044216776709" free_energy=-45149.87364174311 pbc="T T T"
+In      -4.37143512       3.09107142       5.91284863        0      -0.00166322       0.00117607      -0.00203702
+In       7.43785372       1.24549936       1.59831228        1       0.00166322      -0.00117607       0.00203702
+In       1.30501651      -0.92278603       5.35389274        2       0.00166322      -0.00117607       0.00203702
+In      -1.53320930      -2.16828539       3.75558046        3       0.00000000       0.00000000      -0.00000000
+In      -1.30501652       4.17521411       3.47610251        4      -0.00166322       0.00117607       0.00203702
+In       4.82782069      -2.92971475       5.63337069        5      -0.00166322      -0.00235215      -0.00000000
+In      -1.30501652       1.40685603       5.63337069        6      -0.00166322      -0.00235215      -0.00000000
+In      -1.76140209       7.26628553       1.87779023        7       0.00166322       0.00235215      -0.00000000
+In       4.37143512       0.16135667       4.03505840        8       0.00166322      -0.00117607      -0.00203702
+In      -1.53320930       4.33657078      -0.00000000        9       0.00000000      -0.00000000       0.00000000
+In       4.37143512       6.66621284       0.27947794       10       0.00166322      -0.00117607      -0.00203702
+In      -1.30501652      -2.32964205       7.23168297       11      -0.00166322       0.00117607       0.00203702
+In       4.37143512       2.92971475       1.87779023       12       0.00166322       0.00235215       0.00000000
+In       1.76140209       5.25935681       2.15726817       13      -0.00166322       0.00117607      -0.00203702
+In       4.59962790       0.00000000      -0.00000000       14       0.00000000      -0.00000000      -0.00000000
+In       1.53320930       2.16828539       3.75558046       15       0.00000000      -0.00000000       0.00000000
+O        0.96761220       4.34713105       4.06970526       16       0.00038379       0.00096108      -0.00157859
+O       -2.09880640       3.51918801       5.46716282       17       0.00038379      -0.00184764      -0.00004303
+O       -0.43814214       2.34492105      -0.01010807       18      -0.00070792      -0.00107568      -0.00138010
+O       -0.96761220      -0.80682249       2.02570716       19      -0.00038379      -0.00088656      -0.00162161
+O        4.01752441       5.13755738       2.03581523       20      -0.00186990       0.00008976      -0.00024152
+O        2.11531280       2.97399637       1.71158236       21       0.00186990       0.00025404      -0.00004303
+O        2.11531280       6.50013179       0.32423287       22       0.00186990      -0.00016428      -0.00019849
+O       -2.35686015       6.13630019       3.74547239       23       0.00077819       0.00102600      -0.00138010
+O        3.50456075       1.99164973       7.52126898       24       0.00070792       0.00107568       0.00138010
+O        5.42327875      -1.79972941       3.76568852       25      -0.00077819      -0.00102600       0.00138010
+O        6.57097935       3.33199208       1.71976523       26       0.00070792      -0.00173304       0.00024152
+O        3.77597706       2.34380954       4.07981333       27       0.00077819      -0.00170820      -0.00019849
+O        0.70955845       4.52960261       7.19703611       28       0.00077819       0.00068220       0.00157859
+O        2.35686015      -0.19303183       0.31412480       29      -0.00077819      -0.00068220      -0.00157859
+O       -3.50456075       1.00457871       5.79139569       30      -0.00070792       0.00173304      -0.00024152
+O        5.16522500       0.81738277       2.04399810       31      -0.00038379       0.00184764       0.00004303
+O        0.95110580       1.36257441       5.79957855       32      -0.00186990      -0.00025404       0.00004303
+O        3.50456075      -0.98707102       5.78128762       33       0.00070792       0.00065736      -0.00162161
+O        2.09880640      -0.01056027       3.44145565       34      -0.00038379      -0.00096108       0.00157859
+O        0.95110580      -2.16356101       7.18692805       35      -0.00186990       0.00016428       0.00019849
+O       -0.70955846       1.99276124       3.43134759       36      -0.00077819       0.00170820       0.00019849
+O       -0.95110580      -0.80098660       5.47534569       37       0.00186990      -0.00008976       0.00024152
+O       -0.43814215       5.32364180       1.72987329       38      -0.00070792      -0.00065736       0.00162161
+O        4.03403080       5.14339328       5.48545375       39       0.00038379       0.00088656       0.00162161
+DEBUG:lattice:    Increased volume 5/10
+40
+Lattice="9.268425746941444 7.264302483214604e-10 1.193949085118279e-14 -3.0894752496653672 8.738355595206235 -1.2582252077128138e-09 -3.0894752486380512 -4.369177796876681 7.567637933589308" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=8 energy=-45149.87364174311 stress="0.0669604421677005 -1.8903218647981832e-13 2.3845877910433573e-14 -1.8903218647981832e-13 0.0669604421684239 -1.5669608450051935e-13 2.3845877910433573e-14 -1.5669608450051935e-13 0.06696044216776709" free_energy=-45149.87364174311 pbc="T T T"
+In      -4.40430429       3.11431343       5.95730781        0      -0.00166322       0.00117607      -0.00203702
+In       7.49377953       1.25486437       1.61033012        1       0.00166322      -0.00117607       0.00203702
+In       1.31482904      -0.92972453       5.39414909        2       0.00166322      -0.00117607       0.00203702
+In      -1.54473763      -2.18458890       3.78381896        3       0.00000000       0.00000000      -0.00000000
+In      -1.31482904       4.20660788       3.50223960        4      -0.00166322       0.00117607       0.00203702
+In       4.86412146      -2.95174351       5.67572845        5      -0.00166322      -0.00235215      -0.00000000
+In      -1.31482904       1.41743429       5.67572845        6      -0.00166322      -0.00235215      -0.00000000
+In      -1.77464621       7.32092131       1.89190948        7       0.00166322       0.00235215      -0.00000000
+In       4.40430429       0.16256992       4.06539833        8       0.00166322      -0.00117607      -0.00203702
+In      -1.54473763       4.36917780      -0.00000000        9       0.00000000      -0.00000000       0.00000000
+In       4.40430429       6.71633662       0.28157936       10       0.00166322      -0.00117607      -0.00203702
+In      -1.31482904      -2.34715882       7.28605857       11      -0.00166322       0.00117607       0.00203702
+In       4.40430429       2.95174351       1.89190948       12       0.00166322       0.00235215       0.00000000
+In       1.77464621       5.29890233       2.17348884       13      -0.00166322       0.00117607      -0.00203702
+In       4.63421287       0.00000000      -0.00000000       14       0.00000000      -0.00000000      -0.00000000
+In       1.54473762       2.18458890       3.78381896       15       0.00000000      -0.00000000       0.00000000
+O        0.97488775       4.37981748       4.10030570       16       0.00038379       0.00096108      -0.00157859
+O       -2.11458750       3.54564906       5.50827085       17       0.00038379      -0.00184764      -0.00004303
+O       -0.44143657       2.36255270      -0.01018407       18      -0.00070792      -0.00107568      -0.00138010
+O       -0.97488776      -0.81288906       2.04093862       19      -0.00038379      -0.00088656      -0.00162161
+O        4.04773249       5.17618708       2.05112268       20      -0.00186990       0.00008976      -0.00024152
+O        2.13121800       2.99635809       1.72445188       21       0.00186990       0.00025404      -0.00004303
+O        2.13121800       6.54900679       0.32667080       22       0.00186990      -0.00016428      -0.00019849
+O       -2.37458157       6.18243952       3.77363490       23       0.00077819       0.00102600      -0.00138010
+O        3.53091182       2.00662510       7.57782200       24       0.00070792       0.00107568       0.00138010
+O        5.46405681      -1.81326172       3.79400303       25      -0.00077819      -0.00102600       0.00138010
+O        6.62038706       3.35704559       1.73269628       26       0.00070792      -0.00173304       0.00024152
+O        3.80436893       2.36143283       4.11048977       27       0.00077819      -0.00170820      -0.00019849
+O        0.71489368       4.56366105       7.25115119       28       0.00077819       0.00068220       0.00157859
+O        2.37458157      -0.19448325       0.31648673       29      -0.00077819      -0.00068220      -0.00157859
+O       -3.53091182       1.01213221       5.83494165       30      -0.00070792       0.00173304      -0.00024152
+O        5.20406274       0.82352874       2.05936708       31      -0.00038379       0.00184764       0.00004303
+O        0.95825724       1.37281971       5.84318605       32      -0.00186990      -0.00025404       0.00004303
+O        3.53091182      -0.99449289       5.82475758       33       0.00070792       0.00065736      -0.00162161
+O        2.11458749      -0.01063968       3.46733223       34      -0.00038379      -0.00096108       0.00157859
+O        0.95825724      -2.17982899       7.24096713       35      -0.00186990       0.00016428       0.00019849
+O       -0.71489368       2.00774497       3.45714816       36      -0.00077819       0.00170820       0.00019849
+O       -0.95825724      -0.80700928       5.51651524       37       0.00186990      -0.00008976       0.00024152
+O       -0.44143657       5.36367069       1.74288034       38      -0.00070792      -0.00065736       0.00162161
+O        4.06436300       5.18206686       5.52669931       39       0.00038379       0.00088656       0.00162161
+trying to relax i 5
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_05-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:46   -45148.871691       0.0670       0.0000
+PreconLBFGS:   1  22:27:46   -45148.878259       0.0330       0.0000
+PreconLBFGS:   2  22:27:47   -45148.879677       0.0278       0.0000
+PreconLBFGS:   3  22:27:49   -45148.881278       0.0381       0.0000
+PreconLBFGS:   4  22:27:50   -45148.884502       0.0139       0.0000
+PreconLBFGS:   5  22:27:51   -45148.884735       0.0081       0.0000
+[lattice   ]     Increased volume 6/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.268425746941482 7.264287665951328e-10 1.781890759497603e-14 -3.0894752496653806 8.73835559520627 -1.258231612410677e-09 -3.089475248638068 -4.369177796876694 7.5676379335893325" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=6 energy=-45148.884734686995 stress="0.07778871110740776 2.544504296490635e-14 -3.008582985804753e-13 2.544504296490635e-14 0.07778871110688514 5.303079762279911e-13 -3.008582985804753e-13 5.303079762279911e-13 0.07778871110731075" free_energy=-45148.884734686995 pbc="T T T"
+In      -4.40137781       3.11224410       5.96089200        0       0.00191928      -0.00135714       0.00235063
+In       7.49085306       1.25693370       1.60674593        1      -0.00191928       0.00135714      -0.00235063
+In       1.31190256      -0.92765519       5.39056490        2      -0.00191928       0.00135714      -0.00235063
+In      -1.54473763      -2.18458890       3.78381896        3       0.00000000       0.00000000       0.00000000
+In      -1.31190256       4.20453855       3.49865541        4       0.00191928      -0.00135714      -0.00235063
+In       4.86704794      -2.94760484       5.67572845        5       0.00191928       0.00271427      -0.00000000
+In      -1.31190256       1.42157296       5.67572845        6       0.00191928       0.00271427       0.00000000
+In      -1.77757269       7.31678264       1.89190948        7      -0.00191928      -0.00271427       0.00000000
+In       4.40137781       0.16463926       4.06898252        8      -0.00191928       0.00135714       0.00235063
+In      -1.54473763       4.36917780      -0.00000000        9       0.00000000       0.00000000      -0.00000000
+In       4.40137781       6.71840595       0.28516355       10      -0.00191928       0.00135714       0.00235063
+In      -1.31190256      -2.34922815       7.28247438       11       0.00191928      -0.00135714      -0.00235063
+In       4.40137781       2.94760484       1.89190948       12      -0.00191928      -0.00271427       0.00000000
+In       1.77757269       5.29683300       2.17707303       13       0.00191928      -0.00135714       0.00235063
+In       4.63421287       0.00000000      -0.00000000       14       0.00000000      -0.00000000      -0.00000000
+In       1.54473762       2.18458890       3.78381896       15      -0.00000000      -0.00000000       0.00000000
+O        0.99477528       4.38278459       4.09228393       16      -0.00002581      -0.00310980       0.00753216
+O       -2.09469997       3.53721845       5.50971213       17      -0.00002581       0.00807794      -0.00107291
+O       -0.43995843       2.36713949      -0.03128959       18       0.00467541       0.00475368       0.00468488
+O       -0.99477529      -0.81835255       2.03435813       19       0.00002581       0.00496814       0.00645925
+O        4.03315485       5.16946531       2.06564772       20       0.00762456      -0.00226333       0.00177437
+O        2.14579564       2.98041815       1.72589317       21      -0.00762456      -0.00266831      -0.00107291
+O        2.14579564       6.55822495       0.33975455       22      -0.00762456       0.00040499       0.00284728
+O       -2.37841332       6.17951699       3.75252938       23      -0.00292335      -0.00599257       0.00468488
+O        3.52943368       2.00203832       7.59892751       24      -0.00467541      -0.00475368      -0.00468488
+O        5.46788857      -1.81033919       3.81510855       25       0.00292335       0.00599257      -0.00468488
+O        6.61890892       3.34106107       1.71817124       26      -0.00467541       0.00643406      -0.00177437
+O        3.80053718       2.34461618       4.12357351       27      -0.00292335       0.00705351       0.00284728
+O        0.71106193       4.58340023       7.25917297       28      -0.00292335      -0.00106094      -0.00753216
+O        2.37841332      -0.21422243       0.30846496       29       0.00292335       0.00106094       0.00753216
+O       -3.52943368       1.02811673       5.84946668       30       0.00467541      -0.00643406       0.00177437
+O        5.18417521       0.83195935       2.05792579       31       0.00002581      -0.00807794       0.00107291
+O        0.94367960       1.38875965       5.84174476       32       0.00762456       0.00266831       0.00107291
+O        3.52943368      -0.97392158       5.81817710       33      -0.00467541      -0.00168038       0.00645925
+O        2.09469996      -0.01360679       3.47535400       34       0.00002581       0.00310980      -0.00753216
+O        0.94367961      -2.18904715       7.22788338       35       0.00762456      -0.00040499      -0.00284728
+O       -0.71106193       2.02456162       3.44406441       36       0.00292335      -0.00705351      -0.00284728
+O       -0.94367961      -0.80028750       5.50199021       37      -0.00762456       0.00226333      -0.00177437
+O       -0.43995843       5.34309938       1.74946083       38       0.00467541       0.00168038      -0.00645925
+O        4.08425053       5.18753036       5.53327979       39      -0.00002581      -0.00496814      -0.00645925
+DEBUG:lattice:    Increased volume 6/10
+40
+Lattice="9.33657838381773 7.317703464165558e-10 1.794993367988075e-14 -3.112192795295833 8.802610517459076 -1.2674836477107536e-09 -3.1121927942609666 -4.401305257997755 7.623284328584625" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=6 energy=-45148.884734686995 stress="0.07778871110740776 2.544504296490635e-14 -3.008582985804753e-13 2.544504296490635e-14 0.07778871110688514 5.303079762279911e-13 -3.008582985804753e-13 5.303079762279911e-13 0.07778871110731075" free_energy=-45148.884734686995 pbc="T T T"
+In      -4.43374205       3.13512907       6.00472366        0       0.00191928      -0.00135714       0.00235063
+In       7.54593484       1.26617620       1.61856066        1      -0.00191928       0.00135714      -0.00235063
+In       1.32154925      -0.93447643       5.43020283        2      -0.00191928       0.00135714      -0.00235063
+In      -1.55609640      -2.20065263       3.81164216        3       0.00000000       0.00000000       0.00000000
+In      -1.32154925       4.23545538       3.52438174        4       0.00191928      -0.00135714      -0.00235063
+In       4.90283634      -2.96927918       5.71746324        5       0.00191928       0.00271427      -0.00000000
+In      -1.32154925       1.43202608       5.71746324        6       0.00191928       0.00271427       0.00000000
+In      -1.79064355       7.37058445       1.90582108        7      -0.00191928      -0.00271427       0.00000000
+In       4.43374204       0.16584988       4.09890258        8      -0.00191928       0.00135714       0.00235063
+In      -1.55609640       4.40130526      -0.00000000        9       0.00000000       0.00000000      -0.00000000
+In       4.43374204       6.76780777       0.28726041       10      -0.00191928       0.00135714       0.00235063
+In      -1.32154925      -2.36650251       7.33602391       11       0.00191928      -0.00135714      -0.00235063
+In       4.43374204       2.96927919       1.90582108       12      -0.00191928      -0.00271427       0.00000000
+In       1.79064354       5.33578170       2.19308150       13       0.00191928      -0.00135714       0.00235063
+In       4.66828919       0.00000000      -0.00000000       14       0.00000000      -0.00000000      -0.00000000
+In       1.55609640       2.20065263       3.81164216       15      -0.00000000      -0.00000000       0.00000000
+O        1.00209007       4.41501211       4.12237533       16      -0.00002581      -0.00310980       0.00753216
+O       -2.11010273       3.56322834       5.55022618       17      -0.00002581       0.00807794      -0.00107291
+O       -0.44319353       2.38454555      -0.03151967       18       0.00467541       0.00475368       0.00468488
+O       -1.00209007      -0.82437007       2.04931719       19       0.00002581       0.00496814       0.00645925
+O        4.06281147       5.20747745       2.08083685       20       0.00762456      -0.00226333       0.00177437
+O        2.16157412       3.00233378       1.73858402       21      -0.00762456      -0.00266831      -0.00107291
+O        2.16157412       6.60644893       0.34225283       22      -0.00762456       0.00040499       0.00284728
+O       -2.39590228       6.22495624       3.78012250       23      -0.00292335      -0.00599257       0.00468488
+O        3.55538633       2.01675971       7.65480399       24      -0.00467541      -0.00475368      -0.00468488
+O        5.50809507      -1.82365098       3.84316182       25       0.00292335       0.00599257      -0.00468488
+O        6.66757912       3.36562858       1.73080531       26      -0.00467541       0.00643406      -0.00177437
+O        3.82848331       2.36185663       4.15389500       27      -0.00292335       0.00705351       0.00284728
+O        0.71629051       4.61710291       7.31255115       28      -0.00292335      -0.00106094      -0.00753216
+O        2.39590228      -0.21579765       0.31073317       29       0.00292335       0.00106094       0.00753216
+O       -3.55538633       1.03567669       5.89247901       30       0.00467541      -0.00643406       0.00177437
+O        5.22229552       0.83807692       2.07305814       31       0.00002581      -0.00807794       0.00107291
+O        0.95061867       1.39897148       5.88470031       32       0.00762456       0.00266831       0.00107291
+O        3.55538633      -0.98108302       5.86095935       33      -0.00467541      -0.00168038       0.00645925
+O        2.11010272      -0.01370685       3.50090899       34       0.00002581       0.00310980      -0.00753216
+O        0.95061867      -2.20514366       7.28103149       35       0.00762456      -0.00040499      -0.00284728
+O       -0.71629052       2.03944864       3.46938933       36       0.00292335      -0.00705351      -0.00284728
+O       -0.95061868      -0.80617218       5.54244747       37      -0.00762456       0.00226333      -0.00177437
+O       -0.44319353       5.38238829       1.76232497       38       0.00467541       0.00168038      -0.00645925
+O        4.11428286       5.22567533       5.57396714       39      -0.00002581      -0.00496814      -0.00645925
+trying to relax i 6
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_06-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:52   -45147.745814       0.0628       0.0000
+PreconLBFGS:   1  22:27:53   -45147.752870       0.0352       0.0000
+PreconLBFGS:   2  22:27:54   -45147.754912       0.0334       0.0000
+PreconLBFGS:   3  22:27:55   -45147.757518       0.0395       0.0000
+PreconLBFGS:   4  22:27:56   -45147.761332       0.0112       0.0000
+PreconLBFGS:   5  22:27:57   -45147.761443       0.0131       0.0000
+PreconLBFGS:   6  22:27:58   -45147.761597       0.0030       0.0000
+[lattice   ]     Increased volume 7/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.336578383817738 7.317714678890692e-10 2.0233424413472452e-14 -3.1121927952958335 8.802610517459081 -1.2674875137931368e-09 -3.112192794260968 -4.401305257997755 7.6232843285846315" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45147.76159717819 stress="0.08672009080729881 -7.633286809119107e-13 -2.0238341065088982e-14 -7.633286809119107e-13 0.0867200908072105 -6.61645151142775e-13 -2.0238341065088982e-14 -6.61645151142775e-13 0.08672009080787847" free_energy=-45147.76159717819 pbc="T T T"
+In      -4.42950564       3.13213347       6.00991218        0      -0.00042226       0.00029858      -0.00051716
+In       7.54169843       1.26917179       1.61337214        1       0.00042226      -0.00029858       0.00051716
+In       1.31731284      -0.93148084       5.42501431        2       0.00042226      -0.00029858       0.00051716
+In      -1.55609640      -2.20065263       3.81164216        3      -0.00000000       0.00000000       0.00000000
+In      -1.31731284       4.23245979       3.51919323        4      -0.00042226       0.00029858       0.00051716
+In       4.90707275      -2.96328800       5.71746324        5      -0.00042226      -0.00059716      -0.00000000
+In      -1.31731284       1.43801726       5.71746324        6      -0.00042226      -0.00059716      -0.00000000
+In      -1.79487995       7.36459326       1.90582108        7       0.00042226       0.00059716       0.00000000
+In       4.42950563       0.16884547       4.10409110        8       0.00042226      -0.00029858      -0.00051716
+In      -1.55609640       4.40130526      -0.00000000        9      -0.00000000       0.00000000      -0.00000000
+In       4.42950563       6.77080336       0.29244893       10       0.00042226      -0.00029858      -0.00051716
+In      -1.31731284      -2.36949810       7.33083539       11      -0.00042226       0.00029858       0.00051716
+In       4.42950563       2.96328800       1.90582108       12       0.00042226       0.00059716       0.00000000
+In       1.79487995       5.33278610       2.19827001       13      -0.00042226       0.00029858      -0.00051716
+In       4.66828919       0.00000000      -0.00000000       14      -0.00000000      -0.00000000       0.00000000
+In       1.55609640       2.20065263       3.81164216       15      -0.00000000       0.00000000      -0.00000000
+O        1.02452784       4.41778720       4.11620015       16       0.00047837      -0.00273199      -0.00124366
+O       -2.08766495       3.55649294       5.55091047       17       0.00047837       0.00028896       0.00298780
+O       -0.43944810       2.39102762      -0.05372872       18      -0.00214386       0.00214316      -0.00022376
+O       -1.02452784      -0.82833039       2.04382630       19      -0.00047837      -0.00244303       0.00174415
+O        4.04898201       5.19861536       2.09755501       20       0.00011298       0.00231385       0.00196790
+O        2.17540357       2.98342438       1.73926831       21      -0.00011298      -0.00054733       0.00298780
+O        2.17540357       6.61649624       0.35828670       22      -0.00011298       0.00286118      -0.00101990
+O       -2.40076516       6.21926432       3.75791345       23      -0.00273521       0.00130686      -0.00022376
+O        3.55164089       2.01027764       7.67701304       24       0.00214386      -0.00214316       0.00022376
+O        5.51295795      -1.81795906       3.86537088       25       0.00273521      -0.00130686       0.00022376
+O        6.66383369       3.34963601       1.71408714       26       0.00214386       0.00087780      -0.00196790
+O        3.82362043       2.34546898       4.16992887       27      -0.00273521      -0.00084721      -0.00101990
+O        0.71142763       4.63918248       7.31872633       28      -0.00273521      -0.00045965       0.00124366
+O        2.40076516      -0.23787721       0.30455799       29       0.00273521       0.00045965      -0.00124366
+O       -3.55164089       1.05166925       5.90919718       30      -0.00214386      -0.00087780       0.00196790
+O        5.19985775       0.84481233       2.07237385       31      -0.00047837      -0.00028896      -0.00298780
+O        0.93678922       1.41788088       5.88401602       32       0.00011298       0.00054733      -0.00298780
+O        3.55164089      -0.95860838       5.85546847       33       0.00214386       0.00126536       0.00174415
+O        2.08766495      -0.01648193       3.50708417       34      -0.00047837       0.00273199       0.00124366
+O        0.93678922      -2.21519098       7.26499762       35       0.00011298      -0.00286118       0.00101990
+O       -0.71142764       2.05583628       3.45335545       36       0.00273521       0.00084721       0.00101990
+O       -0.93678922      -0.79731010       5.52572931       37      -0.00011298      -0.00231385      -0.00196790
+O       -0.43944810       5.35991365       1.76781586       38      -0.00214386      -0.00126536      -0.00174415
+O        4.13672063       5.22963565       5.57945802       39       0.00047837       0.00244303      -0.00174415
+DEBUG:lattice:    Increased volume 7/10
+40
+Lattice="9.403750321992465 7.37036191835935e-10 2.0378993622865097e-14 -3.1345834413590397 8.865940828109052 -1.2766064425284557e-09 -3.134583440316729 -4.432970413317475 7.678129986443145" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=7 energy=-45147.76159717819 stress="0.08672009080729881 -7.633286809119107e-13 -2.0238341065088982e-14 -7.633286809119107e-13 0.0867200908072105 -6.61645151142775e-13 -2.0238341065088982e-14 -6.61645151142775e-13 0.08672009080787847" free_energy=-45147.76159717819 pbc="T T T"
+In      -4.46137368       3.15466758       6.05315044        0      -0.00042226       0.00029858      -0.00051716
+In       7.59595712       1.27830283       1.62497954        1       0.00042226      -0.00029858       0.00051716
+In       1.32679024      -0.93818237       5.46404453        2       0.00042226      -0.00029858       0.00051716
+In      -1.56729172      -2.21648521       3.83906499        3      -0.00000000       0.00000000       0.00000000
+In      -1.32679024       4.26291019       3.54451203        4      -0.00042226       0.00029858       0.00051716
+In       4.94237664      -2.98460735       5.75859749        5      -0.00042226      -0.00059716      -0.00000000
+In      -1.32679024       1.44836306       5.75859749        6      -0.00042226      -0.00059716      -0.00000000
+In      -1.80779320       7.41757777       1.91953249        7       0.00042226       0.00059716       0.00000000
+In       4.46137368       0.17006023       4.13361795        8       0.00042226      -0.00029858      -0.00051716
+In      -1.56729172       4.43297042      -0.00000000        9      -0.00000000       0.00000000      -0.00000000
+In       4.46137368       6.81951585       0.29455295       10       0.00042226      -0.00029858      -0.00051716
+In      -1.32679024      -2.38654543       7.38357703       11      -0.00042226       0.00029858       0.00051716
+In       4.46137368       2.98460736       1.91953249       12       0.00042226       0.00059716       0.00000000
+In       1.80779320       5.37115279       2.21408545       13      -0.00042226       0.00029858      -0.00051716
+In       4.70187516       0.00000000      -0.00000000       14      -0.00000000      -0.00000000       0.00000000
+In       1.56729172       2.21648521       3.83906499       15      -0.00000000       0.00000000      -0.00000000
+O        1.03189880       4.44957093       4.14581412       16       0.00047837      -0.00273199      -0.00124366
+O       -2.10268464       3.58208010       5.59084645       17       0.00047837       0.00028896       0.00298780
+O       -0.44260971       2.40822985      -0.05411527       18      -0.00214386       0.00214316      -0.00022376
+O       -1.03189880      -0.83428980       2.05853059       19      -0.00047837      -0.00244303       0.00174415
+O        4.07811238       5.23601676       2.11264586       20       0.00011298       0.00231385       0.00196790
+O        2.19105450       3.00488860       1.75178146       21      -0.00011298      -0.00054733       0.00298780
+O        2.19105450       6.66409857       0.36086440       22      -0.00011298       0.00286118      -0.00101990
+O       -2.41803745       6.26400877       3.78494972       23      -0.00273521       0.00130686      -0.00022376
+O        3.57719314       2.02474057       7.73224525       24       0.00214386      -0.00214316       0.00022376
+O        5.55262088      -1.83103835       3.89318026       25       0.00273521      -0.00130686       0.00022376
+O        6.71177658       3.37373494       1.72641913       26       0.00214386       0.00087780      -0.00196790
+O        3.85112943       2.36234344       4.19992939       27      -0.00273521      -0.00084721      -0.00101990
+O        0.71654599       4.67255904       7.37138085       28      -0.00273521      -0.00045965       0.00124366
+O        2.41803744      -0.23958862       0.30674913       29       0.00273521       0.00045965      -0.00124366
+O       -3.57719315       1.05923548       5.95171085       30      -0.00214386      -0.00087780       0.00196790
+O        5.23726808       0.85089032       2.08728353       31      -0.00047837      -0.00028896      -0.00298780
+O        0.94352894       1.42808182       5.92634852       32       0.00011298       0.00054733      -0.00298780
+O        3.57719314      -0.96550509       5.89759559       33       0.00214386       0.00126536       0.00174415
+O        2.10268464      -0.01660051       3.53231586       34      -0.00047837       0.00273199       0.00124366
+O        0.94352894      -2.23112815       7.31726558       35       0.00011298      -0.00286118       0.00101990
+O       -0.71654600       2.07062698       3.47820059       36       0.00273521       0.00084721       0.00101990
+O       -0.94352894      -0.80304634       5.56548412       37      -0.00011298      -0.00231385      -0.00196790
+O       -0.44260971       5.39847550       1.78053439       38      -0.00214386      -0.00126536      -0.00174415
+O        4.16648224       5.26726022       5.61959939       39       0.00047837       0.00244303      -0.00174415
+trying to relax i 7
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_07-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:27:59   -45146.510916       0.0681       0.0000
+PreconLBFGS:   1  22:28:00   -45146.519380       0.0380       0.0000
+PreconLBFGS:   2  22:28:01   -45146.521923       0.0352       0.0000
+PreconLBFGS:   3  22:28:02   -45146.525316       0.0462       0.0000
+PreconLBFGS:   4  22:28:03   -45146.529342       0.0225       0.0000
+PreconLBFGS:   5  22:28:04   -45146.530217       0.0212       0.0000
+PreconLBFGS:   6  22:28:05   -45146.530574       0.0113       0.0000
+PreconLBFGS:   7  22:28:06   -45146.530659       0.0107       0.0000
+PreconLBFGS:   8  22:28:07   -45146.530805       0.0006       0.0000
+[lattice   ]     Increased volume 8/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.403750321992494 7.370370769740944e-10 1.8427729711235e-14 -3.1345834413590503 8.865940828109085 -1.2766101489517914e-09 -3.134583440316737 -4.43297041331749 7.678129986443167" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=9 energy=-45146.530805399176 stress="0.09342923493527722 3.974979909360047e-13 1.078382754168794e-13 3.974979909360047e-13 0.0934292349344362 4.755344746964242e-13 1.078382754168794e-13 4.755344746964242e-13 0.09342923493486582" free_energy=-45146.530805399176 pbc="T T T"
+In      -4.45784101       3.15216961       6.05747706        0       0.00006861      -0.00004851       0.00008403
+In       7.59242445       1.28080081       1.62065292        1      -0.00006861       0.00004851      -0.00008403
+In       1.32325757      -0.93568440       5.45971791        2      -0.00006861       0.00004851      -0.00008403
+In      -1.56729172      -2.21648521       3.83906499        3       0.00000000      -0.00000000       0.00000000
+In      -1.32325757       4.26041221       3.54018541        4       0.00006861      -0.00004851      -0.00008403
+In       4.94590931      -2.97961140       5.75859749        5       0.00006861       0.00009703       0.00000000
+In      -1.32325757       1.45335901       5.75859749        6       0.00006861       0.00009703      -0.00000000
+In      -1.81132587       7.41258182       1.91953249        7      -0.00006861      -0.00009703      -0.00000000
+In       4.45784101       0.17255821       4.13794457        8      -0.00006861       0.00004851       0.00008403
+In      -1.56729172       4.43297042      -0.00000000        9      -0.00000000      -0.00000000       0.00000000
+In       4.45784101       6.82201383       0.29887957       10      -0.00006861       0.00004851       0.00008403
+In      -1.32325757      -2.38904341       7.37925041       11       0.00006861      -0.00004851      -0.00008403
+In       4.45784101       2.97961141       1.91953249       12      -0.00006861      -0.00009703       0.00000000
+In       1.81132587       5.36865482       2.21841207       13       0.00006861      -0.00004851       0.00008403
+In       4.70187516       0.00000000      -0.00000000       14       0.00000000      -0.00000000      -0.00000000
+In       1.56729172       2.21648521       3.83906499       15      -0.00000000       0.00000000       0.00000000
+O        1.05999807       4.45161508       4.13849612       16       0.00028714       0.00045029      -0.00032311
+O       -2.07458537       3.57472045       5.59273517       17       0.00028714      -0.00050497      -0.00022840
+O       -0.43825478       2.41765999      -0.08130732       18       0.00004416      -0.00033315      -0.00052600
+O       -1.05999807      -0.83960530       2.05310131       19      -0.00028714      -0.00005468      -0.00055152
+O        4.06180721       5.22563292       2.13440863       20      -0.00057180      -0.00024900      -0.00002552
+O        2.20735966       2.98084957       1.75367018       21       0.00057180      -0.00010240      -0.00022840
+O        2.20735966       6.67775376       0.38073845       22       0.00057180      -0.00014660       0.00020288
+O       -2.42547663       6.25675953       3.75775767       23       0.00032882       0.00006942      -0.00052600
+O        3.57283822       2.01531042       7.75943730       24      -0.00004416       0.00033315       0.00052600
+O        5.56006007      -1.82378911       3.92037231       25      -0.00032882      -0.00006942       0.00052600
+O        6.70742166       3.35490100       1.70465636       26      -0.00004416      -0.00062210       0.00002552
+O        3.84369025       2.34241905       4.21980344       27       0.00032882      -0.00049023       0.00020288
+O        0.70910681       4.69973267       7.37869885       28       0.00032882       0.00042082       0.00032311
+O        2.42547663      -0.26676225       0.29943113       29      -0.00032882      -0.00042082      -0.00032311
+O       -3.57283823       1.07806942       5.97347362       30       0.00004416       0.00062210      -0.00002552
+O        5.20916881       0.85824997       2.08539481       31      -0.00028714       0.00050497       0.00022840
+O        0.92722377       1.45212085       5.92445980       32      -0.00057180       0.00010240       0.00022840
+O        3.57283822      -0.93724100       5.89216630       33      -0.00004416       0.00028895      -0.00055152
+O        2.07458537      -0.01864466       3.53963386       34      -0.00028714      -0.00045029       0.00032311
+O        0.92722377      -2.24478335       7.29739153       35      -0.00057180       0.00014660      -0.00020288
+O       -0.70910681       2.09055137       3.45832654       36      -0.00032882       0.00049023      -0.00020288
+O       -0.92722378      -0.79266250       5.54372135       37       0.00057180       0.00024900       0.00002552
+O       -0.43825478       5.37021142       1.78596368       38       0.00004416      -0.00028895       0.00055152
+O        4.19458151       5.27257572       5.62502867       39       0.00028714       0.00005468       0.00055152
+DEBUG:lattice:    Increased volume 8/10
+40
+Lattice="9.46997609776066 7.422276499392612e-10 1.8557506731464742e-14 -3.1566586999533333 8.92837908828737 -1.2856006574800884e-09 -3.1566586989036796 -4.464189543401441 7.732203105931658" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=9 energy=-45146.530805399176 stress="0.09342923493527722 3.974979909360047e-13 1.078382754168794e-13 3.974979909360047e-13 0.0934292349344362 4.755344746964242e-13 1.078382754168794e-13 4.755344746964242e-13 0.09342923493486582" free_energy=-45146.530805399176 pbc="T T T"
+In      -4.48923529       3.17436872       6.10013676        0       0.00006861      -0.00004851       0.00008403
+In       7.64589399       1.28982083       1.63206634        1      -0.00006861       0.00004851      -0.00008403
+In       1.33257659      -0.94227394       5.49816790        2      -0.00006861       0.00004851      -0.00008403
+In      -1.57832935      -2.23209477       3.86610155        3       0.00000000      -0.00000000       0.00000000
+In      -1.33257659       4.29041610       3.56511712        4       0.00006861      -0.00004851      -0.00008403
+In       4.98074081      -3.00059527       5.79915233        5       0.00006861       0.00009703       0.00000000
+In      -1.33257659       1.46359427       5.79915233        6       0.00006861       0.00009703      -0.00000000
+In      -1.82408211       7.46478482       1.93305077        7      -0.00006861      -0.00009703      -0.00000000
+In       4.48923529       0.17377344       4.16708598        8      -0.00006861       0.00004851       0.00008403
+In      -1.57832935       4.46418955      -0.00000000        9      -0.00000000      -0.00000000       0.00000000
+In       4.48923529       6.87005776       0.30098443       10      -0.00006861       0.00004851       0.00008403
+In      -1.33257659      -2.40586821       7.43121867       11       0.00006861      -0.00004851      -0.00008403
+In       4.48923529       3.00059528       1.93305077       12      -0.00006861      -0.00009703       0.00000000
+In       1.82408211       5.40646349       2.23403520       13       0.00006861      -0.00004851       0.00008403
+In       4.73498805       0.00000000      -0.00000000       14       0.00000000      -0.00000000      -0.00000000
+In       1.57832935       2.23209477       3.86610155       15      -0.00000000       0.00000000       0.00000000
+O        1.06746309       4.48296551       4.16764142       16       0.00028714       0.00045029      -0.00032311
+O       -2.08919561       3.59989537       5.63212193       17       0.00028714      -0.00050497      -0.00022840
+O       -0.44134119       2.43468633      -0.08187993       18       0.00004416      -0.00033315      -0.00052600
+O       -1.06746309      -0.84551821       2.06756025       19      -0.00028714      -0.00005468      -0.00055152
+O        4.09041243       5.26243436       2.14944017       20      -0.00057180      -0.00024900      -0.00002552
+O        2.22290496       3.00184216       1.76602037       21       0.00057180      -0.00010240      -0.00022840
+O        2.22290496       6.72478175       0.38341979       22       0.00057180      -0.00014660       0.00020288
+O       -2.44255802       6.30082267       3.78422163       23       0.00032882       0.00006942      -0.00052600
+O        3.59799988       2.02950322       7.81408303       24      -0.00004416       0.00033315       0.00052600
+O        5.59921671      -1.83663312       3.94798147       25      -0.00032882      -0.00006942       0.00052600
+O        6.75465858       3.37852785       1.71666138       26      -0.00004416      -0.00062210       0.00002552
+O        3.87075938       2.35891551       4.24952135       27       0.00032882      -0.00049023       0.00020288
+O        0.71410068       4.73283047       7.43066323       28       0.00032882       0.00042082       0.00032311
+O        2.44255801      -0.26864092       0.30153987       29      -0.00032882      -0.00042082      -0.00032311
+O       -3.59799989       1.08566170       6.01554172       30       0.00004416       0.00062210      -0.00002552
+O        5.24585431       0.86429418       2.10008117       31      -0.00028714       0.00050497       0.00022840
+O        0.93375373       1.46234739       5.96618273       32      -0.00057180       0.00010240       0.00022840
+O        3.59799988      -0.94384151       5.93366180       33      -0.00004416       0.00028895      -0.00055152
+O        2.08919561      -0.01877596       3.56456168       34      -0.00028714      -0.00045029       0.00032311
+O        0.93375373      -2.26059220       7.34878331       35      -0.00057180       0.00014660      -0.00020288
+O       -0.71410069       2.10527404       3.48268175       36      -0.00032882       0.00049023      -0.00020288
+O       -0.93375374      -0.79824482       5.58276293       37       0.00057180       0.00024900       0.00002552
+O       -0.44134119       5.40803106       1.79854130       38       0.00004416      -0.00028895       0.00055152
+O        4.22412179       5.30970776       5.66464285       39       0.00028714       0.00005468       0.00055152
+trying to relax i 8
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_08-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:28:07   -45145.201743       0.0780       0.0000
+PreconLBFGS:   1  22:28:09   -45145.216492       0.0499       0.0000
+PreconLBFGS:   2  22:28:11   -45145.224033       0.0543       0.0000
+PreconLBFGS:   3  22:28:11   -45145.228055       0.0480       0.0000
+PreconLBFGS:   4  22:28:12   -45145.229472       0.0447       0.0000
+PreconLBFGS:   5  22:28:13   -45145.232152       0.0564       0.0000
+PreconLBFGS:   6  22:28:14   -45145.234730       0.0193       0.0000
+PreconLBFGS:   7  22:28:14   -45145.234995       0.0166       0.0000
+PreconLBFGS:   8  22:28:15   -45145.235363       0.0127       0.0000
+PreconLBFGS:   9  22:28:16   -45145.235594       0.0001       0.0000
+[lattice   ]     Increased volume 9/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.469976097760696 7.422279912171293e-10 1.8179350188578567e-14 -3.1566586999533466 8.9283790882874 -1.2855989704102803e-09 -3.156658698903693 -4.464189543401457 7.732203105931694" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=10 energy=-45145.23559368389 stress="0.09748954330695213 3.002242352373052e-13 3.016631089501802e-13 3.002242352373052e-13 0.0974895433067507 2.6695828333257307e-13 3.016631089501802e-13 2.6695828333257307e-13 0.09748954330609853" free_energy=-45145.23559368389 pbc="T T T"
+In      -4.48718144       3.17291642       6.10265220        0      -0.00000450       0.00000318      -0.00000551
+In       7.64384013       1.29127313       1.62955089        1       0.00000450      -0.00000318       0.00000551
+In       1.33052273      -0.94082165       5.49565245        2       0.00000450      -0.00000318       0.00000551
+In      -1.57832935      -2.23209477       3.86610155        3      -0.00000000       0.00000000      -0.00000000
+In      -1.33052274       4.28896381       3.56260167        4      -0.00000450       0.00000318       0.00000551
+In       4.98279466      -2.99769068       5.79915233        5      -0.00000450      -0.00000636      -0.00000000
+In      -1.33052274       1.46649886       5.79915233        6      -0.00000450      -0.00000636       0.00000000
+In      -1.82613597       7.46188023       1.93305077        7       0.00000450       0.00000636       0.00000000
+In       4.48718143       0.17522574       4.16960143        8       0.00000450      -0.00000318      -0.00000551
+In      -1.57832935       4.46418955      -0.00000000        9       0.00000000      -0.00000000       0.00000000
+In       4.48718143       6.87151005       0.30349988       10       0.00000450      -0.00000318      -0.00000551
+In      -1.33052274      -2.40732051       7.42870322       11      -0.00000450       0.00000318       0.00000551
+In       4.48718143       2.99769069       1.93305077       12       0.00000450       0.00000636       0.00000000
+In       1.82613596       5.40501120       2.23655065       13      -0.00000450       0.00000318      -0.00000551
+In       4.73498805       0.00000000      -0.00000000       14      -0.00000000      -0.00000000       0.00000000
+In       1.57832935       2.23209477       3.86610155       15      -0.00000000      -0.00000000      -0.00000000
+O        1.10618770       4.48501160       4.15957128       16       0.00000492       0.00006813      -0.00001731
+O       -2.05047100       3.59188338       5.63438503       17       0.00000492      -0.00004905      -0.00005035
+O       -0.43405769       2.44890656      -0.11812416       18       0.00001963      -0.00005945      -0.00003234
+O       -1.10618770      -0.85148411       2.06175321       19      -0.00000492       0.00001908      -0.00006766
+O        4.06995045       5.24747464       2.17987737       20      -0.00004789      -0.00003775      -0.00003532
+O        2.24336694       2.96800291       1.76828348       21       0.00004789       0.00001171      -0.00005035
+O        2.24336694       6.74366128       0.41159389       22       0.00004789      -0.00004946       0.00001503
+O       -2.45353715       6.28921564       3.74797739       23       0.00006260       0.00000131      -0.00003234
+O        3.59071639       2.01528298       7.85032726       24      -0.00001963       0.00005945       0.00003234
+O        5.61019584      -1.82502609       3.98422571       25      -0.00006260      -0.00000131       0.00003234
+O        6.74737508       3.35424953       1.68622417       26      -0.00001963      -0.00005773       0.00003532
+O        3.85978025       2.33333059       4.27769544       27       0.00006260      -0.00002866       0.00001503
+O        0.70312155       4.77002241       7.43873337       28       0.00006260       0.00002735       0.00001731
+O        2.45353714      -0.30583286       0.29346973       29      -0.00006260      -0.00002735      -0.00001731
+O       -3.59071639       1.10994002       6.04597893       30       0.00001963       0.00005773      -0.00003532
+O        5.20712969       0.87230617       2.09781807       31      -0.00000492       0.00004905       0.00005035
+O        0.91329175       1.49618664       5.96391962       32      -0.00004789      -0.00001171       0.00005035
+O        3.59071639      -0.90534296       5.92785477       33      -0.00001963      -0.00000172      -0.00006766
+O        2.05047100      -0.02082205       3.57263182       34      -0.00000492      -0.00006813       0.00001731
+O        0.91329175      -2.27947173       7.32060921       35      -0.00004789       0.00004946      -0.00001503
+O       -0.70312156       2.13085896       3.45450766       36      -0.00006260       0.00002866      -0.00001503
+O       -0.91329176      -0.78328510       5.55232573       37       0.00004789       0.00003775       0.00003532
+O       -0.43405769       5.36953251       1.80434833       38       0.00001963       0.00000172       0.00006766
+O        4.26284640       5.31567366       5.67044989       39       0.00000492      -0.00001908       0.00006766
+DEBUG:lattice:    Increased volume 9/10
+40
+Lattice="9.535288341624618 7.473469667102633e-10 1.8304728979459023e-14 -3.178429447912813 8.98995606232661 -1.2944654503886719e-09 -3.17842944685592 -4.494978030415943 7.785530329743736" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=10 energy=-45145.23559368389 stress="0.09748954330695213 3.002242352373052e-13 3.016631089501802e-13 3.002242352373052e-13 0.0974895433067507 2.6695828333257307e-13 3.016631089501802e-13 2.6695828333257307e-13 0.09748954330609853" free_energy=-45145.23559368389 pbc="T T T"
+In      -4.51812849       3.19479930       6.14474079        0      -0.00000450       0.00000318      -0.00000551
+In       7.69655794       1.30017874       1.64078953        1       0.00000450      -0.00000318       0.00000551
+In       1.33969904      -0.94731028       5.53355470        2       0.00000450      -0.00000318       0.00000551
+In      -1.58921473      -2.24748901       3.89276516        3      -0.00000000       0.00000000      -0.00000000
+In      -1.33969905       4.31854381       3.58717211        4      -0.00000450       0.00000318       0.00000551
+In       5.01715985      -3.01836506       5.83914774        5      -0.00000450      -0.00000636      -0.00000000
+In      -1.33969905       1.47661297       5.83914774        6      -0.00000450      -0.00000636       0.00000000
+In      -1.83873040       7.51334310       1.94638258        7       0.00000450       0.00000636       0.00000000
+In       4.51812849       0.17643423       4.19835821        8       0.00000450      -0.00000318      -0.00000551
+In      -1.58921473       4.49497803      -0.00000000        9       0.00000000      -0.00000000       0.00000000
+In       4.51812849       6.91890128       0.30559304       10       0.00000450      -0.00000318      -0.00000551
+In      -1.33969905      -2.42392324       7.47993728       11      -0.00000450       0.00000318       0.00000551
+In       4.51812849       3.01836507       1.94638258       12       0.00000450       0.00000636       0.00000000
+In       1.83873040       5.44228831       2.25197563       13      -0.00000450       0.00000318      -0.00000551
+In       4.76764417       0.00000000      -0.00000000       14      -0.00000000      -0.00000000       0.00000000
+In       1.58921472       2.24748902       3.89276516       15      -0.00000000      -0.00000000      -0.00000000
+O        1.11381682       4.51594369       4.18825889       16       0.00000492       0.00006813      -0.00001731
+O       -2.06461263       3.61665577       5.67324409       17       0.00000492      -0.00004905      -0.00005035
+O       -0.43705129       2.46579611      -0.11893884       18       0.00001963      -0.00005945      -0.00003234
+O       -1.11381683      -0.85735660       2.07597265       19      -0.00000492       0.00001908      -0.00006766
+O        4.09801996       5.28366527       2.19491148       20      -0.00004789      -0.00003775      -0.00003532
+O        2.25883893       2.98847254       1.78047892       21       0.00004789       0.00001171      -0.00005035
+O        2.25883893       6.79017076       0.41443256       22       0.00004789      -0.00004946       0.00001503
+O       -2.47045863       6.33259091       3.77382633       23       0.00006260       0.00000131      -0.00003234
+O        3.61548073       2.02918193       7.90446916       24      -0.00001963       0.00005945       0.00003234
+O        5.64888807      -1.83761288       4.01170400       25      -0.00006260      -0.00000131       0.00003234
+O        6.79391018       3.37738302       1.69785367       26      -0.00001963      -0.00005773       0.00003532
+O        3.88640027       2.34942303       4.30719772       27       0.00006260      -0.00002866       0.00001503
+O        0.70797082       4.80292015       7.49003660       28       0.00006260       0.00002735       0.00001731
+O        2.47045862      -0.30794212       0.29549372       29      -0.00006260      -0.00002735      -0.00001731
+O       -3.61548073       1.11759502       6.08767665       30       0.00001963       0.00005773      -0.00003532
+O        5.24304207       0.87832227       2.11228624       31      -0.00000492       0.00004905       0.00005035
+O        0.91959052       1.50650549       6.00505140       32      -0.00004789      -0.00001171       0.00005035
+O        3.61548073      -0.91158691       5.96873781       33      -0.00001963      -0.00000172      -0.00006766
+O        2.06461262      -0.02096566       3.59727144       34      -0.00000492      -0.00006813       0.00001731
+O        0.91959052      -2.29519272       7.37109776       35      -0.00004789       0.00004946      -0.00001503
+O       -0.70797082       2.14555500       3.47833260       36      -0.00006260       0.00002866      -0.00001503
+O       -0.91959052      -0.78868723       5.59061884       37       0.00004789       0.00003775       0.00003532
+O       -0.43705129       5.40656494       1.81679251       38       0.00001963       0.00000172       0.00006766
+O        4.29224627       5.35233464       5.70955767       39       0.00000492      -0.00001908       0.00006766
+trying to relax i 9
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_09-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:28:17   -45143.846843       0.0768       0.0000
+PreconLBFGS:   1  22:28:18   -45143.855672       0.0331       0.0000
+PreconLBFGS:   2  22:28:19   -45143.857611       0.0322       0.0000
+PreconLBFGS:   3  22:28:20   -45143.859022       0.0269       0.0000
+PreconLBFGS:   4  22:28:20   -45143.860186       0.0211       0.0000
+PreconLBFGS:   5  22:28:21   -45143.860584       0.0214       0.0000
+PreconLBFGS:   6  22:28:22   -45143.861218       0.0301       0.0000
+PreconLBFGS:   7  22:28:23   -45143.862567       0.0134       0.0000
+PreconLBFGS:   8  22:28:24   -45143.862880       0.0123       0.0000
+PreconLBFGS:   9  22:28:25   -45143.863109       0.0059       0.0000
+[lattice   ]     Increased volume 10/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.53528834162467 7.473470415819828e-10 2.2215028528003828e-14 -3.1784294479128308 8.989956062326655 -1.2944682827911965e-09 -3.178429446855941 -4.494978030415964 7.7855303297437795" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=10 energy=-45143.86310932136 stress="0.10323090411414369 5.4197889585389753e-14 -2.8244892365189074e-13 5.4197889585389753e-14 0.1032309041136357 3.238589984345672e-13 -2.8244892365189074e-13 3.238589984345672e-13 0.1032309041136902" free_energy=-45143.86310932136 pbc="T T T"
+In      -4.51417235       3.19200188       6.14958605        0      -0.00341422       0.00241422      -0.00418155
+In       7.69260180       1.30297615       1.63594427        1       0.00341422      -0.00241422       0.00418155
+In       1.33574290      -0.94451286       5.52870943        2       0.00341422      -0.00241422       0.00418155
+In      -1.58921473      -2.24748901       3.89276516        3      -0.00000000      -0.00000000      -0.00000000
+In      -1.33574291       4.31574639       3.58232685        4      -0.00341422       0.00241422       0.00418155
+In       5.02111599      -3.01277024       5.83914774        5      -0.00341422      -0.00482844      -0.00000000
+In      -1.33574291       1.48220780       5.83914774        6      -0.00341422      -0.00482844       0.00000000
+In      -1.84268655       7.50774827       1.94638258        7       0.00341422       0.00482844      -0.00000000
+In       4.51417235       0.17923164       4.20320347        8       0.00341422      -0.00241422      -0.00418155
+In      -1.58921473       4.49497803      -0.00000000        9      -0.00000000      -0.00000000      -0.00000000
+In       4.51417235       6.92169869       0.31043831       10       0.00341422      -0.00241422      -0.00418155
+In      -1.33574291      -2.42672066       7.47509202       11      -0.00341422       0.00241422       0.00418155
+In       4.51417235       3.01277024       1.94638258       12       0.00341422       0.00482844      -0.00000000
+In       1.84268654       5.43949090       2.25682089       13      -0.00341422       0.00241422      -0.00418155
+In       4.76764417       0.00000000      -0.00000000       14       0.00000000      -0.00000000       0.00000000
+In       1.58921472       2.24748902       3.89276516       15      -0.00000000      -0.00000000      -0.00000000
+O        1.13648307       4.51987621       4.18314087       16      -0.00108331      -0.00035875      -0.00064308
+O       -2.04194638       3.61025718       5.67239744       17      -0.00108331      -0.00037755       0.00063223
+O       -0.43182091       2.47172654      -0.14113998       18      -0.00105530      -0.00039736       0.00066654
+O       -1.13648307      -0.85982268       2.07000798       19       0.00108331      -0.00073630      -0.00001086
+O        4.08443190       5.27331351       2.21114796       20       0.00000514       0.00112113      -0.00067740
+O        2.27242699       2.96923547       1.77963227       21      -0.00000514       0.00114721       0.00063223
+O        2.27242699       6.79905608       0.43151568       22      -0.00000514      -0.00002608      -0.00130963
+O       -2.47430643       6.32568286       3.75162518       23       0.00002287       0.00112740       0.00066654
+O        3.61025035       2.02325150       7.92667030       24       0.00105530       0.00039736      -0.00066654
+O        5.65273588      -1.83070482       4.03390514       25      -0.00002287      -0.00112740      -0.00066654
+O        6.78867980       3.36112148       1.68161720       26       0.00105530       0.00037856       0.00067740
+O        3.88255246       2.33365031       4.32428085       27       0.00002287       0.00001354      -0.00130963
+O        0.70412302       4.82560094       7.49515462       28       0.00002287      -0.00114094       0.00064308
+O        2.47430643      -0.33062290       0.29037570       29      -0.00002287       0.00114094      -0.00064308
+O       -3.61025036       1.13385656       6.10391312       30      -0.00105530      -0.00037856      -0.00067740
+O        5.22037582       0.88472086       2.11313289       31       0.00108331       0.00037755      -0.00063223
+O        0.90600245       1.52574257       6.00589805       32       0.00000514      -0.00114721      -0.00063223
+O        3.61025035      -0.88939494       5.96277314       33       0.00105530      -0.00077592      -0.00001086
+O        2.04194637      -0.02489817       3.60238946       34       0.00108331       0.00035875       0.00064308
+O        0.90600245      -2.30407804       7.35401464       35       0.00000514       0.00002608       0.00130963
+O       -0.70412302       2.16132773       3.46124948       36      -0.00002287      -0.00001354       0.00130963
+O       -0.90600245      -0.77833547       5.57438237       37      -0.00000514      -0.00112113       0.00067740
+O       -0.43182091       5.38437297       1.82275718       38      -0.00105530       0.00077592       0.00001086
+O        4.31491252       5.35480072       5.71552234       39      -0.00108331       0.00073630       0.00001086
+DEBUG:lattice:    Increased volume 10/10
+40
+Lattice="9.599717919972047 7.523968369361612e-10 2.236513462545514e-14 -3.1999059740333844 9.0507008513362 -1.3032149554303671e-09 -3.1999059729693533 -4.525350424915686 7.838136860179402" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=10 energy=-45143.86310932136 stress="0.10323090411414369 5.4197889585389753e-14 -2.8244892365189074e-13 5.4197889585389753e-14 0.1032309041136357 3.238589984345672e-13 -2.8244892365189074e-13 3.238589984345672e-13 0.1032309041136902" free_energy=-45143.86310932136 pbc="T T T"
+In      -4.54467444       3.21357012       6.19113857        0      -0.00341422       0.00241422      -0.00418155
+In       7.74458041       1.31178031       1.64699828        1       0.00341422      -0.00241422       0.00418155
+In       1.34476847      -0.95089490       5.56606671        2       0.00341422      -0.00241422       0.00418155
+In      -1.59995299      -2.26267521       3.91906843        3      -0.00000000      -0.00000000      -0.00000000
+In      -1.34476847       4.34490772       3.60653250        4      -0.00341422       0.00241422       0.00418155
+In       5.05504348      -3.03312741       5.87860264        5      -0.00341422      -0.00482844      -0.00000000
+In      -1.34476847       1.49222302       5.87860264        6      -0.00341422      -0.00482844       0.00000000
+In      -1.85513751       7.55847784       1.95953421        7       0.00341422       0.00482844      -0.00000000
+In       4.54467444       0.18044271       4.23160436        8       0.00341422      -0.00241422      -0.00418155
+In      -1.59995299       4.52535043      -0.00000000        9      -0.00000000      -0.00000000      -0.00000000
+In       4.54467444       6.96846834       0.31253593       10       0.00341422      -0.00241422      -0.00418155
+In      -1.34476847      -2.44311791       7.52560093       11      -0.00341422       0.00241422       0.00418155
+In       4.54467444       3.03312741       1.95953421       12       0.00341422       0.00482844      -0.00000000
+In       1.85513750       5.47624533       2.27207014       13      -0.00341422       0.00241422      -0.00418155
+In       4.79985896       0.00000000      -0.00000000       14       0.00000000      -0.00000000       0.00000000
+In       1.59995298       2.26267522       3.91906843       15      -0.00000000      -0.00000000      -0.00000000
+O        1.14416224       4.55041684       4.21140619       16      -0.00108331      -0.00035875      -0.00064308
+O       -2.05574373       3.63465155       5.71072561       17      -0.00108331      -0.00037755       0.00063223
+O       -0.43473871       2.48842790      -0.14209366       18      -0.00105530      -0.00039736       0.00066654
+O       -1.14416224      -0.86563247       2.08399494       19       0.00108331      -0.00073630      -0.00001086
+O        4.11203025       5.30894509       2.22608860       20       0.00000514       0.00112113      -0.00067740
+O        2.28778170       2.98929848       1.79165718       21      -0.00000514       0.00114721       0.00063223
+O        2.28778170       6.84499704       0.43443142       22      -0.00000514      -0.00002608      -0.00130963
+O       -2.49102523       6.36842526       3.77697477       23       0.00002287       0.00112740       0.00066654
+O        3.63464468       2.03692253       7.98023051       24       0.00105530       0.00039736      -0.00066654
+O        5.69093120      -1.84307483       4.06116208       25      -0.00002287      -0.00112740      -0.00066654
+O        6.83455065       3.38383245       1.69297982       26       0.00105530       0.00037856       0.00067740
+O        3.90878672       2.34941869       4.35349985       27       0.00002287       0.00001354      -0.00130963
+O        0.70888075       4.85820734       7.54579909       28       0.00002287      -0.00114094       0.00064308
+O        2.49102522      -0.33285691       0.29233776       29      -0.00002287       0.00114094      -0.00064308
+O       -3.63464468       1.14151798       6.14515703       30      -0.00105530      -0.00037856      -0.00067740
+O        5.25564970       0.89069888       2.12741124       31       0.00108331       0.00037755      -0.00063223
+O        0.91212427       1.53605195       6.04647967       32       0.00000514      -0.00114721      -0.00063223
+O        3.63464468      -0.89540455       6.00306337       33       0.00105530      -0.00077592      -0.00001086
+O        2.05574373      -0.02506641       3.62673066       34       0.00108331       0.00035875       0.00064308
+O        0.91212427      -2.31964661       7.40370544       35       0.00000514       0.00002608       0.00130963
+O       -0.70888075       2.17593174       3.48463701       36      -0.00002287      -0.00001354       0.00130963
+O       -0.91212428      -0.78359466       5.61204825       37      -0.00000514      -0.00112113       0.00067740
+O       -0.43473871       5.42075498       1.83507348       38      -0.00105530       0.00077592       0.00001086
+O        4.34406821       5.39098290       5.75414191       39      -0.00108331       0.00073630       0.00001086
+trying to relax i 10
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_Ia3-E_vs_V_10-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  22:28:25   -45142.406120       0.0829       0.0000
+PreconLBFGS:   1  22:28:26   -45142.418057       0.0444       0.0000
+PreconLBFGS:   2  22:28:27   -45142.421720       0.0462       0.0000
+PreconLBFGS:   3  22:28:29   -45142.425604       0.0463       0.0000
+PreconLBFGS:   4  22:28:29   -45142.427547       0.0345       0.0000
+PreconLBFGS:   5  22:28:30   -45142.428535       0.0329       0.0000
+PreconLBFGS:   6  22:28:31   -45142.430157       0.0504       0.0000
+PreconLBFGS:   7  22:28:32   -45142.434116       0.0171       0.0000
+PreconLBFGS:   8  22:28:33   -45142.434681       0.0125       0.0000
+PreconLBFGS:   9  22:28:33   -45142.435107       0.0029       0.0000
+[lattice   ] Calculating elastic constants
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 206 , international (Hermann-Mauguin) Ia-3 , Hall  -I 2b 2c 3
+40
+Lattice="9.599717919972065 7.523962389985e-10 2.9126626118257646e-14 -3.199905974033391 9.050700851336225 -1.3032207193920215e-09 -3.199905972969362 -4.525350424915699 7.838136860179411" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"In\": 1}, \"5\": {\"In\": 1}, \"6\": {\"In\": 1}, \"7\": {\"In\": 1}, \"8\": {\"In\": 1}, \"9\": {\"In\": 1}, \"10\": {\"In\": 1}, \"11\": {\"In\": 1}, \"12\": {\"In\": 1}, \"13\": {\"In\": 1}, \"14\": {\"In\": 1}, \"15\": {\"In\": 1}, \"16\": {\"O\": 1}, \"17\": {\"O\": 1}, \"18\": {\"O\": 1}, \"19\": {\"O\": 1}, \"20\": {\"O\": 1}, \"21\": {\"O\": 1}, \"22\": {\"O\": 1}, \"23\": {\"O\": 1}, \"24\": {\"O\": 1}, \"25\": {\"O\": 1}, \"26\": {\"O\": 1}, \"27\": {\"O\": 1}, \"28\": {\"O\": 1}, \"29\": {\"O\": 1}, \"30\": {\"O\": 1}, \"31\": {\"O\": 1}, \"32\": {\"O\": 1}, \"33\": {\"O\": 1}, \"34\": {\"O\": 1}, \"35\": {\"O\": 1}, \"36\": {\"O\": 1}, \"37\": {\"O\": 1}, \"38\": {\"O\": 1}, \"39\": {\"O\": 1}}" n_minim_iter=10 energy=-45142.435106724995 stress="0.10571181325483217 1.0403426809180895e-13 2.0269683155884957e-13 1.0403426809180895e-13 0.1057118132543095 4.159805063329714e-13 2.0269683155884957e-13 4.159805063329714e-13 0.10571181325400113" free_energy=-45142.435106724995 pbc="T T T"
+In      -4.54287911       3.21230062       6.19333740        0      -0.00111230       0.00078652      -0.00136229
+In       7.74278508       1.31304981       1.64479946        1       0.00111230      -0.00078652       0.00136229
+In       1.34297313      -0.94962541       5.56386789        2       0.00111230      -0.00078652       0.00136229
+In      -1.59995299      -2.26267521       3.91906843        3       0.00000000       0.00000000      -0.00000000
+In      -1.34297314       4.34363823       3.60433367        4      -0.00111230       0.00078652       0.00136229
+In       5.05683881      -3.03058842       5.87860264        5      -0.00111230      -0.00157303      -0.00000000
+In      -1.34297314       1.49476200       5.87860264        6      -0.00111230      -0.00157303       0.00000000
+In      -1.85693284       7.55593885       1.95953421        7       0.00111230       0.00157303       0.00000000
+In       4.54287911       0.18171220       4.23380318        8       0.00111230      -0.00078652      -0.00136229
+In      -1.59995299       4.52535043      -0.00000000        9       0.00000000       0.00000000      -0.00000000
+In       4.54287910       6.96973784       0.31473475       10       0.00111230      -0.00078652      -0.00136229
+In      -1.34297314      -2.44438741       7.52340210       11      -0.00111230       0.00078652       0.00136229
+In       4.54287911       3.03058843       1.95953421       12       0.00111230       0.00157303       0.00000000
+In       1.85693284       5.47497584       2.27426897       13      -0.00111230       0.00078652      -0.00136229
+In       4.79985896       0.00000000      -0.00000000       14       0.00000000       0.00000000       0.00000000
+In       1.59995298       2.26267522       3.91906843       15      -0.00000000       0.00000000       0.00000000
+O        1.18168086       4.55557263       4.20491904       16      -0.00120101      -0.00083095      -0.00252592
+O       -2.01822511       3.62645561       5.70950414       17      -0.00120101      -0.00177203       0.00198258
+O       -0.42509877       2.49994517      -0.17745941       18      -0.00285445      -0.00060287      -0.00004247
+O       -1.18168086      -0.86867261       2.07628632       19       0.00120101      -0.00260298      -0.00054334
+O        4.09179684       5.29156680       2.25374572       20      -0.00127035       0.00257846      -0.00050087
+O        2.30801511       2.95665756       1.79043571       21       0.00127035       0.00172300       0.00198258
+O        2.30801510       6.86025967       0.46331001       22       0.00127035       0.00085547      -0.00248345
+O       -2.49867050       6.35549755       3.74160902       23      -0.00038309       0.00289216      -0.00004247
+O        3.62500474       2.02540526       8.01559626       24       0.00285445       0.00060287       0.00004247
+O        5.69857647      -1.83014712       4.09652783       25       0.00038309      -0.00289216       0.00004247
+O        6.82491072       3.35896345       1.66532270       26       0.00285445      -0.00033821       0.00050087
+O        3.90114144       2.32525491       4.38237844       27      -0.00038309      -0.00148286      -0.00248345
+O        0.70123547       4.89529883       7.55228624       28      -0.00038309      -0.00140930       0.00252592
+O        2.49867050      -0.36994840       0.28585061       29       0.00038309       0.00140930      -0.00252592
+O       -3.62500475       1.16638698       6.17281416       30      -0.00285445       0.00033821      -0.00050087
+O        5.21813108       0.89889482       2.12863272       31       0.00120101       0.00177203      -0.00198258
+O        0.89189086       1.56869287       6.04770115       32      -0.00127035      -0.00172300      -0.00198258
+O        3.62500474      -0.85901827       5.99535475       33       0.00285445      -0.00026466      -0.00054334
+O        2.01822511      -0.03022220       3.63321781       34       0.00120101       0.00083095       0.00252592
+O        0.89189087      -2.33490924       7.37482684       35      -0.00127035      -0.00085547       0.00248345
+O       -0.70123547       2.20009552       3.45575841       36       0.00038309       0.00148286       0.00248345
+O       -0.89189087      -0.76621637       5.58439113       37       0.00127035      -0.00257846       0.00050087
+O       -0.42509877       5.38436870       1.84278210       38      -0.00285445       0.00026466       0.00054334
+O        4.38158683       5.39402304       5.76185053       39      -0.00120101       0.00260298       0.00054334
+INFO:lattice:Calculating elastic constants
+PreconLBFGS:   0  22:28:34   -45151.684247       0.2367
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  22:28:34   -45151.694962       0.2016
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  22:28:34   -45151.713661       0.0940
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   3  22:28:35   -45151.715785       0.0863
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   4  22:28:35   -45151.719885       0.0420
+PreconLBFGS:   0  22:28:35   -45151.852602       0.1108
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  22:28:36   -45151.854941       0.0940
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  22:28:36   -45151.859194       0.0457
+PreconLBFGS:   0  22:28:36   -45151.905613       0.0027
+PreconLBFGS:   0  22:28:37   -45151.856325       0.0955
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  22:28:37   -45151.858055       0.0797
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  22:28:37   -45151.861480       0.0406
+PreconLBFGS:   0  22:28:38   -45151.713625       0.1824
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  22:28:38   -45151.719930       0.1511
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  22:28:38   -45151.732733       0.0786
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   3  22:28:39   -45151.733999       0.0696
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   4  22:28:39   -45151.736817       0.0308
+Fitting C_11
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-4.51846040e+00, -2.27617522e+00,  3.01334369e-03,  2.06278435e+00,
+        3.92713638e+00]) GPa
+Cij (gradient) / GPa    :     212.3015312966381
+Error in Cij / GPa      :     4.9820094647445154
+Correlation coefficient :     0.9991749953412529
+Setting C11 (1) to 1.325082 +/- 0.031095
+
+
+Fitting C_21
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.42508531, -1.16381966,  0.00301334,  1.07804714,  2.11393343]) GPa
+Cij (gradient) / GPa    :     113.19904272518293
+Error in Cij / GPa      :     2.6688167822696585
+Correlation coefficient :     0.9991672770456662
+Setting C21 (7) to 0.706533 +/- 0.016657
+
+
+Fitting C_31
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.42137362, -1.16014872,  0.00301334,  1.07862426,  2.11050413]) GPa
+Cij (gradient) / GPa    :     113.02528485065321
+Error in Cij / GPa      :     2.684763291772341
+Correlation coefficient :     0.9991547189789969
+Updating C31 (7) with value 0.705448 +/- 0.016757
+
+
+Fitting C_44
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-1.02440309e+00, -5.37702199e-01, -1.85654117e-11,  5.08578289e-01,
+        9.31781249e-01]) GPa
+Cij (gradient) / GPa    :     49.58649168899076
+Error in Cij / GPa      :     1.0968070243758083
+Correlation coefficient :     0.9992669270714087
+Setting C44 (4) to 0.309495 +/- 0.006846
+
+
+[[b C11 b C12 b C12 b     b     b    ]
+ [b C12 b C11 b C12 b     b     b    ]
+ [b C12 b C12 b C11 b     b     b    ]
+ [b     b     b     b C44 b     b    ]
+ [b     b     b     b     b C44 b    ]
+ [b     b     b     b     b     b C44]]
+
+ = 
+
+[[212.3  113.11 113.11   0.     0.     0.  ]
+ [113.11 212.3  113.11   0.     0.     0.  ]
+ [113.11 113.11 212.3    0.     0.     0.  ]
+ [  0.     0.     0.    49.59   0.     0.  ]
+ [  0.     0.     0.     0.    49.59   0.  ]
+ [  0.     0.     0.     0.     0.    49.59]]
+C_11 = 212.30 +/- 4.98 GPa
+C_12 = 113.11 +/- 2.68 GPa
+C_44 = 49.59 +/- 1.10 GPa
+============================================================
+Property calculation output:
+
+
+Summary of computed properties:
+{'E_vs_V': [(10.215150836679499, -1128.139124972677, [-0.5034996282017963, -0.5034996282034968, -0.5034996282018903, 4.77271472697407e-13, -8.76299733762236e-14, 9.36197093282302e-13]), (10.555655864569072, -1128.295519235387, [-0.41601190073021027, -0.41601190072924854, -0.4160119007297016, 4.315054643431772e-13, -6.312121057186342e-13, 3.8273125932787933e-13]), (10.896160892458315, -1128.4234402778293, [-0.3373697000142275, -0.3373697000148118, -0.33736970001508954, 5.639984182374847e-14, -2.375875050464715e-13, 3.1983345345237246e-13]), (11.236665920347578, -1128.5268634007666, [-0.271558475909645, -0.2715584759092554, -0.2715584759093468, -1.2349246840341003e-12, -6.56537559543987e-15, 9.043493342622868e-14]), (11.577170948236875, -1128.6094972891965, [-0.21549764409822025, -0.21549764409653432, -0.21549764409798833, -3.3152930577733995e-13, 3.450133488489797e-13, 3.724394659520744e-13]), (11.917675976126228, -1128.674335853292, [-0.1658284838136971, -0.1658284838141969, -0.16582848381375442, 3.1344996910598285e-14, 1.0268915928032661e-12, 2.000589088719498e-13]), (12.258181004015555, -1128.7230960804177, [-0.12150658277428329, -0.12150658277563622, -0.12150658277537171, -5.613823047981608e-13, -2.901595346630688e-13, -1.9319252811461428e-13]), (12.59868603190487, -1128.7578696221303, [-0.08373688884516937, -0.0837368888447623, -0.08373688884407308, 4.49512517668447e-13, 1.5592042952327176e-13, -4.762626505747034e-13]), (12.939191059794187, -1128.7808016503761, [-0.05179660630898505, -0.05179660630988174, -0.05179660630876029, -6.167292648201135e-14, 1.5223501428890158e-13, 3.356300768530099e-13]), (13.279696087683481, -1128.7936452318215, [-0.024223343685666875, -0.02422334368483333, -0.024223343684985642, -7.514910475252789e-14, 3.179133266509012e-13, -2.186217526867864e-13]), (13.620201115572808, -1128.7976403358496, [1.8807811425972778e-05, 1.880781165010736e-05, 1.8807810669693827e-05, -2.2829459359875803e-13, -8.705656360649605e-14, -4.2041006368946877e-13]), (13.960706143462286, -1128.793999407657, [0.020861680305037753, 0.020861680304250438, 0.020861680304689077, 7.120058393235412e-14, -2.536856546554921e-13, -1.0130968519065521e-13]), (14.301211171351692, -1128.783685646018, [0.03924657566439846, 0.039246575663711585, 0.039246575663705895, -8.903506287482648e-14, 2.8526618096912157e-13, -5.168428748370563e-13]), (14.641716199240822, -1128.7676136801688, [0.05460878457076765, 0.05460878456932621, 0.05460878457022154, -2.2828019613373795e-13, 3.3600820922834647e-13, -4.024010907743682e-14]), (14.982221227130168, -1128.7468410435777, [0.0669604421677005, 0.0669604421684239, 0.06696044216776709, -1.5669608450051935e-13, 2.3845877910433573e-14, -1.8903218647981832e-13]), (15.322726255019592, -1128.722118367175, [0.07778871110740776, 0.07778871110688514, 0.07778871110731075, 5.303079762279911e-13, -3.008582985804753e-13, 2.544504296490635e-14]), (15.663231282908754, -1128.694039929455, [0.08672009080729881, 0.0867200908072105, 0.08672009080787847, -6.61645151142775e-13, -2.0238341065088982e-14, -7.633286809119107e-13]), (16.00373631079821, -1128.6632701349795, [0.09342923493527722, 0.0934292349344362, 0.09342923493486582, 4.755344746964242e-13, 1.078382754168794e-13, 3.974979909360047e-13]), (16.344241338687592, -1128.630889842097, [0.09748954330695213, 0.0974895433067507, 0.09748954330609853, 2.6695828333257307e-13, 3.016631089501802e-13, 3.002242352373052e-13]), (16.684746366576956, -1128.596577733034, [0.10323090411414369, 0.1032309041136357, 0.1032309041136902, 3.238589984345672e-13, -2.8244892365189074e-13, 5.4197889585389753e-14]), (17.025251394466117, -1128.560877668125, [0.10571181325483217, 0.1057118132543095, 0.10571181325400113, 4.159805063329714e-13, 2.0269683155884957e-13, 1.0403426809180895e-13])], 'c11': 212.3015312966381, 'c12': 113.11216378791806, 'c44': 49.58649168899076, 'B': 146.17528629082474}
+============================================================
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_6_28_0_16_7_29_156"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
