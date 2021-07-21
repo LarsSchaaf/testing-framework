@@ -1,8 +1,8 @@
 #!/bin/bash
-#$ -pe smp 24 # number of cores requested
+#$ -pe smp 32 # number of cores requested
 #$ -l h_rt=99:00:00  # time requested in HH:MM:SS format
 #$ -S /bin/bash      # shell to run the job ingit s
-#$ -N batch_vac           # name of job (will appear in output of qstat)
+#$ -N phon_ver           # name of job (will appear in output of qstat)
 #$ -o $JOB_NAME.o$JOB_ID
 #$ -e $JOB_NAME.e$JOB_ID
 #$ -q any
@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=${NSLOTS}
 eval "$(/home/lls34/miniconda3/bin/conda shell.bash hook)" # Works
 conda activate phd-code
 
-cd /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/example_models/In2O3/run_dir
+cd /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir
 
 # model=DFT_QE
 # model=GAP_it1_50s
@@ -42,13 +42,21 @@ model=GAP_itB_3_b_5
 model=GAP_itB_1_b_4_virials2
 model=GAP_inA_50s_virials2
 model=GAP_itB_3_b_7_virials2
-#model=DFT_QE
+model=DFT_QE
+model=DFT_QE_Plasebo
+model=GAP_itC_0_b_1
 
+model=GAP_itC_1_d_1_o
+model=GAP_itC_1_d_2_a
+model=GAP_itC_1_d_2_o
+model=GAP_itC_1_d_3_a_train0.01_0.1
+model=GAP_itC_1_d_3_a_train0.01_0.001
+model=GAP_itC_1_d_4_train0.01_0.1
+model=GAP_itC_1_d_4_train0.01_0.001
 
-
-
-
-
+model=GAP_itC_1_d_3_o_train0.01_0.1
+# model=GAP_itC_1_d_3_o_train0.01_0.01
+# model=GAP_itC_1_d_3_o_train0.01_0.001
 
 
 
@@ -62,7 +70,8 @@ echo Analysing Model@ $model
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_Ia3
 # date +"%T" >> time.txt
-# python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_Pbca
 # date +"%T" >> time.txt
@@ -70,7 +79,7 @@ echo Analysing Model@ $model
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_Ia3
 # date +"%T" >> time.txt
-python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonon_veryify_R3c
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In 
 # date +"%T" >> time.txt

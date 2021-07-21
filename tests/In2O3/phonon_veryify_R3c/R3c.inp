@@ -1,0 +1,57 @@
+&CONTROL
+  calculation='scf',
+  prefix='calc',
+  pseudo_dir='/home/lls34/programs/QuantumExpresso/pseudopotentials/use_pot',
+  outdir='.',
+  tprnfor=.true.,
+  tstress=.true.,
+  etot_conv_thr=1,
+  forc_conv_thr=0.0019446903957408628,
+/
+&SYSTEM
+  ibrav=0,
+  celldm(1)=1.8897261245650618,
+  nat=10,
+  ntyp=2,
+  ecutwfc=65.0,
+  ecutrho=520.0,
+  nbnd=64,
+  occupations='smearing',
+  smearing='gaussian',
+  degauss=0.007349864494991328,
+  nspin=2,
+  starting_magnetization(1)=0.0,
+  starting_magnetization(2)=0.0,
+  input_dft='PBE',
+  nosym=.false.,
+  noinv=.false.,
+  nosym_evc=.false.,
+  no_t_rev=.false.,
+/
+&ELECTRONS
+  diagonalization='david',
+  conv_thr=7.3498644949913266e-09,
+  mixing_beta=0.5,
+  mixing_ndim=10,
+  electron_maxstep=500,
+/
+CELL_PARAMETERS alat
+    5.879406410000000     0.000000000000000     0.000000000000000
+    3.226158737651722     4.915213071009489     0.000000000000000
+    3.226158737651722     1.741490762991984     4.596360457561627
+ATOMIC_SPECIES
+In 114.818 In.UPF
+O 15.999 O.UPF
+ATOMIC_POSITIONS {crystal}
+In      0.857214999585667     0.857215000568794     0.857215000080784
+In      0.642785000592073     0.642784998945367     0.642785000714968
+In      0.357215000465496     0.357215000052574     0.357214999815533
+In      0.142784998654676     0.142785000463646     0.142785000449717
+O       0.749999999892286     0.453279000668923     0.046721000666237
+O       0.546721000280753     0.953278999958620     0.249999999044808
+O       0.953278999793584     0.249999999835554     0.546721000931487
+O       0.046721001263985     0.749999999162387     0.453278999599014
+O       0.250000000048909     0.546721000363518     0.953278999864264
+O       0.453278999846805     0.046720999810162     0.749999999310059
+K_POINTS automatic
+6 6 6  0 0 0 

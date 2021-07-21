@@ -4,7 +4,7 @@ Taken from the testing-framework: phonons.py
 """
 import sys
 
-# from utilities import *
+from utilities import *
 import numpy as np
 import phonopy
 import ase.units
@@ -58,6 +58,9 @@ def do_phonons(
     for bulk_i, bulk_struct_test in enumerate(bulk_struct_tests):
 
         to_dir = run_root
+
+        os.makedirs(to_dir, exist_ok=True)
+        print(f"To Dir : {to_dir}")
         at0 = get_relaxed_bulk(bulk_struct_test)
 
         # magnetic moments could change the symmetry, ignored here for now
@@ -137,6 +140,9 @@ def do_phonons(
 
             to_fname = os.path.join(to_dir, "FORCES.UNDISPL.{}".format("txt"))
             np.savetxt(to_fname, f0)
+
+            to_fname = os.path.join(to_dir, "CALC_UNDISPL.{}".format(FILE_LABEL))
+            ase.io.write(to_fname, at0_sc)
 
             for (displ_i, at) in enumerate(at_sets):
                 at0_sc.set_positions(at.positions)

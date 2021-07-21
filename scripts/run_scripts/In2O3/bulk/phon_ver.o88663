@@ -1,0 +1,13 @@
+node36
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+21/07/2021 10:57:58
+--------------------------------------------------------
+model: GAP_itC_1_d_3_o_train0.01_0.001
+args:
+Analysing Model@ GAP_itC_1_d_3_o_train0.01_0.001
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+../In2O3-model-GAP_itC_1_d_3_o_train0.01_0.001-test-bulk_In2O3_R3c-properties.json already exists and is not empty, not rerunning test
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+../In2O3-model-GAP_itC_1_d_3_o_train0.01_0.001-test-phonons_In2O3_R3c-properties.json already exists and is not empty, not rerunning test
