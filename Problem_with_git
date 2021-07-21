@@ -1,0 +1,32 @@
+git filter-branch --force --index-filter \                                                                                                                                                                                                                                                                                                              ─╯
+  "git rm --cached --ignore-unmatch scripts/run_scripts/In2O3/bulk/nohup.out" \
+  --prune-empty --tag-name-filter cat -- --all
+Rewrite e3d360c8483839062025d9404f2e4c5a95c0ea74 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite c5825c7fbc48da2123793e45c244c106335d5048 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite d65b9f4e6670df38a13c49cc8a3cd45779cd6a4b (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 3a90785e2bd2d0e2b39740ba29448abbc370274a (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 282e87210633434d7bd96662135372dec7ca9590 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 943d01adff4e65bc90279817a82bd8885995d8b8 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 1626c68c8112222a13d43b6a63503ac49f2d58d4 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 9ca5c3b7aa81e9ddcb3d96a59da6b1bfbd09a907 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 703c9f1d1c3c38c93d42c2bdfff74487bae2ef20 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 195e3f08e439f055f3d40c66173eccaa8004d440 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite f70aa0891e4f9defe448ceef9f44a55a316e5a70 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 0124a9a7fa155962dc4dd0719d01bbd477a60bab (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 5c1464cd3c5b72fc441eac34e7beb08abec39e3e (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 06f67fa892d40e4a0bc2c7fe57ecb6e46173721c (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite c16e5998d92c27a0c30d5785e7dc8374ab9307d8 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite 1e5425e88ab34cad4c8ef80c63d8b2717208ec77 (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+Rewrite bbfa43e1f116c96495cb6206a8ec8bd67423cdde (224/242) (10 seconds passed, remaining 0 predicted)    rm 'scripts/run_scripts/In2O3/bulk/nohup.out'
+
+Ref 'refs/heads/formatted' was rewritten
+Ref 'refs/heads/lls34' was rewritten
+Ref 'refs/heads/public' was rewritten
+Ref 'refs/remotes/origin/public' was rewritten
+Ref 'refs/remotes/origin/casv2' was rewritten
+Ref 'refs/remotes/origin/lls34' was rewritten
+Ref 'refs/remotes/origin/more_point_defect_tests' was rewritten
+Ref 'refs/remotes/origin/mult_test_sets' was rewritten
+WARNING: Ref 'refs/remotes/origin/public' is unchanged
+Ref 'refs/remotes/origin/tks32-SiC' was rewritten
+Ref 'refs/remotes/origin/update_for_extxyz_io' was rewritten
