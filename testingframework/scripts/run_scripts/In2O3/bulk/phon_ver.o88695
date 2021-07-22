@@ -1,0 +1,33 @@
+node15
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+21/07/2021 16:08:57
+--------------------------------------------------------
+model: GAP_itC_1_d_4_train0.01_0.01
+args:
+Analysing Model@ GAP_itC_1_d_4_train0.01_0.01
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/testingframework/scripts/../share
+
+###### START RUN Wed Jul 21 16:09:03 2021 ######
+Model GAP_itC_1_d_4_train0.01_0.01, Test bulk_In2O3_R3c
+Test run at 2021-07-21 16:09
+
+model file: ../../models/GAP_itC_1_d_4_train0.01_0.01/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itC_1_d_4_train0.01_0.01/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/testingframework/scripts/../share
+
+###### START RUN Wed Jul 21 16:09:05 2021 ######
+Model GAP_itC_1_d_4_train0.01_0.01, Test phonons_In2O3_R3c
+Test run at 2021-07-21 16:09
+
+model file: ../../models/GAP_itC_1_d_4_train0.01_0.01/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itC_1_d_4_train0.01_0.01/model.py'

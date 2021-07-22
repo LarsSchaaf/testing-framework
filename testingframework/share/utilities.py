@@ -182,11 +182,14 @@ def relax_config(
     fix_cell_dependence=False,
     applied_P=0.0,
     hydrostatic_strain=False,
+    run_root="./",
+    model=None,
     **kwargs,
 ):
 
     # get from base model if requested
-    import model
+    if model is None:
+        import model
 
     if config_label is not None:
         save_file = run_root + "-" + config_label + "-relaxed.xyz"
@@ -306,7 +309,7 @@ def relax_config(
         opt.run(tol, max_steps)
 
     if refine_symmetry_tol is not None:
-        print("symmetry at end of relaxation at desired tol")
+        print(f"symmetry at end of relaxation at desired tol {refine_symmetry_tol}")
         check_symmetry(atoms, refine_symmetry_tol, verbose=True)
     print("symmetry at end of relaxation at default tol 1e-6")
     check_symmetry(atoms, 1.0e-6, verbose=True)
@@ -482,6 +485,7 @@ def get_relaxed_bulk(bulk_struct_test, model_name=None):
         model_test_root(u_model_name=model_name, u_test_name=bulk_struct_test)
         + "-relaxed.xyz",
     )
+    print(f"Reading Relaxed Bulk: {bulk_model_test_relaxed}")
     try:
         bulk = read(bulk_model_test_relaxed, format="extxyz")
     except:

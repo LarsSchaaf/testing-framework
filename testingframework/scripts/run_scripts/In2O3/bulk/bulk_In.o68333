@@ -1,0 +1,81 @@
+node27
+Bulk In - Testing Framework
+QE
+Running Testing_Framework on womble with md
+04/06/2021 11:47:08
+--------------------------------------------------------
+model: GAP_itB_4_b_3
+args:
+Analysing Model@ GAP_itB_4_b_3
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Fri Jun  4 11:47:12 2021 ######
+Model GAP_itB_4_b_3, Test bulk_In2O3_Ia3
+Test run at 2021-06-04 11:47
+
+model file: ../../models/GAP_itB_4_b_3/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 118, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itB_4_b_3/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Fri Jun  4 11:47:14 2021 ######
+Model GAP_itB_4_b_3, Test bulk_In2O3_R3c
+Test run at 2021-06-04 11:47
+
+model file: ../../models/GAP_itB_4_b_3/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 118, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itB_4_b_3/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Fri Jun  4 11:47:15 2021 ######
+Model GAP_itB_4_b_3, Test bulk_In2O3_Pbca
+Test run at 2021-06-04 11:47
+
+model file: ../../models/GAP_itB_4_b_3/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 118, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itB_4_b_3/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Fri Jun  4 11:47:17 2021 ######
+Model GAP_itB_4_b_3, Test bulk_In2O3_Pbcn
+Test run at 2021-06-04 11:47
+
+model file: ../../models/GAP_itB_4_b_3/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 118, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itB_4_b_3/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Fri Jun  4 11:47:18 2021 ######
+Model GAP_itB_4_b_3, Test phonons_In2O3_Ia3
+Test run at 2021-06-04 11:47
+
+model file: ../../models/GAP_itB_4_b_3/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 118, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itB_4_b_3/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Fri Jun  4 11:47:19 2021 ######
+Model GAP_itB_4_b_3, Test bulk_In
+Test run at 2021-06-04 11:47
+
+model file: ../../models/GAP_itB_4_b_3/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 118, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itB_4_b_3/model.py'

@@ -1,0 +1,167 @@
+node7
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+16/07/2021 00:05:36
+--------------------------------------------------------
+model: DFT_QE_Plasebo
+args:
+Analysing Model@ DFT_QE_Plasebo
+SETUP
+Creating 5 displacements
+CALCULATE
+Calculating for 5 displacements
+[gapalysis.espresso.espresso] Problem: both self.kspacing ([3, 3, 3]) and self.kpts are set, keeping self.kspacing
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Fri Jul 16 00:05:43 2021 ######
+Model DFT_QE_Plasebo, Test phonons_In2O3_R3c
+Test run at 2021-07-16 00:05
+
+model file: ../../models/DFT_QE_Plasebo/model.py
+============================================================
+"""
+Python script for running QE with the github calculator
+
+This was originally created by Sandip on Feb 2021. The code requires the espresso
+.esspresso to be installed. This was modified to work on womble0 using the GridEngine
+
+The script can be called by
+
+`python qe_simple.py traj.xyz 2`
+
+where 2 is the configuraiton in traj.xyz that should be calculated
+
+ - still need to do out directory
+"""
+from gapalysis.espresso.espresso import mEspresso
+from gapalysis.espresso.siteconfig import mSiteConfig
+
+# from espresso.espresso import Espresso  # Espresso Library
+# from espresso.siteconfig import SiteConfig
+
+from ase import units  # Ase Units
+import os
+import numpy as np
+import ase.io
+import json
+
+
+# ---- Setting Variables
+
+config = json.load(
+    open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "config.yml"))
+)
+
+# Environements
+os.environ["SCRATCH"] = config["SCRATCH"]  # Scratch directory
+PSP_PATH = config["PSP_PATH"]  # Pseudo Potentails
+SCEDULER = config["SCEDULER"]  # slurm, pbs, ge (grid engine)
+
+# Sceduling Properties
+if SCEDULER is not None:
+    site = mSiteConfig(SCEDULER, scratchenv="SCRATCH")
+else:
+    site = None
+
+# Folder in working dir in which it will be written
+prefix = "QE_"
+
+kspacing = 0.25 / (2.0 * np.pi)
+
+xc = "PBE"
+dipole = {"status": False}
+calcstress = True
+spinpol = True
+
+convergence = {
+    "energy": 1e-7,
+    "mixing": 0.5,
+    "nmix": 10,
+    "maxsteps": 500,
+    "diag": "david",
+}
+
+# Detail Save?
+save_things = False
+if save_things:
+    output = {
+        "removesave": False,
+        "avoidio": False,
+        "removewf": False,
+        "wf_collect": True,
+    }
+else:
+    output = {
+        "removesave": True,
+        "avoidio": False,
+        "removewf": True,
+        "wf_collect": False,
+    }
+
+# Magnetic Moments
+magmom_dict = {"In": 10, "O": 4, "C": 3, "H": 1, "N": 3}
+
+calculator = mEspresso(
+    # pseudopotentials=pseudopotentials,
+    pw=65 * units.Ry,  # plane-wave cut-off in eV, defaults to 350.0
+    dw=8 * 65 * units.Ry,  # default 10*pw
+    xc=xc,
+    kspacing=kspacing,
+    calculation="scf",
+    psppath=PSP_PATH,
+    parflags="-npool 1",
+    nbands=-20,
+    occupations="smearing",
+    sigma=0.1,
+    smearing="gaussian",
+    convergence=convergence,
+    dipole=dipole,
+    calcstress=calcstress,
+    spinpol=spinpol,
+    # vdw_corr='D3',
+    output=output,
+    outdir=prefix,
+    site=site,
+    txt="pw.out",
+    magmom_dict=magmom_dict,
+)
+
+name = "QE_2021_June_10"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonons_In2O3_R3c/test.py
+============================================================
+from phonons import *
+
+properties = do_phonons(
+    ["bulk_In2O3_R3c"],
+    n_supercell=2,
+    band_paths=[["G", "L", "B1", "B", "Z", "G", "X", "Q", "F", "P1", "Z", "L", "P"]],
+    dx=0.010583544211276823,
+)  # GHNGPHPN from matrials project, before: GXKGL
+============================================================
+Called mSiteCOnfig
+Nslots = 24
+Nslots = 24
+Nslots = 24
+Nslots = 24
+To Dir : In2O3-model-DFT_QE_Plasebo-test-phonons_In2O3_R3c
+Reading Relaxed Bulk: ../In2O3-model-DFT_QE_Plasebo-test-bulk_In2O3_R3c-relaxed.xyz
+WARNING:gapalysis.espresso.espresso:Problem: both self.kspacing ([3, 3, 3]) and self.kpts are set, keeping self.kspacing
+[gapalysis.espresso.espresso] Kpts : [3 3 3], kpoint spacing : 0.039788735772973836
+INFO:gapalysis.espresso.espresso:Kpts : [3 3 3], kpoint spacing : 0.039788735772973836
+[gapalysis.espresso.espresso] Setting Initial Moments
+INFO:gapalysis.espresso.espresso:Setting Initial Moments
+[gapalysis.espresso.espresso] Checking Atom Type
+Running on 24 nodes
+Running on 24 nodes
+INFO:gapalysis.espresso.espresso:Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+DEBUG:gapalysis.espresso.espresso:Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+WARNING:gapalysis.espresso.espresso:atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+INFO:gapalysis.espresso.espresso:Updating Parameters to fit Bulk
+[node7:09533] 23 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node7:09533] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

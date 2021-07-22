@@ -1,0 +1,3 @@
+1
+Lattice="3.43062895 0.0 0.0 0.23743309832649084 3.4224027402392583 0.0 -1.8340310238485267 -1.7112013698259878 2.340370711670459" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}}" pbc="T T T"
+In       0.00000000       0.00000000       0.00000000        0

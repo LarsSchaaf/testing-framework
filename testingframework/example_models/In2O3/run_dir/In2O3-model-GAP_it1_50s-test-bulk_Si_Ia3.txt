@@ -1,0 +1,23 @@
+
+###### START RUN Mon May 17 16:19:55 2021 ######
+Model GAP_it1_50s, Test bulk_Si_Ia3
+Test run at 2021-05-17 16:19
+
+model file: ../../models/GAP_it1_50s/model.py
+============================================================
+from quippy.potential import Potential
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_it1_50s"
+============================================================
+test file: ../../tests/bulk_Si_Ia3/test.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 124, in <module>
+    sys.stdout.write(open(test_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../tests/bulk_Si_Ia3/test.py'

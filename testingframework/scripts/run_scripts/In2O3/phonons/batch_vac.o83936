@@ -1,0 +1,317 @@
+node9
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+15/07/2021 14:09:20
+--------------------------------------------------------
+model: GAP_itB_3_b_7_virials2
+args: -f
+Analysing Model@ GAP_itB_3_b_7_virials2
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:09:27 2021 ######
+Model GAP_itC_0_m_0.2_a_0.2, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:09
+
+model file: ../../models/GAP_itC_0_m_0.2_a_0.2/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itC_0_m_0.2_a_0.2"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_0_a_1/m_0.2_a_0.2/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_0_m_0.2_a_0.2-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_13_0_4_14_51_957"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:09:41 2021 ######
+Model GAP_itC_0_m_0.05_a_0.5, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:09
+
+model file: ../../models/GAP_itC_0_m_0.05_a_0.5/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itC_0_m_0.05_a_0.5"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_0_a_1/m_0.05_a_0.5/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_0_m_0.05_a_0.5-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_13_0_0_59_17_158"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:09:56 2021 ######
+Model GAP_itC_0_m_0.05_a_1, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:09
+
+model file: ../../models/GAP_itC_0_m_0.05_a_1/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itC_0_m_0.05_a_1"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_0_a_1/m_0.05_a_1/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_0_m_0.05_a_1-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_13_0_0_58_48_84"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:10:11 2021 ######
+Model GAP_itC_0_m_0.1_a_0.5, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:10
+
+model file: ../../models/GAP_itC_0_m_0.1_a_0.5/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itC_0_m_0.1_a_0.5"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_0_a_1/m_0.1_a_0.5/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_0_m_0.1_a_0.5-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_13_0_2_46_1_486"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:10:26 2021 ######
+Model GAP_itC_0_m_0.1_a_0.2, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:10
+
+model file: ../../models/GAP_itC_0_m_0.1_a_0.2/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itC_0_m_0.1_a_0.2"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_0_a_1/m_0.1_a_0.2/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_0_m_0.1_a_0.2-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_13_0_2_46_31_981"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:10:41 2021 ######
+Model GAP_itC_0_b_1, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:10
+
+model file: ../../models/GAP_itC_0_b_1/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itC_0_b_1"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_0_b/itC_0_b_1/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_0_b_1-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_14_0_7_1_24_758"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Thu Jul 15 14:10:48 2021 ######
+Model GAP_itB_3_b_7_virials2, Test phonon_veryify_R3c
+Test run at 2021-07-15 14:10
+
+model file: ../../models/GAP_itB_3_b_7_virials2/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+name = "GAP_itB_3_b_7_virials2"
+no_checkpoint = True
+============================================================
+test file: ../../../../tests/In2O3/phonon_veryify_R3c/test.py
+============================================================
+from testingframework.share.evaluate import evaluate_all_xyz
+import os
+
+
+properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/virials/itB_3_b_7_virials2/gap_fit/gap.xml
+To Dir: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itB_3_b_7_virials2-test-phonon_veryify_R3c
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 171, in <module>
+    import test  # import and run the current test
+  File "../../../../tests/In2O3/phonon_veryify_R3c/test.py", line 5, in <module>
+    properties = evaluate_all_xyz(os.path.abspath(os.path.dirname(__file__)), compare=True)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/share/evaluate.py", line 59, in evaluate_all_xyz
+    df = np.linalg.norm(fs - ats_org.get_forces(), axis=1)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 793, in get_forces
+    raise RuntimeError('Atoms object has no calculator.')
+RuntimeError: Atoms object has no calculator.
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_6_30_0_3_0_0_646"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now

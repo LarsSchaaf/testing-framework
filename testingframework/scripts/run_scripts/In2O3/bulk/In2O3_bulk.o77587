@@ -1,0 +1,93 @@
+node29
+Bulk In - Vacancy
+testing-framework
+Vacancy
+29/06/2021 14:53:38
+--------------------------------------------------------
+model: GAP_itA_50s_virials2
+args:
+Analysing Model@ GAP_itA_50s_virials2
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:42 2021 ######
+Model GAP_itA_50s_virials2, Test bulk_In2O3_Ia3
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:44 2021 ######
+Model GAP_itA_50s_virials2, Test bulk_In2O3_R3c
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:45 2021 ######
+Model GAP_itA_50s_virials2, Test bulk_In2O3_Pbca
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:47 2021 ######
+Model GAP_itA_50s_virials2, Test bulk_In2O3_Pbcn
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:48 2021 ######
+Model GAP_itA_50s_virials2, Test phonons_In2O3_Ia3
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:50 2021 ######
+Model GAP_itA_50s_virials2, Test phonons_In2O3_R3c
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+
+###### START RUN Tue Jun 29 14:53:51 2021 ######
+Model GAP_itA_50s_virials2, Test bulk_In
+Test run at 2021-06-29 14:53
+
+model file: ../../models/GAP_itA_50s_virials2/model.py
+============================================================
+Traceback (most recent call last):
+  File "../../../scripts/run-model-test.py", line 143, in <module>
+    sys.stdout.write(open(model_file).read())
+FileNotFoundError: [Errno 2] No such file or directory: '../../models/GAP_itA_50s_virials2/model.py'

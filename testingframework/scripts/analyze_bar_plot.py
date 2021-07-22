@@ -4,6 +4,7 @@ from analyze_utils import *
 import numpy as np
 from ase.units import _k
 import matplotlib.pyplot as plt
+import os
 
 (args, models, tests, default_analysis_settings) = analyze_start("bulk_Si_diamond")
 bulk_data = read_properties(models, tests, args.test_set)
@@ -137,7 +138,12 @@ plt.xticks(
 )
 plt.yticks(model_vals, model_ticks, ha="left", va="center")
 
-plt.savefig("bar_plot.pdf")
+for i in range(1000):
+    fname = f"bar_plot_{i}.png"
+    if os.path.exists(fname):
+        continue
+    print(f"saved: {fname}")
+    plt.savefig(fname)
 
 
 # fig = plt.figure(figsize=(8, 3))

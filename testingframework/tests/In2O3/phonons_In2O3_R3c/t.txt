@@ -1,0 +1,6 @@
+previous train: 
+/data/lls34/Data/In2O3/In2O3_LS_1/04_QE2/02_Ameliorate_GAP/02_Itterative/03_Bulk/Volume_Curves/It3_3/Training/Data_b_GAP_train.xyz
+new .xyz files
+/data/lls34/Data/In2O3/In2O3_LS_1/04_QE2/02_Ameliorate_GAP/02_Itterative/03_Bulk/Volume_Curves/It4_3/Training/Data_b_GAP/GAP_ORG/
+to_fname
+/data/lls34/Data/In2O3/In2O3_LS_1/04_QE2/02_Ameliorate_GAP/02_Itterative/03_Bulk/Volume_Curves/It4_3/Training/Data_b_GAP/GAP_ORG/_train.xyz

@@ -12,6 +12,9 @@ import ase.units
 
 (args, models, tests, default_analysis_settings) = analyze_start(["phonon_bulks"])
 
+print(
+    f"(args, models, tests, default_analysis_settings): {(args, models, tests, default_analysis_settings)}"
+)
 data = read_properties(models, tests, args.test_set)
 
 ref_model_name = default_analysis_settings["ref_model"]

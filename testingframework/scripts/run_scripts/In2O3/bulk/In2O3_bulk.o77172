@@ -1,0 +1,11 @@
+node21
+Bulk In - Vacancy
+testing-framework
+Vacancy
+28/06/2021 22:53:43
+--------------------------------------------------------
+model: GAP_itB_2_b_6_virials2
+args:
+Analysing Model@ GAP_itB_2_b_6_virials2
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/scripts/../share
+../In2O3-model-GAP_itB_2_b_6_virials2-test-bulk_In2O3_Ia3-properties.json already exists and is not empty, not rerunning test

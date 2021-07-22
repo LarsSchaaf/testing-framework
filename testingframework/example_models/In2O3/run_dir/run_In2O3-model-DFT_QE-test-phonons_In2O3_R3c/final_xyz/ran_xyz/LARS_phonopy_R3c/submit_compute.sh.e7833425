@@ -1,0 +1,5 @@
+/gpfs/nobackup/projects/quantumchemistry/rom_cq/SOAPML/venv/SOAPML/lib/python3.6/site-packages/ase/io/extxyz.py:999: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  'from calculator'.format(key))
+Walltime used is = 00:47:36
+CPU Time used is = 30:57:41
+Memory used is   = 24501192kb

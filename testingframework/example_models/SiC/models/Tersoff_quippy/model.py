@@ -11,8 +11,8 @@ calculator = Potential(
     param_str="""
 <Tersoff_params n_types="3" label="PRB_39">
 <comment> Tersoff, Phys. Rev. B v 39, p 5566 (1989) </comment>
-<per_type_data type="1" atomic_num="6" 
-  A="1393.6" B="346.7" lambda="3.4879" mu="2.2119" beta="0.00000015724" 
+<per_type_data type="1" atomic_num="6"
+  A="1393.6" B="346.7" lambda="3.4879" mu="2.2119" beta="0.00000015724"
   n="0.72751" c="38049" d="4.384" h="-0.57058" R="1.8" S="2.1" />
 <per_type_data type="2" atomic_num="14"
  A="1830.8" B="471.18" lambda="2.4799" mu="1.7322" beta="0.0000011"

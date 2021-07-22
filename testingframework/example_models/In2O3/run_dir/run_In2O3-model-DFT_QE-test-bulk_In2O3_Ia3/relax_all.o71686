@@ -1,0 +1,670 @@
+node35
+Cutoff MD - Locality Testing
+quippy
+Done on Edvins 110 strucutre
+18/06/2021 08:42:25
+--------------------------------------------------------
+[data      ] Logging setup was successful.
+[QE-relax  ] Logging setup was successful.
+[QE-relax  ] END_FNAME: In2O3-model-DFT_QE-test-bulk_In2O3_Ia3-E_vs_V_02-relaxed_relaxed_qe.xyz
+[QE-relax  ] OUT_FNAME: In2O3-model-DFT_QE-test-bulk_In2O3_Ia3-E_vs_V_02-relaxed_relaxing_traj_qe.xyz
+[QE-relax  ] Initial Symmetry: {'number': 206, 'hall_number': 502, 'international': 'Ia-3', 'hall': '-I 2b 2c 3', 'choice': '', 'transformation_matrix': array([[ 0.5, -0.5,  0.5],
+       [ 0.5,  0.5, -0.5],
+       [-0.5,  0.5,  0.5]]), 'origin_shift': array([1., 1., 1.]), 'rotations': array([[[ 1,  0,  0],
+        [ 0,  1,  0],
+        [ 0,  0,  1]],
+
+       [[-1,  0,  0],
+        [ 0, -1,  0],
+        [ 0,  0, -1]],
+
+       [[-1,  0,  0],
+        [-1,  0,  1],
+        [-1,  1,  0]],
+
+       [[ 1,  0,  0],
+        [ 1,  0, -1],
+        [ 1, -1,  0]],
+
+       [[ 0, -1,  1],
+        [ 0, -1,  0],
+        [ 1, -1,  0]],
+
+       [[ 0,  1, -1],
+        [ 0,  1,  0],
+        [-1,  1,  0]],
+
+       [[ 0,  1, -1],
+        [ 1,  0, -1],
+        [ 0,  0, -1]],
+
+       [[ 0, -1,  1],
+        [-1,  0,  1],
+        [ 0,  0,  1]],
+
+       [[ 0,  0,  1],
+        [ 1,  0,  0],
+        [ 0,  1,  0]],
+
+       [[ 0,  0, -1],
+        [-1,  0,  0],
+        [ 0, -1,  0]],
+
+       [[-1,  1,  0],
+        [-1,  0,  0],
+        [-1,  0,  1]],
+
+       [[ 1, -1,  0],
+        [ 1,  0,  0],
+        [ 1,  0, -1]],
+
+       [[ 1, -1,  0],
+        [ 0, -1,  1],
+        [ 0, -1,  0]],
+
+       [[-1,  1,  0],
+        [ 0,  1, -1],
+        [ 0,  1,  0]],
+
+       [[ 0,  0, -1],
+        [ 0,  1, -1],
+        [ 1,  0, -1]],
+
+       [[ 0,  0,  1],
+        [ 0, -1,  1],
+        [-1,  0,  1]],
+
+       [[ 0,  1,  0],
+        [ 0,  0,  1],
+        [ 1,  0,  0]],
+
+       [[ 0, -1,  0],
+        [ 0,  0, -1],
+        [-1,  0,  0]],
+
+       [[-1,  0,  1],
+        [-1,  1,  0],
+        [-1,  0,  0]],
+
+       [[ 1,  0, -1],
+        [ 1, -1,  0],
+        [ 1,  0,  0]],
+
+       [[ 0, -1,  0],
+        [ 1, -1,  0],
+        [ 0, -1,  1]],
+
+       [[ 0,  1,  0],
+        [-1,  1,  0],
+        [ 0,  1, -1]],
+
+       [[ 1,  0, -1],
+        [ 0,  0, -1],
+        [ 0,  1, -1]],
+
+       [[-1,  0,  1],
+        [ 0,  0,  1],
+        [ 0, -1,  1]]], dtype=int32), 'translations': array([[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
+       [ 4.51360549e-09,  3.07639691e-09,  2.97077740e-09],
+       [ 5.00000005e-01,  5.00000002e-01,  2.20399299e-09],
+       [ 5.00000000e-01,  5.00000001e-01,  7.66784414e-10],
+       [ 2.30961272e-09,  5.00000003e-01,  5.00000001e-01],
+       [ 2.20399321e-09,  5.00000000e-01,  5.00000002e-01],
+       [ 5.00000002e-01,  7.66784414e-10,  5.00000003e-01],
+       [ 5.00000002e-01,  2.30961250e-09,  5.00000000e-01],
+       [ 7.71414044e-10,  9.99999999e-01, -5.28097566e-11],
+       [ 3.74219145e-09,  3.79500120e-09,  3.02358716e-09],
+       [ 2.97540725e-09,  5.00000004e-01,  5.00000002e-01],
+       [ 1.53819868e-09,  4.99999999e-01,  5.00000001e-01],
+       [ 5.00000002e-01,  1.59100821e-09,  5.00000003e-01],
+       [ 5.00000003e-01,  1.48538870e-09,  5.00000000e-01],
+       [ 5.00000004e-01,  5.00000001e-01,  7.13974657e-10],
+       [ 5.00000001e-01,  5.00000002e-01,  2.25680274e-09],
+       [ 7.18604287e-10,  5.28097566e-11,  9.99999999e-01],
+       [ 3.79500165e-09,  3.02358716e-09,  3.74219145e-09],
+       [ 5.00000003e-01,  2.25680274e-09,  5.00000004e-01],
+       [ 5.00000001e-01,  8.19594170e-10,  4.99999999e-01],
+       [ 5.00000004e-01,  5.00000001e-01,  1.53819846e-09],
+       [ 5.00000001e-01,  5.00000002e-01,  1.43257894e-09],
+       [ 1.48538892e-09,  5.00000003e-01,  5.00000001e-01],
+       [ 3.02821701e-09,  5.00000000e-01,  5.00000002e-01]]), 'wyckoffs': ['d', 'd', 'd', 'b', 'd', 'd', 'd', 'd', 'd', 'b', 'd', 'd', 'd', 'd', 'b', 'b', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'], 'site_symmetry_symbols': ['2..', '2..', '2..', '.-3.', '2..', '2..', '2..', '2..', '2..', '.-3.', '2..', '2..', '2..', '2..', '.-3.', '.-3.', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'], 'crystallographic_orbits': array([ 0,  0,  0,  3,  0,  0,  0,  0,  0,  3,  0,  0,  0,  0,  3,  3, 16,
+       16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
+       16, 16, 16, 16, 16, 16], dtype=int32), 'equivalent_atoms': array([ 0,  0,  0,  3,  0,  0,  0,  0,  0,  3,  0,  0,  0,  0,  3,  3, 16,
+       16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
+       16, 16, 16, 16, 16, 16], dtype=int32), 'primitive_lattice': array([[ 9.04655635e+00,  7.09044649e-10, -1.26416609e-16],
+       [-3.01551878e+00,  8.52917512e+00, -1.22810816e-09],
+       [-3.01551878e+00, -4.26458756e+00,  7.38648233e+00]]), 'mapping_to_primitive': array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39], dtype=int32), 'std_lattice': array([[10.44606349,  0.        ,  0.        ],
+       [ 0.        , 10.44606349,  0.        ],
+       [ 0.        ,  0.        , 10.44606349]]), 'std_types': array([49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49,  8,
+        8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+        8,  8,  8,  8,  8,  8, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49,
+       49, 49, 49, 49, 49,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+        8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8], dtype=int32), 'std_positions': array([[0.034915  , 0.        , 0.75      ],
+       [0.465085  , 0.5       , 0.75      ],
+       [0.465085  , 0.        , 0.25      ],
+       [0.25      , 0.75      , 0.25      ],
+       [0.        , 0.25      , 0.465085  ],
+       [0.75      , 0.034915  , 0.        ],
+       [0.25      , 0.034915  , 0.5       ],
+       [0.75      , 0.465085  , 0.5       ],
+       [0.5       , 0.25      , 0.034915  ],
+       [0.75      , 0.25      , 0.25      ],
+       [0.        , 0.75      , 0.034915  ],
+       [0.5       , 0.75      , 0.465085  ],
+       [0.25      , 0.465085  , 0.        ],
+       [0.034915  , 0.5       , 0.25      ],
+       [0.25      , 0.25      , 0.75      ],
+       [0.25      , 0.25      , 0.25      ],
+       [0.1550049 , 0.38402326, 0.38798764],
+       [0.11201236, 0.1550049 , 0.61597674],
+       [0.88798764, 0.1550049 , 0.11597674],
+       [0.11597674, 0.88798764, 0.1550049 ],
+       [0.1550049 , 0.61597674, 0.11201236],
+       [0.11201236, 0.3449951 , 0.11597674],
+       [0.88402326, 0.61201236, 0.1550049 ],
+       [0.88798764, 0.3449951 , 0.61597674],
+       [0.61201236, 0.3449951 , 0.38402326],
+       [0.61201236, 0.1550049 , 0.88402326],
+       [0.3449951 , 0.61597674, 0.88798764],
+       [0.38402326, 0.38798764, 0.1550049 ],
+       [0.3449951 , 0.38402326, 0.61201236],
+       [0.1550049 , 0.11597674, 0.88798764],
+       [0.1550049 , 0.88402326, 0.61201236],
+       [0.38798764, 0.3449951 , 0.88402326],
+       [0.38798764, 0.1550049 , 0.38402326],
+       [0.61597674, 0.11201236, 0.1550049 ],
+       [0.3449951 , 0.11597674, 0.11201236],
+       [0.61597674, 0.88798764, 0.3449951 ],
+       [0.11597674, 0.11201236, 0.3449951 ],
+       [0.3449951 , 0.88402326, 0.38798764],
+       [0.88402326, 0.38798764, 0.3449951 ],
+       [0.38402326, 0.61201236, 0.3449951 ],
+       [0.534915  , 0.5       , 0.25      ],
+       [0.965085  , 0.        , 0.25      ],
+       [0.965085  , 0.5       , 0.75      ],
+       [0.75      , 0.25      , 0.75      ],
+       [0.5       , 0.75      , 0.965085  ],
+       [0.25      , 0.534915  , 0.5       ],
+       [0.75      , 0.534915  , 0.        ],
+       [0.25      , 0.965085  , 0.        ],
+       [0.        , 0.75      , 0.534915  ],
+       [0.25      , 0.75      , 0.75      ],
+       [0.5       , 0.25      , 0.534915  ],
+       [0.        , 0.25      , 0.965085  ],
+       [0.75      , 0.965085  , 0.5       ],
+       [0.534915  , 0.        , 0.75      ],
+       [0.75      , 0.75      , 0.25      ],
+       [0.75      , 0.75      , 0.75      ],
+       [0.6550049 , 0.88402326, 0.88798764],
+       [0.61201236, 0.6550049 , 0.11597674],
+       [0.38798764, 0.6550049 , 0.61597674],
+       [0.61597674, 0.38798764, 0.6550049 ],
+       [0.6550049 , 0.11597674, 0.61201236],
+       [0.61201236, 0.8449951 , 0.61597674],
+       [0.38402326, 0.11201236, 0.6550049 ],
+       [0.38798764, 0.8449951 , 0.11597674],
+       [0.11201236, 0.8449951 , 0.88402326],
+       [0.11201236, 0.6550049 , 0.38402326],
+       [0.8449951 , 0.11597674, 0.38798764],
+       [0.88402326, 0.88798764, 0.6550049 ],
+       [0.8449951 , 0.88402326, 0.11201236],
+       [0.6550049 , 0.61597674, 0.38798764],
+       [0.6550049 , 0.38402326, 0.11201236],
+       [0.88798764, 0.8449951 , 0.38402326],
+       [0.88798764, 0.6550049 , 0.88402326],
+       [0.11597674, 0.61201236, 0.6550049 ],
+       [0.8449951 , 0.61597674, 0.61201236],
+       [0.11597674, 0.38798764, 0.8449951 ],
+       [0.61597674, 0.61201236, 0.8449951 ],
+       [0.8449951 , 0.38402326, 0.88798764],
+       [0.38402326, 0.88798764, 0.8449951 ],
+       [0.88402326, 0.11201236, 0.8449951 ]]), 'std_rotation_matrix': array([[ 5.77350269e-01, -4.08248290e-01,  7.07106781e-01],
+       [ 5.77350269e-01,  8.16496581e-01, -1.17566179e-10],
+       [-5.77350269e-01,  4.08248291e-01,  7.07106781e-01]]), 'std_mapping_to_primitive': array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+       11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+       28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], dtype=int32), 'pointgroup': 'm-3'}
+[gapalysis.espresso.espresso] Problem: both self.kspacing ([4, 4, 4]) and self.kpts are set, keeping self.kspacing
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/handlers.py", line 69, in emit
+    if self.shouldRollover(record):
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/handlers.py", line 185, in shouldRollover
+    msg = "%s\n" % self.format(record)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 925, in format
+    return fmt.format(record)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 664, in format
+    record.message = record.getMessage()
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 369, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "relax.py", line 87, in <module>
+    atoms.set_calculator(calc_qe_dft)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/utils/__init__.py", line 531, in deprecated_function
+    return func(*args, **kwargs)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 281, in set_calculator
+    self.calc = calc
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 300, in calc
+    calc.set_atoms(self)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/GapAlysis/gapalysis/gapalysis/espresso/espresso.py", line 408, in set_atoms
+    log.info(
+Message: [4, 4, 4]
+Arguments: (array([[ 0.        , 12.5136962 ,  6.89001816, ...,  5.12446463,
+         6.06710116,  8.48940908],
+       [12.5136962 ,  0.        ,  7.38648233, ...,  9.34836398,
+         8.76597572,  6.38097117],
+       [ 6.89001816,  7.38648233,  0.        , ...,  2.26255026,
+         7.36570611,  6.52485413],
+       ...,
+       [ 5.12446463,  9.34836398,  2.26255026, ...,  0.        ,
+         7.14867623,  7.62877158],
+       [ 6.06710116,  8.76597572,  7.36570611, ...,  7.14867623,
+         0.        ,  5.72332828],
+       [ 8.48940908,  6.38097117,  6.52485413, ...,  7.62877158,
+         5.72332828,  0.        ]]),)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 1081, in emit
+    msg = self.format(record)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 925, in format
+    return fmt.format(record)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 664, in format
+    record.message = record.getMessage()
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/logging/__init__.py", line 369, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "relax.py", line 87, in <module>
+    atoms.set_calculator(calc_qe_dft)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/utils/__init__.py", line 531, in deprecated_function
+    return func(*args, **kwargs)
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 281, in set_calculator
+    self.calc = calc
+  File "/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/atoms.py", line 300, in calc
+    calc.set_atoms(self)
+  File "/home/lls34/GitHub/01_PhD/PhD_Code/submodules/GapAlysis/gapalysis/gapalysis/espresso/espresso.py", line 408, in set_atoms
+    log.info(
+Message: [4, 4, 4]
+Arguments: (array([[ 0.        , 12.5136962 ,  6.89001816, ...,  5.12446463,
+         6.06710116,  8.48940908],
+       [12.5136962 ,  0.        ,  7.38648233, ...,  9.34836398,
+         8.76597572,  6.38097117],
+       [ 6.89001816,  7.38648233,  0.        , ...,  2.26255026,
+         7.36570611,  6.52485413],
+       ...,
+       [ 5.12446463,  9.34836398,  2.26255026, ...,  0.        ,
+         7.14867623,  7.62877158],
+       [ 6.06710116,  8.76597572,  7.36570611, ...,  7.14867623,
+         0.        ,  5.72332828],
+       [ 8.48940908,  6.38097117,  6.52485413, ...,  7.62877158,
+         5.72332828,  0.        ]]),)
+[gapalysis.espresso.espresso] Kpts : [4 4 4], kpoint spacing : 0.039788735772973836
+[gapalysis.espresso.espresso] Setting Initial Moments
+[QE-relax  ] Fixing symmetry
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/optimize/precon/lbfgs.py:132: UserWarning: The system is likely too small to benefit from the standard preconditioner, hence it is disabled. To re-enable preconditioning, call`PreconLBFGS` by explicitly providing the kwarg `precon`
+  warnings.warn('The system is likely too small to benefit from ' +
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:19550] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:19550] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Called mSiteCOnfig
+Nslots = 16
+Nslots = 16
+Nslots = 16
+Nslots = 16
+Running on 16 nodes
+Running on 16 nodes
+2
+['             z_valence', '"1.300000000000000E+001"\n']
+2
+['             z_valence', '"6.000000000000000E+000"\n']
+2
+['             z_valence', '"1.300000000000000E+001"\n']
+2
+['             z_valence', '"6.000000000000000E+000"\n']
+2 (array([13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,  6,
+        6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,  6,
+        6,  6,  6,  6,  6,  6]), {'In': 13, 'O': 6})
+2
+['             z_valence', '"1.300000000000000E+001"\n']
+2
+['             z_valence', '"6.000000000000000E+000"\n']
+converted stress matrix to ase compatible format
+PreconLBFGS:   0  09:59:29   -45151.496286       0.0230
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:44454] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:44454] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   1  11:17:13   -45151.496444       0.0204
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:04107] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:04107] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   2  12:34:36   -45151.496736       0.0157
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:28683] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:28683] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   3  13:52:11   -45151.497222       0.0133
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:53336] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:53336] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   4  15:08:46   -45151.497712       0.0161
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:12550] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:12550] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   5  16:26:15   -45151.497815       0.0143
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:37333] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:37333] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   6  17:43:24   -45151.497979       0.0093
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:61636] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:61636] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   7  18:54:43   -45151.498071       0.0068
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[gapalysis.espresso.espresso] Checking Atom Type
+[gapalysis.espresso.espresso] Detected atom type: bulk
+[gapalysis.espresso.espresso] atoms.info doesnt contain `type` so cant double check detected type
+[gapalysis.espresso.espresso] Updating Parameters to fit Bulk
+[node35:19975] 15 more processes have sent help message help-mpi-btl-base.txt / btl:no-nics
+[node35:19975] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_DENORMAL
+converted stress matrix to ase compatible format
+PreconLBFGS:   8  19:44:28   -45151.498101       0.0034
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/io/extxyz.py:997: UserWarning: write_xyz() overwriting array "forces" present in atoms.arrays with stored results from calculator
+  warnings.warn('write_xyz() overwriting array "{0}" present '
+[QE-relax  ] Final Symmetry: {'number': 206, 'hall_number': 502, 'international': 'Ia-3', 'hall': '-I 2b 2c 3', 'choice': '', 'transformation_matrix': array([[ 0.5, -0.5,  0.5],
+       [ 0.5,  0.5, -0.5],
+       [-0.5,  0.5,  0.5]]), 'origin_shift': array([9.99999999e-01, 1.00000000e+00, 1.79788517e-10]), 'rotations': array([[[ 1,  0,  0],
+        [ 0,  1,  0],
+        [ 0,  0,  1]],
+
+       [[-1,  0,  0],
+        [ 0, -1,  0],
+        [ 0,  0, -1]],
+
+       [[-1,  0,  0],
+        [-1,  0,  1],
+        [-1,  1,  0]],
+
+       [[ 1,  0,  0],
+        [ 1,  0, -1],
+        [ 1, -1,  0]],
+
+       [[ 0, -1,  1],
+        [ 0, -1,  0],
+        [ 1, -1,  0]],
+
+       [[ 0,  1, -1],
+        [ 0,  1,  0],
+        [-1,  1,  0]],
+
+       [[ 0,  1, -1],
+        [ 1,  0, -1],
+        [ 0,  0, -1]],
+
+       [[ 0, -1,  1],
+        [-1,  0,  1],
+        [ 0,  0,  1]],
+
+       [[ 0,  0,  1],
+        [ 1,  0,  0],
+        [ 0,  1,  0]],
+
+       [[ 0,  0, -1],
+        [-1,  0,  0],
+        [ 0, -1,  0]],
+
+       [[-1,  1,  0],
+        [-1,  0,  0],
+        [-1,  0,  1]],
+
+       [[ 1, -1,  0],
+        [ 1,  0,  0],
+        [ 1,  0, -1]],
+
+       [[ 1, -1,  0],
+        [ 0, -1,  1],
+        [ 0, -1,  0]],
+
+       [[-1,  1,  0],
+        [ 0,  1, -1],
+        [ 0,  1,  0]],
+
+       [[ 0,  0, -1],
+        [ 0,  1, -1],
+        [ 1,  0, -1]],
+
+       [[ 0,  0,  1],
+        [ 0, -1,  1],
+        [-1,  0,  1]],
+
+       [[ 0,  1,  0],
+        [ 0,  0,  1],
+        [ 1,  0,  0]],
+
+       [[ 0, -1,  0],
+        [ 0,  0, -1],
+        [-1,  0,  0]],
+
+       [[-1,  0,  1],
+        [-1,  1,  0],
+        [-1,  0,  0]],
+
+       [[ 1,  0, -1],
+        [ 1, -1,  0],
+        [ 1,  0,  0]],
+
+       [[ 0, -1,  0],
+        [ 1, -1,  0],
+        [ 0, -1,  1]],
+
+       [[ 0,  1,  0],
+        [-1,  1,  0],
+        [ 0,  1, -1]],
+
+       [[ 1,  0, -1],
+        [ 0,  0, -1],
+        [ 0,  1, -1]],
+
+       [[-1,  0,  1],
+        [ 0,  0,  1],
+        [ 0, -1,  1]]], dtype=int32), 'translations': array([[0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+       [3.04775138e-09, 4.84179585e-10, 1.84441706e-09],
+       [5.00000003e-01, 5.00000001e-01, 2.20399410e-09],
+       [5.00000000e-01, 5.00000000e-01, 1.00000000e+00],
+       [8.43757064e-10, 5.00000000e-01, 5.00000000e-01],
+       [2.20399454e-09, 5.00000000e-01, 5.00000002e-01],
+       [5.00000002e-01, 1.00000000e+00, 5.00000002e-01],
+       [5.00000001e-01, 8.43756620e-10, 5.00000000e-01],
+       [6.01667161e-10, 9.99999999e-01, 6.80118628e-10],
+       [2.44608422e-09, 1.76596515e-09, 1.16429844e-09],
+       [2.80566148e-09, 5.00000002e-01, 5.00000002e-01],
+       [2.42090015e-10, 4.99999999e-01, 5.00000000e-01],
+       [5.00000000e-01, 1.00000000e+00, 5.00000001e-01],
+       [5.00000003e-01, 9.22208088e-10, 5.00000001e-01],
+       [5.00000002e-01, 5.00000001e-01, 3.20541593e-10],
+       [5.00000001e-01, 5.00000000e-01, 1.52387547e-09],
+       [1.28178568e-09, 9.99999999e-01, 9.99999999e-01],
+       [1.76596604e-09, 1.16429844e-09, 2.44608422e-09],
+       [5.00000002e-01, 1.52387525e-09, 5.00000002e-01],
+       [5.00000001e-01, 9.99999999e-01, 4.99999999e-01],
+       [5.00000002e-01, 4.99999999e-01, 2.42089904e-10],
+       [5.00000001e-01, 5.00000002e-01, 1.60232716e-09],
+       [9.22208532e-10, 5.00000001e-01, 5.00000002e-01],
+       [2.12554263e-09, 4.99999999e-01, 5.00000000e-01]]), 'wyckoffs': ['d', 'd', 'd', 'b', 'd', 'd', 'd', 'd', 'd', 'b', 'd', 'd', 'd', 'd', 'b', 'b', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'], 'site_symmetry_symbols': ['2..', '2..', '2..', '.-3.', '2..', '2..', '2..', '2..', '2..', '.-3.', '2..', '2..', '2..', '2..', '.-3.', '.-3.', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'], 'crystallographic_orbits': array([ 0,  0,  0,  3,  0,  0,  0,  0,  0,  3,  0,  0,  0,  0,  3,  3, 16,
+       16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
+       16, 16, 16, 16, 16, 16], dtype=int32), 'equivalent_atoms': array([ 0,  0,  0,  3,  0,  0,  0,  0,  0,  3,  0,  0,  0,  0,  3,  3, 16,
+       16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
+       16, 16, 16, 16, 16, 16], dtype=int32), 'primitive_lattice': array([[ 9.04655635e+00,  7.09043370e-10,  4.56755541e-15],
+       [-3.01551878e+00,  8.52917512e+00, -1.22810796e-09],
+       [-3.01551878e+00, -4.26458756e+00,  7.38648233e+00]]), 'mapping_to_primitive': array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39], dtype=int32), 'std_lattice': array([[10.44606349,  0.        ,  0.        ],
+       [ 0.        , 10.44606349,  0.        ],
+       [ 0.        ,  0.        , 10.44606349]]), 'std_types': array([49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49,  8,
+        8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+        8,  8,  8,  8,  8,  8, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49,
+       49, 49, 49, 49, 49,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,
+        8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8], dtype=int32), 'std_positions': array([[0.03434311, 0.        , 0.75      ],
+       [0.46565689, 0.5       , 0.75      ],
+       [0.46565689, 0.        , 0.25      ],
+       [0.25      , 0.75      , 0.25      ],
+       [0.        , 0.25      , 0.46565689],
+       [0.75      , 0.03434311, 0.        ],
+       [0.25      , 0.03434311, 0.5       ],
+       [0.75      , 0.46565689, 0.5       ],
+       [0.5       , 0.25      , 0.03434311],
+       [0.75      , 0.25      , 0.25      ],
+       [0.        , 0.75      , 0.03434311],
+       [0.5       , 0.75      , 0.46565689],
+       [0.25      , 0.46565689, 0.        ],
+       [0.03434311, 0.5       , 0.25      ],
+       [0.25      , 0.25      , 0.75      ],
+       [0.25      , 0.25      , 0.25      ],
+       [0.1546042 , 0.38364654, 0.38824728],
+       [0.11175272, 0.1546042 , 0.61635346],
+       [0.88824728, 0.1546042 , 0.11635346],
+       [0.11635346, 0.88824728, 0.1546042 ],
+       [0.1546042 , 0.61635346, 0.11175272],
+       [0.11175272, 0.3453958 , 0.11635346],
+       [0.88364654, 0.61175272, 0.1546042 ],
+       [0.88824728, 0.3453958 , 0.61635346],
+       [0.61175272, 0.3453958 , 0.38364654],
+       [0.61175272, 0.1546042 , 0.88364654],
+       [0.3453958 , 0.61635346, 0.88824728],
+       [0.38364654, 0.38824728, 0.1546042 ],
+       [0.3453958 , 0.38364654, 0.61175272],
+       [0.1546042 , 0.11635346, 0.88824728],
+       [0.1546042 , 0.88364654, 0.61175272],
+       [0.38824728, 0.3453958 , 0.88364654],
+       [0.38824728, 0.1546042 , 0.38364654],
+       [0.61635346, 0.11175272, 0.1546042 ],
+       [0.3453958 , 0.11635346, 0.11175272],
+       [0.61635346, 0.88824728, 0.3453958 ],
+       [0.11635346, 0.11175272, 0.3453958 ],
+       [0.3453958 , 0.88364654, 0.38824728],
+       [0.88364654, 0.38824728, 0.3453958 ],
+       [0.38364654, 0.61175272, 0.3453958 ],
+       [0.53434311, 0.5       , 0.25      ],
+       [0.96565689, 0.        , 0.25      ],
+       [0.96565689, 0.5       , 0.75      ],
+       [0.75      , 0.25      , 0.75      ],
+       [0.5       , 0.75      , 0.96565689],
+       [0.25      , 0.53434311, 0.5       ],
+       [0.75      , 0.53434311, 0.        ],
+       [0.25      , 0.96565689, 0.        ],
+       [0.        , 0.75      , 0.53434311],
+       [0.25      , 0.75      , 0.75      ],
+       [0.5       , 0.25      , 0.53434311],
+       [0.        , 0.25      , 0.96565689],
+       [0.75      , 0.96565689, 0.5       ],
+       [0.53434311, 0.        , 0.75      ],
+       [0.75      , 0.75      , 0.25      ],
+       [0.75      , 0.75      , 0.75      ],
+       [0.6546042 , 0.88364654, 0.88824728],
+       [0.61175272, 0.6546042 , 0.11635346],
+       [0.38824728, 0.6546042 , 0.61635346],
+       [0.61635346, 0.38824728, 0.6546042 ],
+       [0.6546042 , 0.11635346, 0.61175272],
+       [0.61175272, 0.8453958 , 0.61635346],
+       [0.38364654, 0.11175272, 0.6546042 ],
+       [0.38824728, 0.8453958 , 0.11635346],
+       [0.11175272, 0.8453958 , 0.88364654],
+       [0.11175272, 0.6546042 , 0.38364654],
+       [0.8453958 , 0.11635346, 0.38824728],
+       [0.88364654, 0.88824728, 0.6546042 ],
+       [0.8453958 , 0.88364654, 0.11175272],
+       [0.6546042 , 0.61635346, 0.38824728],
+       [0.6546042 , 0.38364654, 0.11175272],
+       [0.88824728, 0.8453958 , 0.38364654],
+       [0.88824728, 0.6546042 , 0.88364654],
+       [0.11635346, 0.61175272, 0.6546042 ],
+       [0.8453958 , 0.61635346, 0.61175272],
+       [0.11635346, 0.38824728, 0.8453958 ],
+       [0.61635346, 0.61175272, 0.8453958 ],
+       [0.8453958 , 0.38364654, 0.88824728],
+       [0.38364654, 0.88824728, 0.8453958 ],
+       [0.88364654, 0.11175272, 0.8453958 ]]), 'std_rotation_matrix': array([[ 5.77350269e-01, -4.08248290e-01,  7.07106781e-01],
+       [ 5.77350269e-01,  8.16496581e-01, -1.17566040e-10],
+       [-5.77350269e-01,  4.08248291e-01,  7.07106781e-01]]), 'std_mapping_to_primitive': array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
+       11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+       28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], dtype=int32), 'pointgroup': 'm-3'}
+[QE-relax  ] Saving end Energy / Writing relaxed structure to file In2O3-model-DFT_QE-test-bulk_In2O3_Ia3-E_vs_V_02-relaxed_relaxed_qe.xyz

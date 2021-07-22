@@ -8,3 +8,5 @@ example_models/Si/models/GAP/*
 .DS_Store
 *.eggs
 *.egg-info
+
+testingframework/example_models/In2O3/models/*

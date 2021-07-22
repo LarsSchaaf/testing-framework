@@ -1,0 +1,9 @@
+{
+  "ref_model": "QE_DFT",
+  "element_ref_struct": {
+    "In2O3": "bulk_In2O3_Ia3"
+  },
+  "multicomponent_constraints": [
+    "bulk_In2O3_Ia3"
+  ]
+}
