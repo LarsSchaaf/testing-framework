@@ -80,7 +80,7 @@ my_path = os.path.split(os.path.realpath(__file__))[0]
 share_dir = os.path.join(my_path, "..", "share")
 print("share_dir", share_dir)
 sys.path.insert(0, share_dir)
-import utilities
+from testingframework.share import utilities
 
 ## # remove this path, since later relative path will be different
 ## sys.path.remove(share_dir)

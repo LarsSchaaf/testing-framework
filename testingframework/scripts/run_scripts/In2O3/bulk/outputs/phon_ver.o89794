@@ -1,0 +1,45 @@
+node33
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+23/07/2021 12:19:16
+--------------------------------------------------------
+model: GAP_itC_1_d_3_a_train0.01_0.01
+args: -f
+Analysing Model@ GAP_itC_1_d_3_a_train0.01_0.01
+Failed to read relaxed bulk '../In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-relaxed.xyz', perhaps bulk test hasn't been run yet
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Fri Jul 23 12:19:22 2021 ######
+Model GAP_itC_1_d_3_a_train0.01_0.01, Test phonons_In2O3_R3c
+Test run at 2021-07-23 12:19
+
+model file: ../../models/GAP_itC_1_d_3_a_train0.01_0.01/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+# name = "GAP_itC_0_c_1"
+no_checkpoint = True
+name = "itC_1_d_3_1_train0.01_0.01"============================================================
+test file: ../../../../tests/In2O3/phonons_In2O3_R3c/test.py
+============================================================
+from phonons import *
+
+properties = do_phonons(
+    ["bulk_In2O3_R3c"],
+    n_supercell=2,
+    band_paths=[["G", "L", "B1", "B", "Z", "G", "X", "Q", "F", "P1", "Z", "L", "P"]],
+    dx=0.010583544211276823,
+)  # GHNGPHPN from matrials project, before: GXKGL
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_1_d_1/Displacements/itC_1_d_3_a/itC_1_d_3_a_train0.01_0.01/gap_fit/gap.xml
+To Dir : /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-phonons_In2O3_R3c
+Reading Relaxed Bulk: ../In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-relaxed.xyz
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_21_0_10_20_55_82"

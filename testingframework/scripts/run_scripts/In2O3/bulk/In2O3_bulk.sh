@@ -25,7 +25,7 @@ export OMP_NUM_THREADS=${NSLOTS}
 eval "$(/home/lls34/miniconda3/bin/conda shell.bash hook)" # Works
 conda activate phd-code
 
-cd /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testing-framework/testingframework/example_models/In2O3/run_dir
+cd /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir
 
 # model=DFT_QE
 # model=GAP_it1_50s
@@ -50,19 +50,20 @@ model=GAP_itC_1_d_1_o
 model=GAP_itC_1_d_2_a
 model=GAP_itC_1_d_2_o
 model=GAP_itC_1_d_3_a_train0.01_0.1
-model=GAP_itC_1_d_3_a_train0.01_0.001
-model=GAP_itC_1_d_4_train0.01_0.1
-model=GAP_itC_1_d_4_train0.01_0.001
+model=GAP_itC_1_d_3_a_train0.01_0.01
+# model=GAP_itC_1_d_4_train0.01_0.1
+# model=GAP_itC_1_d_4_train0.01_0.001
 
-model=GAP_itC_1_d_3_o_train0.01_0.1
+# model=GAP_itC_1_d_3_o_train0.01_0.1
 # model=GAP_itC_1_d_3_o_train0.01_0.01
 # model=GAP_itC_1_d_3_o_train0.01_0.001
 
-model=GAP_itC_1_d_4_train0.01_0.001
-model=GAP_itC_1_d_4_train0.01_0.01
+# model=GAP_itC_1_d_4_train0.01_0.001
+# model=GAP_itC_1_d_4_train0.01_0.01
+model=GAP_itC_1_d_3_o_train0.01_0.001
+# model=GAP_itC_1_d_4_train0.01_0.1
 
-
-args=''
+args='-f'
 
 echo model: $model
 echo args: $args
@@ -72,9 +73,10 @@ echo Analysing Model@ $model
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_Ia3
 # date +"%T" >> time.txt
-python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonon_veryify_R3c
-python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_R3c
-python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonon_veryify_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c_big_displ
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_Pbca
 # date +"%T" >> time.txt

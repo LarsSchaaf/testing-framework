@@ -485,10 +485,34 @@ def get_relaxed_bulk(bulk_struct_test, model_name=None):
         model_test_root(u_model_name=model_name, u_test_name=bulk_struct_test)
         + "-relaxed.xyz",
     )
+
+    # For some reason depending on which potential is run either exists ??
+    bulk_model_test_relaxed_2 = os.path.join(
+        "..",
+        "run_"  # For some reason this is sometimes needed
+        + model_test_root(u_model_name=model_name, u_test_name=bulk_struct_test)
+        + "-relaxed.xyz",
+    )
+
+    if os.path.exists(bulk_model_test_relaxed):
+        pass
+    elif os.path.exists(bulk_model_test_relaxed_2):
+        bulk_model_test_relaxed = bulk_model_test_relaxed_2
+    else:
+        raise ValueError(
+            "Relaxed Bulk doesnt exists: {}".format(bulk_model_test_relaxed)
+        )
+
     print(f"Reading Relaxed Bulk: {bulk_model_test_relaxed}")
+
     try:
         bulk = read(bulk_model_test_relaxed, format="extxyz")
     except:
+        print(
+            "Failed to read relaxed bulk '{}', perhaps bulk test hasn't been run yet\n".format(
+                bulk_model_test_relaxed
+            )
+        )
         sys.stderr.write(
             "Failed to read relaxed bulk '{}', perhaps bulk test hasn't been run yet\n".format(
                 bulk_model_test_relaxed

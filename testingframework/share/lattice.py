@@ -1,5 +1,5 @@
 import numpy as np
-from testingframework.share.utilities import relax_config, run_root
+from testingframework.share.utilities import relax_config
 import ase.io, sys, os.path
 from ase.optimize.precon import PreconLBFGS
 import matscipy.elasticity
@@ -14,6 +14,8 @@ import pathlib
 DATA_DIR = "/data/lls34/"
 
 LOG_DIR = pathlib.Path(os.path.join(DATA_DIR, "logs/"))
+
+run_root = os.getcwd()
 
 
 def initialize_logger(logger, log_name=None):

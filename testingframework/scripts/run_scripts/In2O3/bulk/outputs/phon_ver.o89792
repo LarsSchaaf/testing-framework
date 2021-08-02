@@ -1,0 +1,1022 @@
+node21
+Bulk In - Phonons Ia3
+testing-framework
+Phonons
+23/07/2021 11:15:48
+--------------------------------------------------------
+model: GAP_itC_1_d_3_a_train0.01_0.01
+args: -f
+Analysing Model@ GAP_itC_1_d_3_a_train0.01_0.01
+[lattice   ] Starting do_latice for itC_1_d_3_1_train0.01_0.01
+share_dir /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/scripts/../share
+
+###### START RUN Fri Jul 23 11:15:55 2021 ######
+Model GAP_itC_1_d_3_a_train0.01_0.01, Test bulk_In2O3_R3c
+Test run at 2021-07-23 11:15
+
+model file: ../../models/GAP_itC_1_d_3_a_train0.01_0.01/model.py
+============================================================
+from quippy.potential import Potential
+import os
+
+model_dir = os.path.dirname(os.path.realpath(__file__))
+gap_xml = os.path.join(model_dir, "gap_fit/gap.xml")
+
+print(f"Gap Fit : using gap.xml from {gap_xml}")
+calculator = Potential(param_filename=gap_xml)
+
+# name = "GAP_itC_0_c_1"
+no_checkpoint = True
+name = "itC_1_d_3_1_train0.01_0.01"============================================================
+test file: ../../../../tests/In2O3/bulk_In2O3_R3c/test.py
+============================================================
+import os.path
+import lattice
+
+# The primitive unit cell was used for this
+properties = lattice.do_lattice(os.path.abspath(os.path.dirname(__file__)), "trigonal")
+============================================================
+Gap Fit : using gap.xml from /data/lls34/Data/In2O3/In2O3_QE_June21/GAPModels/iterations/itC-Phonons/Itterations/itC_1_d_1/Displacements/itC_1_d_3_a/itC_1_d_3_a_train0.01_0.01/gap_fit/gap.xml
+INFO:lattice:Starting do_latice for itC_1_d_3_1_train0.01_0.01
+[lattice   ]     Relax bulk as is first!
+INFO:lattice:    Relax bulk as is first!
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-bulk-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.01 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:05   -11287.683675       0.0159       0.0033
+PreconLBFGS:   1  11:16:06   -11287.684297       0.0246       0.0007
+PreconLBFGS:   2  11:16:06   -11287.684411       0.0227       0.0001
+PreconLBFGS:   3  11:16:07   -11287.684535       0.0035       0.0000
+/home/lls34/miniconda3/envs/phd-code/lib/python3.8/site-packages/ase/optimize/precon/lbfgs.py:132: UserWarning: The system is likely too small to benefit from the standard preconditioner, hence it is disabled. To re-enable preconditioning, call`PreconLBFGS` by explicitly providing the kwarg `precon`
+  warnings.warn('The system is likely too small to benefit from ' +
+[lattice   ]     Relaxed structure: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-relaxed.xyz
+symmetry at end of relaxation at desired tol 0.01
+ase.spacegroup.symmetrize: prec 0.01 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+INFO:lattice:    Relaxed structure: /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-relaxed.xyz
+[lattice   ] Calculating E vs. V
+10
+Lattice="5.878960736244068 0.0054815073311961435 0.003784903786203712 3.230496754183107 4.91183266270691 0.0037849037862039453 3.230496754183106 1.7438324381336758 4.591858323124078" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=4 energy=-11287.684535258672 stress="-2.8577179877361762e-05 6.486974589246955e-06 4.479164956684698e-06 6.486974589246955e-06 -3.709278557420123e-05 2.4178669162417873e-06 4.479164956684698e-06 2.4178669162417873e-06 -3.892497236477376e-05" free_energy=-11287.684535258672 pbc="T T T"
+In      10.57754399       5.70979194       3.94253110        0       0.00293346       0.00158349       0.00109338
+In       7.93238739       4.28192798       2.95661110        1      -0.00293346      -0.00158349      -0.00109338
+In       4.40756687       2.37921864       1.64281704        2       0.00293346       0.00158349       0.00109338
+In       1.76241026       0.95135468       0.65689703        3      -0.00293346      -0.00158349      -0.00109338
+O        6.02446893       2.31311540       0.21749733        4       0.00000000       0.00049114      -0.00071129
+O        7.10042054       5.12300560       1.15364194        5      -0.00041059       0.00076064       0.00000000
+O        8.17901408       2.18596976       2.51342649        6       0.00041059      -0.00026950      -0.00071129
+O        4.16094017       4.47517686       2.08600164        7      -0.00041059       0.00026950       0.00071129
+O        6.31548532       4.34803122       4.38193081        8       0.00000000      -0.00049114       0.00071129
+O        5.23953372       1.53814102       3.44578620        9       0.00041059      -0.00076064       0.00000000
+INFO:lattice:Calculating E vs. V
+[lattice   ] Starting calc_E_vs_V for itC_1_d_3_1_train0.01_0.01
+DEBUG:lattice:Starting calc_E_vs_V for itC_1_d_3_1_train0.01_0.01
+[lattice   ] Runs for decreasing Volume: 
+DEBUG:lattice:Runs for decreasing Volume: 
+[lattice   ] Decreased volume 0/-10
+INFO:lattice:Decreased volume 0/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_000-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_000-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_000-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:07   -11287.684535       0.0035       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -1/-10
+INFO:lattice:Decreased volume -1/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-01-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-01-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-01-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:07   -11287.639725       0.0800       0.0007
+PreconLBFGS:   1  11:16:08   -11287.640368       0.0618       0.0004
+PreconLBFGS:   2  11:16:08   -11287.642007       0.0488       0.0006
+PreconLBFGS:   3  11:16:08   -11287.642205       0.0293       0.0000
+PreconLBFGS:   4  11:16:09   -11287.642307       0.0042       0.0003
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -2/-10
+INFO:lattice:Decreased volume -2/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-02-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-02-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-02-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:09   -11287.505489       0.0810       0.0015
+PreconLBFGS:   1  11:16:10   -11287.506340       0.0927       0.0011
+PreconLBFGS:   2  11:16:10   -11287.507709       0.0452       0.0009
+PreconLBFGS:   3  11:16:11   -11287.509163       0.0164       0.0000
+PreconLBFGS:   4  11:16:11   -11287.509207       0.0023       0.0001
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -3/-10
+INFO:lattice:Decreased volume -3/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-03-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-03-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-03-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:11   -11287.266371       0.0999       0.0014
+PreconLBFGS:   1  11:16:12   -11287.267492       0.1194       0.0012
+PreconLBFGS:   2  11:16:12   -11287.270697       0.0394       0.0015
+PreconLBFGS:   3  11:16:12   -11287.271906       0.0143       0.0006
+PreconLBFGS:   4  11:16:13   -11287.272161       0.0139       0.0000
+PreconLBFGS:   5  11:16:13   -11287.272197       0.0059       0.0001
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -4/-10
+INFO:lattice:Decreased volume -4/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-04-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-04-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-04-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:13   -11286.912898       0.1053       0.0022
+PreconLBFGS:   1  11:16:14   -11286.914973       0.1709       0.0007
+PreconLBFGS:   2  11:16:15   -11286.922550       0.0311       0.0003
+PreconLBFGS:   3  11:16:15   -11286.922886       0.0174       0.0001
+PreconLBFGS:   4  11:16:15   -11286.922943       0.0081       0.0001
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -5/-10
+INFO:lattice:Decreased volume -5/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-05-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-05-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-05-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:16   -11286.438444       0.1156       0.0027
+PreconLBFGS:   1  11:16:16   -11286.441026       0.1867       0.0006
+PreconLBFGS:   2  11:16:17   -11286.448354       0.0289       0.0011
+PreconLBFGS:   3  11:16:17   -11286.448754       0.0295       0.0000
+PreconLBFGS:   4  11:16:18   -11286.448882       0.0118       0.0003
+PreconLBFGS:   5  11:16:18   -11286.448900       0.0027       0.0001
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -6/-10
+INFO:lattice:Decreased volume -6/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-06-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-06-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-06-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:18   -11285.819743       0.1687       0.0037
+PreconLBFGS:   1  11:16:19   -11285.823292       0.2520       0.0008
+PreconLBFGS:   2  11:16:19   -11285.831954       0.1057       0.0003
+PreconLBFGS:   3  11:16:20   -11285.833430       0.0092       0.0007
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -7/-10
+INFO:lattice:Decreased volume -7/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-07-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-07-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-07-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:20   -11285.043330       0.2234       0.0041
+PreconLBFGS:   1  11:16:20   -11285.048313       0.3460       0.0011
+PreconLBFGS:   2  11:16:21   -11285.062760       0.1563       0.0012
+PreconLBFGS:   3  11:16:21   -11285.067447       0.0676       0.0020
+PreconLBFGS:   4  11:16:22   -11285.068352       0.0117       0.0004
+PreconLBFGS:   5  11:16:22   -11285.068399       0.0009       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -8/-10
+INFO:lattice:Decreased volume -8/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-08-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-08-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-08-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:22   -11284.114522       0.2627       0.0065
+PreconLBFGS:   1  11:16:23   -11284.124516       0.4703       0.0010
+PreconLBFGS:   2  11:16:23   -11284.150793       0.2233       0.0041
+PreconLBFGS:   3  11:16:24   -11284.159106       0.2111       0.0031
+PreconLBFGS:   4  11:16:25   -11284.165540       0.0145       0.0003
+PreconLBFGS:   5  11:16:25   -11284.165618       0.0004       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -9/-10
+INFO:lattice:Decreased volume -9/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-09-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-09-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-09-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:25   -11283.019975       0.1074       0.0073
+PreconLBFGS:   1  11:16:26   -11283.031370       0.3403       0.0006
+PreconLBFGS:   2  11:16:26   -11283.042579       0.2992       0.0030
+PreconLBFGS:   3  11:16:26   -11283.048846       0.1016       0.0009
+PreconLBFGS:   4  11:16:27   -11283.050267       0.0825       0.0013
+PreconLBFGS:   5  11:16:27   -11283.050815       0.0362       0.0004
+PreconLBFGS:   6  11:16:28   -11283.050933       0.0008       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Decreased volume -10/-10
+INFO:lattice:Decreased volume -10/-10
+[lattice   ]     - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-10-unrelaxed.xyz
+DEBUG:lattice:    - writing unrelaxed /home/lls34/GitHub/01_PhD/PhD_Code/submodules/testing-framework/testingframework/example_models/In2O3/run_dir/run_In2O3-model-GAP_itC_1_d_3_a_train0.01_0.01-test-bulk_In2O3_R3c-E_vs_V_-10-unrelaxed.xyz
+[lattice   ]     - About to relax using relax_config() call
+DEBUG:lattice:    - About to relax using relax_config() call
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_-10-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:28   -11281.616404       0.1493       0.0102
+PreconLBFGS:   1  11:16:28   -11281.628398       0.3378       0.0004
+PreconLBFGS:   2  11:16:29   -11281.639507       0.0633       0.0008
+PreconLBFGS:   3  11:16:30   -11281.639973       0.0464       0.0009
+PreconLBFGS:   4  11:16:30   -11281.640153       0.0190       0.0004
+PreconLBFGS:   5  11:16:30   -11281.640189       0.0002       0.0000
+[lattice   ]     - Appending E_vs_V dictionary
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+DEBUG:lattice:    - Appending E_vs_V dictionary
+[lattice   ] Runs for increasing Volume: 
+DEBUG:lattice:Runs for increasing Volume: 
+[lattice   ]     Increased volume 1/10
+DEBUG:lattice:    Increased volume 1/10
+10
+Lattice="5.9275493920391185 0.005526811099141308 0.0038161854013625722 3.2571962852530008 4.952428162027021 0.0038161854013628077 3.2571962852529994 1.7582449300522482 4.629809286488473" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=4 pbc="T T T"
+In      10.66496567       5.75698245       3.97511548        0
+In       7.99794728       4.31731742       2.98104701        1
+In       4.44399469       2.39888249       1.65639465        2
+In       1.77697630       0.95921747       0.66232618        3
+O        6.07426019       2.33223292       0.21929491        4
+O        7.15910436       5.16534641       1.16317660        5
+O        8.24661231       2.20403644       2.53419955        6
+O        4.19532967       4.51216347       2.10324211        7
+O        6.36768178       4.38396699       4.41814675        8
+O        5.28283761       1.55085351       3.47426506        9
+trying to relax i 1
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_01-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:31   -11287.642981       0.0707       0.0002
+PreconLBFGS:   1  11:16:31   -11287.643814       0.0423       0.0011
+PreconLBFGS:   2  11:16:31   -11287.644982       0.0284       0.0004
+PreconLBFGS:   3  11:16:32   -11287.645208       0.0300       0.0000
+PreconLBFGS:   4  11:16:32   -11287.645370       0.0197       0.0003
+PreconLBFGS:   5  11:16:33   -11287.645504       0.0000       0.0000
+[lattice   ]     Increased volume 2/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="5.933858842144633 0.012020657685695749 0.00830009521802917 3.266087306482998 4.95413957828601 0.008300095218029603 3.266087306482994 1.763044331633106 4.629821004900399" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=6 energy=-11287.645504500084 stress="0.02276928458637472 -9.397830758836913e-07 -6.489072383083256e-07 -9.397830758836913e-07 0.022770518262787684 -3.502816104488549e-07 -6.489072383083256e-07 -3.502816104488549e-07 0.022770783695793727" free_energy=-11287.645504500084 pbc="T T T"
+In      10.67680794       5.76337494       3.97952940        0       0.00002357       0.00001272       0.00000879
+In       8.02224226       4.33043193       2.99010239        1      -0.00002357      -0.00001272      -0.00000879
+In       4.44379121       2.39877265       1.65631881        2       0.00002357       0.00001272       0.00000879
+In       1.78922553       0.96582964       0.66689180        3      -0.00002357      -0.00001272      -0.00000879
+O        6.08343779       2.33387281       0.23081766        4       0.00000000      -0.00000952       0.00001378
+O        7.17678895       5.16517621       1.16990540        5       0.00000796      -0.00001474       0.00000000
+O        8.25617394       2.21560003       2.54572816        6      -0.00000796       0.00000522       0.00001378
+O        4.20985952       4.51360455       2.10069304        7       0.00000796      -0.00000522      -0.00001378
+O        6.38259568       4.39533176       4.41560354        8      -0.00000000       0.00000952      -0.00001378
+O        5.28924452       1.56402837       3.47651580        9      -0.00000796       0.00001474       0.00000000
+DEBUG:lattice:    Increased volume 2/10
+10
+Lattice="5.9817146091411635 0.012117602660063186 0.008367034360561833 3.2924278577646127 4.994094042258573 0.00836703436056227 3.2924278577646087 1.7772630451184934 4.667159883552604" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=6 energy=-11287.645504500084 stress="0.02276928458637472 -9.397830758836913e-07 -6.489072383083256e-07 -9.397830758836913e-07 0.022770518262787684 -3.502816104488549e-07 -6.489072383083256e-07 -3.502816104488549e-07 0.022770783695793727" free_energy=-11287.645504500084 pbc="T T T"
+In      10.76291494       5.80985577       4.01162377        0       0.00002357       0.00001272       0.00000879
+In       8.08694055       4.36535627       3.01421716        1      -0.00002357      -0.00001272      -0.00000879
+In       4.47962978       2.41811843       1.66967679        2       0.00002357       0.00001272       0.00000879
+In       1.80365539       0.97361893       0.67227019        3      -0.00002357      -0.00001272      -0.00000879
+O        6.13249989       2.35269518       0.23267917        4       0.00000000      -0.00000952       0.00001378
+O        7.23466878       5.20683266       1.17934052        5       0.00000796      -0.00001474       0.00000000
+O        8.32275886       2.23346855       2.56625911        6      -0.00000796       0.00000522       0.00001378
+O        4.24381147       4.55000615       2.11763484        7       0.00000796      -0.00000522      -0.00001378
+O        6.43407044       4.43077952       4.45121479        8      -0.00000000       0.00000952      -0.00001378
+O        5.33190156       1.57664204       3.50455343        9      -0.00000796       0.00001474       0.00000000
+trying to relax i 2
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_02-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:33   -11287.534984       0.0764       0.0000
+PreconLBFGS:   1  11:16:34   -11287.537743       0.0193       0.0009
+PreconLBFGS:   2  11:16:34   -11287.538094       0.0360       0.0005
+PreconLBFGS:   3  11:16:34   -11287.538275       0.0256       0.0001
+PreconLBFGS:   4  11:16:35   -11287.538473       0.0053       0.0004
+[lattice   ]     Increased volume 3/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="5.990163838023436 0.020796061800292812 0.014359388447429663 3.3043193693410804 4.996395579610112 0.014359388447426999 3.304319369341076 1.78368212094596 4.667188990324026" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11287.538472799766 stress="0.04180392897672876 -0.00038795434531959457 -0.00026787702392088895 -0.00038795434531959457 0.04231320590114254 -0.00014460087139115681 -0.00026787702392088895 -0.00014460087139115681 0.04242278002325438" free_energy=-11287.538472799766 pbc="T T T"
+In      10.77819252       5.81810266       4.01731813        0      -0.00228216      -0.00123192      -0.00085062
+In       8.12001135       4.38320800       3.02654353        1       0.00228216       0.00123192       0.00085062
+In       4.47879123       2.41766578       1.66936424        2      -0.00228216      -0.00123192      -0.00085062
+In       1.82061007       0.98277112       0.67858964        3       0.00228216       0.00123192       0.00085062
+O        6.14478257       2.35675154       0.24538804        4      -0.00000000       0.00299968      -0.00434430
+O        7.25677012       5.20949776       1.18833633        5      -0.00250774       0.00464566       0.00000000
+O        8.33711439       2.24790911       2.57898254        6       0.00250774      -0.00164599      -0.00434430
+O        4.26168820       4.55296466       2.11692523        7      -0.00250774       0.00164599       0.00434430
+O        6.45402002       4.44412223       4.45051973        8       0.00000000      -0.00299968       0.00434430
+O        5.34203247       1.59137601       3.50757144        9       0.00250774      -0.00464566      -0.00000000
+DEBUG:lattice:    Increased volume 3/10
+10
+Lattice="6.037332424480189 0.020959817060668254 0.014472459153634615 3.330338703380684 5.035738896961969 0.01447245915363193 3.3303387033806793 1.7977274403409238 4.703940023075868" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11287.538472799766 stress="0.04180392897672876 -0.00038795434531959457 -0.00026787702392088895 -0.00038795434531959457 0.04231320590114254 -0.00014460087139115681 -0.00026787702392088895 -0.00014460087139115681 0.04242278002325438" free_energy=-11287.538472799766 pbc="T T T"
+In      10.86306367       5.86391638       4.04895186        0      -0.00228216      -0.00123192      -0.00085062
+In       8.18395108       4.41772287       3.05037556        1       0.00228216       0.00123192       0.00085062
+In       4.51405876       2.43670330       1.68250939        2      -0.00228216      -0.00123192      -0.00085062
+In       1.83494617       0.99050979       0.68393309        3       0.00228216       0.00123192       0.00085062
+O        6.19316867       2.37530941       0.24732031        4      -0.00000000       0.00299968      -0.00434430
+O        7.31391239       5.25051912       1.19769370        5      -0.00250774       0.00464566       0.00000000
+O        8.40276366       2.26560991       2.59929032        6       0.00250774      -0.00164599      -0.00434430
+O        4.29524618       4.58881625       2.13359462        7      -0.00250774       0.00164599       0.00434430
+O        6.50484117       4.47911676       4.48556464        8       0.00000000      -0.00299968       0.00434430
+O        5.38409745       1.60390705       3.53519125        9       0.00250774      -0.00464566      -0.00000000
+trying to relax i 3
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_03-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:35   -11287.368463       0.0765       0.0011
+PreconLBFGS:   1  11:16:35   -11287.369464       0.1036       0.0004
+PreconLBFGS:   2  11:16:36   -11287.373328       0.0089       0.0009
+[lattice   ]     Increased volume 4/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.053538497224086 0.03754997706888246 0.025927731514839417 3.3531007860087265 5.040183871350285 0.025927731514840756 3.35310078600872 1.8100144850484752 4.7040379747824925" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=3 energy=-11287.373327620757 stress="0.056636784274959516 -0.0008625890346211182 -0.000595605607388121 -0.0008625890346211182 0.05776912548330389 -0.0003215098034731742 -0.000595605607388121 -0.0003215098034731742 0.058012755788504615" free_energy=-11287.373327620757 pbc="T T T"
+In      10.90042187       5.88408245       4.06287625        0       0.00117354       0.00063348       0.00043741
+In       8.23918824       4.44754006       3.07096391        1      -0.00117354      -0.00063348      -0.00043741
+In       4.52055183       2.44020828       1.68492953        2       0.00117354       0.00063348       0.00043741
+In       1.85931821       1.00366590       0.69301720        3      -0.00117354      -0.00063348      -0.00043741
+O        6.21670427       2.38754855       0.26515281        4       0.00000000       0.00506810      -0.00733991
+O        7.35249615       5.26257379       1.21490109        5      -0.00423696       0.00784908       0.00000000
+O        8.43401318       2.29078602       2.61717180        6       0.00423696      -0.00278098      -0.00733991
+O        4.32572690       4.59696233       2.13872164        7      -0.00423696       0.00278098       0.00733991
+O        6.54303581       4.50019979       4.49074063        8       0.00000000      -0.00506810       0.00733991
+O        5.40724393       1.62517455       3.54099235        9       0.00423696      -0.00784908       0.00000000
+DEBUG:lattice:    Increased volume 4/10
+10
+Lattice="6.10010600797907 0.03783883439783253 0.02612718344146436 3.37889488263281 5.078956040180768 0.02612718344146571 3.378894882632803 1.823938220569084 4.74022430432892" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=3 energy=-11287.373327620757 stress="0.056636784274959516 -0.0008625890346211182 -0.000595605607388121 -0.0008625890346211182 0.05776912548330389 -0.0003215098034731742 -0.000595605607388121 -0.0003215098034731742 0.058012755788504615" free_energy=-11287.373327620757 pbc="T T T"
+In      10.98427456       5.92934640       4.09413037        0       0.00117354       0.00063348       0.00043741
+In       8.30256911       4.48175325       3.09458764        1      -0.00117354      -0.00063348      -0.00043741
+In       4.55532668       2.45897985       1.69789103        2       0.00117354       0.00063348       0.00043741
+In       1.87362122       1.01138671       0.69834831        3      -0.00117354      -0.00063348      -0.00043741
+O        6.26452695       2.40591503       0.26719253        4       0.00000000       0.00506810      -0.00733991
+O        7.40905603       5.30305672       1.22424685        5      -0.00423696       0.00784908       0.00000000
+O        8.49889276       2.30840814       2.63730468        6       0.00423696      -0.00278098      -0.00733991
+O        4.35900303       4.63232497       2.15517399        7      -0.00423696       0.00278098       0.00733991
+O        6.59336883       4.53481807       4.52528615        8       0.00000000      -0.00506810       0.00733991
+O        5.44883975       1.63767639       3.56823182        9       0.00423696      -0.00784908       0.00000000
+trying to relax i 4
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_04-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:36   -11287.157832       0.0758       0.0017
+PreconLBFGS:   1  11:16:36   -11287.159957       0.1104       0.0003
+PreconLBFGS:   2  11:16:37   -11287.164212       0.0085       0.0007
+[lattice   ]     Increased volume 5/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.125240251627118 0.06342787211453886 0.04379605440841029 3.4140791543081406 5.085927129170509 0.04379605440841138 3.414079154308134 1.8429308024932418 4.740482983287252" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=3 energy=-11287.164212037438 stress="0.0690432232363638 -0.0006582290516276409 -0.0004544979100960855 -0.0006582290516276409 0.06990729622003772 -0.0002453394198032429 -0.0004544979100960855 -0.0002453394198032429 0.07009320693444991" free_energy=-11287.164212037438 pbc="T T T"
+In      11.04849600       5.96401334       4.11806740        0       0.00701366       0.00378599       0.00261418
+In       8.38160185       4.52441538       3.12404524        1      -0.00701366      -0.00378599      -0.00261418
+In       4.57179672       2.46787044       1.70402986        2       0.00701366       0.00378599       0.00261418
+In       1.90490257       1.02827248       0.71000769        3      -0.00701366      -0.00378599      -0.00261418
+O        6.30096977       2.42818928       0.28986237        4      -0.00000000      -0.00255340       0.00369797
+O        7.46594047       5.32694622       1.25081483        5       0.00213465      -0.00395450      -0.00000000
+O        8.55007823       2.34545742       2.66010386        6      -0.00213465       0.00140110       0.00369797
+O        4.40332034       4.64682840       2.16797123        7       0.00213465      -0.00140110      -0.00369797
+O        6.65242880       4.56409653       4.53821272        8       0.00000000       0.00255340      -0.00369797
+O        5.48745811       1.66533959       3.57726027        9      -0.00213465       0.00395450       0.00000000
+DEBUG:lattice:    Increased volume 5/10
+10
+Lattice="6.171296418939152 0.06390479131612894 0.04412536041545301 3.439749886277482 5.124168618675458 0.04412536041545411 3.4397498862774754 1.8567879453802627 4.776127050858336" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=3 energy=-11287.164212037438 stress="0.0690432232363638 -0.0006582290516276409 -0.0004544979100960855 -0.0006582290516276409 0.06990729622003772 -0.0002453394198032429 -0.0004544979100960855 -0.0002453394198032429 0.07009320693444991" free_energy=-11287.164212037438 pbc="T T T"
+In      11.13157052       6.00885723       4.14903148        0       0.00701366       0.00378599       0.00261418
+In       8.44462378       4.55843482       3.14753518        1      -0.00701366      -0.00378599      -0.00261418
+In       4.60617242       2.48642655       1.71684259        2       0.00701366       0.00378599       0.00261418
+In       1.91922568       1.03600414       0.71534630        3      -0.00701366      -0.00378599      -0.00261418
+O        6.34834726       2.44644703       0.29204187        4      -0.00000000      -0.00255340       0.00369797
+O        7.52207746       5.36699995       1.26021981        5       0.00213465      -0.00395450      -0.00000000
+O        8.61436695       2.36309310       2.68010540        6      -0.00213465       0.00140110       0.00369797
+O        4.43642925       4.68176827       2.18427238        7       0.00213465      -0.00140110      -0.00369797
+O        6.70244894       4.59841434       4.57233591        8       0.00000000       0.00255340      -0.00369797
+O        5.52871874       1.67786141       3.60415797        9      -0.00213465       0.00395450       0.00000000
+trying to relax i 5
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_05-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:37   -11286.911538       0.0627       0.0012
+PreconLBFGS:   1  11:16:37   -11286.912636       0.0741       0.0003
+PreconLBFGS:   2  11:16:38   -11286.913686       0.0323       0.0006
+PreconLBFGS:   3  11:16:38   -11286.914219       0.0093       0.0003
+[lattice   ]     Increased volume 6/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.184504731657932 0.0772851549516083 0.05336431348525668 3.4581836267208987 5.1278687361275965 0.05336431348525622 3.458183626720893 1.8667385371893237 4.776313720714005" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=4 energy=-11286.914218673463 stress="0.08123148733738635 -0.00026347786856782533 -0.000181927765473919 -0.00026347786856782533 0.08157736102290943 -9.820518718996526e-05 -0.000181927765473919 -9.820518718996526e-05 0.08165177791227317" free_energy=-11286.914218673463 pbc="T T T"
+In      11.16562171       6.02723817       4.16172326        0      -0.00773821      -0.00417711      -0.00288423
+In       8.48568628       4.58060049       3.16284027        1       0.00773821       0.00417711       0.00288423
+In       4.61518571       2.49129195       1.72020208        2      -0.00773821      -0.00417711      -0.00288423
+In       1.93525029       1.04465427       0.72131909        3       0.00773821       0.00417711       0.00288423
+O        6.36747037       2.45907258       0.30251854        4      -0.00000000      -0.00206167       0.00298583
+O        7.55110497       5.38102429       1.27412490        5       0.00172357      -0.00319296       0.00000000
+O        8.64201939       2.38196761       2.69067540        6      -0.00172357       0.00113129       0.00298583
+O        4.45885260       4.68992483       2.19236695        7       0.00172357      -0.00113129      -0.00298583
+O        6.73340163       4.61281986       4.58052381        8       0.00000000       0.00206167      -0.00298583
+O        5.54976703       1.69086815       3.60891745        9      -0.00172357       0.00319296      -0.00000000
+DEBUG:lattice:    Increased volume 6/10
+10
+Lattice="6.2299806643291715 0.07785344855886753 0.05375671223542335 3.483612360725826 5.1655750074474955 0.053756712235422895 3.4836123607258203 1.8804650488043084 4.811434935848346" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=4 energy=-11286.914218673463 stress="0.08123148733738635 -0.00026347786856782533 -0.000181927765473919 -0.00026347786856782533 0.08157736102290943 -9.820518718996526e-05 -0.000181927765473919 -9.820518718996526e-05 0.08165177791227317" free_energy=-11286.914218673463 pbc="T T T"
+In      11.24772481       6.07155769       4.19232526        0      -0.00773821      -0.00417711      -0.00288423
+In       8.54808327       4.61428258       3.18609728        1       0.00773821       0.00417711       0.00288423
+In       4.64912212       2.50961093       1.73285108        2      -0.00773821      -0.00417711      -0.00288423
+In       1.94948058       1.05233583       0.72662310        3       0.00773821       0.00417711       0.00288423
+O        6.41429168       2.47715464       0.30474302        4      -0.00000000      -0.00206167       0.00298583
+O        7.60662979       5.42059207       1.28349380        5       0.00172357      -0.00319296       0.00000000
+O        8.70556593       2.39948271       2.71046049        6      -0.00172357       0.00113129       0.00298583
+O        4.49163946       4.72441081       2.20848788        7       0.00172357      -0.00113129      -0.00298583
+O        6.78291371       4.64673887       4.61420535        8       0.00000000       0.00206167      -0.00298583
+O        5.59057560       1.70330145       3.63545456        9      -0.00172357       0.00319296      -0.00000000
+trying to relax i 6
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_06-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:38   -11286.625133       0.0680       0.0007
+PreconLBFGS:   1  11:16:38   -11286.625749       0.0686       0.0005
+PreconLBFGS:   2  11:16:39   -11286.627441       0.0228       0.0003
+PreconLBFGS:   3  11:16:39   -11286.627585       0.0120       0.0000
+PreconLBFGS:   4  11:16:39   -11286.627634       0.0097       0.0001
+[lattice   ]     Increased volume 7/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.2366330773439085 0.08457545595142833 0.058398163882523925 3.4928823167677474 5.167447945589838 0.05839816388252992 3.4928823167677443 1.8854690006036785 4.811541880072132" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11286.627634170478 stress="0.09179476121257502 0.00013727309338335342 9.478514276895487e-05 0.00013727309338335342 0.09161455954628384 5.1165322198209385e-05 9.478514276895487e-05 5.1165322198209385e-05 0.09157578802877213" free_energy=-11286.627634170478 pbc="T T T"
+In      11.25978442       6.07806750       4.19682020        0      -0.00100684      -0.00054350      -0.00037528
+In       8.57381216       4.62817112       3.19568712        1       0.00100684       0.00054350       0.00037528
+In       4.64858556       2.50932130       1.73265109        2      -0.00100684      -0.00054350      -0.00037528
+In       1.96261330       1.05942492       0.73151802        3       0.00100684       0.00054350       0.00037528
+O        6.42391597       2.48626734       0.30600496        4      -0.00000000      -0.00551529       0.00798755
+O        7.61892281       5.43193181       1.29048272        5       0.00461081      -0.00854166       0.00000000
+O        8.72179145       2.40745484       2.71177590        6      -0.00461081       0.00302636       0.00798755
+O        4.50060627       4.73003758       2.21656231        7       0.00461081      -0.00302636      -0.00798755
+O        6.79848175       4.65122508       4.62233325        8       0.00000000       0.00551529      -0.00798755
+O        5.60347492       1.70556061       3.63785549        9      -0.00461081       0.00854166       0.00000000
+DEBUG:lattice:    Increased volume 7/10
+10
+Lattice="6.28150248391536 0.08518393338981352 0.05881830900342098 3.5180118305348187 5.204625108320442 0.05881830900342702 3.5180118305348156 1.8990339921811508 4.846158479473626" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11286.627634170478 stress="0.09179476121257502 0.00013727309338335342 9.478514276895487e-05 0.00013727309338335342 0.09161455954628384 5.1165322198209385e-05 9.478514276895487e-05 5.1165322198209385e-05 0.09157578802877213" free_energy=-11286.627634170478 pbc="T T T"
+In      11.34079285       6.12179611       4.22701419        0      -0.00100684      -0.00054350      -0.00037528
+In       8.63549638       4.66146846       3.21867846        1       0.00100684       0.00054350       0.00037528
+In       4.68202978       2.52737459       1.74511664        2      -0.00100684      -0.00054350      -0.00037528
+In       1.97673331       1.06704694       0.73678092        3       0.00100684       0.00054350       0.00037528
+O        6.47013278       2.50415477       0.30820651        4      -0.00000000      -0.00551529       0.00798755
+O        7.67373708       5.47101180       1.29976709        5       0.00461081      -0.00854166       0.00000000
+O        8.78454031       2.42477525       2.73128575        6      -0.00461081       0.00302636       0.00798755
+O        4.53298584       4.76406779       2.23250935        7       0.00461081      -0.00302636      -0.00798755
+O        6.84739337       4.68468828       4.65558859        8       0.00000000       0.00551529      -0.00798755
+O        5.64378907       1.71783125       3.66402802        9      -0.00461081       0.00854166       0.00000000
+trying to relax i 7
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_07-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:40   -11286.305348       0.0874       0.0004
+PreconLBFGS:   1  11:16:40   -11286.306309       0.0514       0.0009
+PreconLBFGS:   2  11:16:41   -11286.308395       0.0216       0.0000
+PreconLBFGS:   3  11:16:41   -11286.308514       0.0123       0.0001
+PreconLBFGS:   4  11:16:41   -11286.308560       0.0023       0.0000
+[lattice   ]     Increased volume 8/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.281522198240656 0.08520383717461416 0.05883205228713398 3.5180392878790956 5.204630667953157 0.05883205228714133 3.5180392878790925 1.8990488137430603 4.846158809118402" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11286.30856015399 stress="0.10060404952698533 3.5122352054865315e-05 2.4251489927540552e-05 3.5122352054865315e-05 0.10055794357792538 1.30910315751641e-05 2.4251489927540552e-05 1.30910315751641e-05 0.10054802359316747" free_energy=-11286.30856015399 pbc="T T T"
+In      11.33336483       6.11778644       4.22424557        0      -0.00193487      -0.00104445      -0.00072118
+In       8.64303635       4.66553855       3.22148881        1       0.00193487       0.00104445       0.00072118
+In       4.67456444       2.52334478       1.74233411        2      -0.00193487      -0.00104445      -0.00072118
+In       1.98423596       1.07109689       0.73957735        3       0.00193487       0.00104445       0.00072118
+O        6.47016130       2.50887729       0.30140992        4       0.00000000       0.00053595      -0.00077620
+O        7.66984802       5.47831746       1.29978778        5      -0.00044806       0.00083004      -0.00000000
+O        8.78851387       2.42222232       2.72448932        6       0.00044806      -0.00029409      -0.00077620
+O        4.52908692       4.76666101       2.23933360        7      -0.00044806       0.00029409       0.00077620
+O        6.84743949       4.68000604       4.66241300        8      -0.00000000      -0.00053595       0.00077620
+O        5.64775277       1.71056587       3.66403514        9       0.00044806      -0.00083004       0.00000000
+DEBUG:lattice:    Increased volume 8/10
+10
+Lattice="6.325759727560293 0.08580388396680942 0.05924637616530406 3.5428150287319697 5.241284204230708 0.05924637616531146 3.5428150287319666 1.9124228375745627 4.880287812509656" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11286.30856015399 stress="0.10060404952698533 3.5122352054865315e-05 2.4251489927540552e-05 3.5122352054865315e-05 0.10055794357792538 1.30910315751641e-05 2.4251489927540552e-05 1.30910315751641e-05 0.10054802359316747" free_energy=-11286.30856015399 pbc="T T T"
+In      11.41317988       6.16087086       4.25399475        0      -0.00193487      -0.00104445      -0.00072118
+In       8.70390480       4.69839554       3.24417610        1       0.00193487       0.00104445       0.00072118
+In       4.70748499       2.54111540       1.75460447        2      -0.00193487      -0.00104445      -0.00072118
+In       1.99820991       1.07864008       0.74478582        3       0.00193487       0.00104445       0.00072118
+O        6.51572732       2.52654602       0.30353259        4       0.00000000       0.00053595      -0.00077620
+O        7.72386281       5.51689843       1.30894152        5      -0.00044806       0.00083004      -0.00000000
+O        8.85040685       2.43928079       2.74367650        6       0.00044806      -0.00029409      -0.00077620
+O        4.56098295       4.80023015       2.25510407        7      -0.00044806       0.00029409       0.00077620
+O        6.89566248       4.71296492       4.69524798        8      -0.00000000      -0.00053595       0.00077620
+O        5.68752699       1.72261250       3.68983905        9       0.00044806      -0.00083004       0.00000000
+trying to relax i 8
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_08-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:41   -11285.959211       0.1232       0.0003
+PreconLBFGS:   1  11:16:42   -11285.961741       0.0485       0.0016
+PreconLBFGS:   2  11:16:42   -11285.964347       0.0359       0.0003
+PreconLBFGS:   3  11:16:42   -11285.964498       0.0294       0.0000
+PreconLBFGS:   4  11:16:43   -11285.964645       0.0127       0.0003
+PreconLBFGS:   5  11:16:43   -11285.964766       0.0002       0.0000
+[lattice   ]     Increased volume 9/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.323383927479131 0.08340454884228352 0.05758966897720774 3.539505519199938 5.240614591116398 0.0575896689772156 3.5395055191999374 1.9106363537872662 4.88024861930021" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=6 energy=-11285.964765899584 stress="0.10678766647148037 -2.0348492074749935e-06 -1.4050353115890241e-06 -2.0348492074749935e-06 0.106790337669027 -7.584423586041504e-07 -1.4050353115890241e-06 -7.584423586041504e-07 0.10679091239233747" free_energy=-11285.964765899584 pbc="T T T"
+In      11.39675443       6.15200435       4.24787255        0      -0.00014127      -0.00007626      -0.00005266
+In       8.70683803       4.69997890       3.24526939        1       0.00014127       0.00007626       0.00005266
+In       4.69555695       2.53467660       1.75015857        2      -0.00014127      -0.00007626      -0.00005266
+In       2.00564054       1.08265116       0.74755541        3       0.00014127       0.00007626       0.00005266
+O        6.51229071       2.53109606       0.29178106        4      -0.00000000       0.00010293      -0.00014907
+O        7.71294987       5.52493473       1.30644666        5      -0.00008605       0.00015942      -0.00000000
+O        8.85113707       2.43215296       2.73190537        6       0.00008605      -0.00005648      -0.00014907
+O        4.55125791       4.80250255       2.26352259        7      -0.00008605       0.00005648       0.00014907
+O        6.89010427       4.70355944       4.70364690        8       0.00000000      -0.00010293       0.00014907
+O        5.68944510       1.70972078       3.68898130        9       0.00008605      -0.00015942      -0.00000000
+DEBUG:lattice:    Increased volume 9/10
+10
+Lattice="6.366994849920052 0.0839797708045266 0.05798685165913365 3.56391667348811 5.276757902845858 0.05798685165914156 3.5639166734881096 1.9238135726298107 4.913906569927535" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=6 energy=-11285.964765899584 stress="0.10678766647148037 -2.0348492074749935e-06 -1.4050353115890241e-06 -2.0348492074749935e-06 0.106790337669027 -7.584423586041504e-07 -1.4050353115890241e-06 -7.584423586041504e-07 0.10679091239233747" free_energy=-11285.964765899584 pbc="T T T"
+In      11.47535522       6.19443331       4.27716915        0      -0.00014127      -0.00007626      -0.00005266
+In       8.76688708       4.73239358       3.26765126        1       0.00014127       0.00007626       0.00005266
+In       4.72794112       2.55215768       1.76222902        2      -0.00014127      -0.00007626      -0.00005266
+In       2.01947298       1.09011795       0.75271113        3       0.00014127       0.00007626       0.00005266
+O        6.55720448       2.54855245       0.29379341        4      -0.00000000       0.00010293      -0.00014907
+O        7.76614431       5.56303893       1.31545692        5      -0.00008605       0.00015942      -0.00000000
+O        8.91218132       2.44892696       2.75074669        6       0.00008605      -0.00005648      -0.00014907
+O        4.58264689       4.83562430       2.27913358        7      -0.00008605       0.00005648       0.00014907
+O        6.93762373       4.73599881       4.73608687        8       0.00000000      -0.00010293       0.00014907
+O        5.72868390       1.72151233       3.71442336        9       0.00008605      -0.00015942      -0.00000000
+trying to relax i 9
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_09-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:43   -11285.595983       0.1411       0.0004
+PreconLBFGS:   1  11:16:44   -11285.598464       0.0709       0.0016
+PreconLBFGS:   2  11:16:44   -11285.601587       0.0374       0.0004
+PreconLBFGS:   3  11:16:44   -11285.601913       0.0299       0.0000
+PreconLBFGS:   4  11:16:45   -11285.602099       0.0097       0.0002
+[lattice   ]     Increased volume 10/10
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.364156262057306 0.08111120797022828 0.05600614933101516 3.559960945485603 5.275958872333904 0.05600614933101475 3.559960945485603 1.9216782580537348 4.9138611482056955" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11285.602099160566 stress="0.11207712596393545 -0.00019091954575852093 -0.00013182726363608803 -0.00019091954575852093 0.1123277506074892 -7.116077738037671e-05 -0.00013182726363608803 -7.116077738037671e-05 0.11238167407068331" free_energy=-11285.602099160566 pbc="T T T"
+In      11.45983799       6.18605705       4.27138547        0      -0.00722945      -0.00390248      -0.00269461
+In       8.76627925       4.73206547       3.26742471        1       0.00722945       0.00390248       0.00269461
+In       4.71779891       2.54668288       1.75844874        2      -0.00722945      -0.00390248      -0.00269461
+In       2.02424018       1.09269130       0.75448799        3       0.00722945       0.00390248       0.00269461
+O        6.55309767       2.55363038       0.28026898        4       0.00000000      -0.00548854       0.00794880
+O        7.75340258       5.57208679       1.31247451        5       0.00458844      -0.00850022       0.00000000
+O        8.91275371       2.44060485       2.73719955        6      -0.00458844       0.00301168       0.00794880
+O        4.57132445       4.83814350       2.28867390        7       0.00458844      -0.00301168      -0.00794880
+O        6.93098049       4.72511797       4.74560448        8      -0.00000000       0.00548854      -0.00794880
+O        5.73067558       1.70666156       3.71339894        9      -0.00458844       0.00850022       0.00000000
+DEBUG:lattice:    Increased volume 10/10
+10
+Lattice="6.407158622322763 0.08165927329783458 0.056384580738328645 3.584015465331607 5.311608324489325 0.056384580738328235 3.584015465331607 1.9346629644883957 4.947063919898995" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=5 energy=-11285.602099160566 stress="0.11207712596393545 -0.00019091954575852093 -0.00013182726363608803 -0.00019091954575852093 0.1123277506074892 -7.116077738037671e-05 -0.00013182726363608803 -7.116077738037671e-05 0.11238167407068331" free_energy=-11285.602099160566 pbc="T T T"
+In      11.53727167       6.22785600       4.30024705        0      -0.00722945      -0.00390248      -0.00269461
+In       8.82551267       4.76403985       3.28950257        1       0.00722945       0.00390248       0.00269461
+In       4.74967690       2.56389072       1.77033051        2      -0.00722945      -0.00390248      -0.00269461
+In       2.03791789       1.10007457       0.75958603        3       0.00722945       0.00390248       0.00269461
+O        6.59737670       2.57088517       0.28216274        4       0.00000000      -0.00548854       0.00794880
+O        7.80579203       5.60973717       1.32134285        5       0.00458844      -0.00850022       0.00000000
+O        8.97297685       2.45709592       2.75569470        6      -0.00458844       0.00301168       0.00794880
+O        4.60221272       4.87083465       2.30413838        7       0.00458844      -0.00301168      -0.00794880
+O        6.97781286       4.75704541       4.77767034        8      -0.00000000       0.00548854      -0.00794880
+O        5.76939754       1.71819340       3.73849023        9      -0.00458844       0.00850022       0.00000000
+trying to relax i 10
+relax_config failed to read base run config from  In2O3-model-None-test-bulk_In2O3_R3c-E_vs_V_10-relaxed.xyz
+relax_config symmetry before refinement at default tol 1.0e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config symmetry after refinement
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+relax_config trying to maintain symmetry
+PreconLBFGS:   0  11:16:45   -11285.213987       0.1389       0.0009
+PreconLBFGS:   1  11:16:45   -11285.215423       0.1027       0.0010
+PreconLBFGS:   2  11:16:46   -11285.219431       0.0321       0.0004
+PreconLBFGS:   3  11:16:46   -11285.219577       0.0303       0.0000
+PreconLBFGS:   4  11:16:46   -11285.219713       0.0155       0.0004
+PreconLBFGS:   5  11:16:47   -11285.219824       0.0001       0.0000
+[lattice   ] Calculating elastic constants
+symmetry at end of relaxation at desired tol 0.1
+ase.spacegroup.symmetrize: prec 0.1 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+symmetry at end of relaxation at default tol 1e-6
+ase.spacegroup.symmetrize: prec 1e-06 got symmetry group number 167 , international (Hermann-Mauguin) R-3c , Hall  -R 3 2"c
+10
+Lattice="6.411058632774256 0.08559996237196178 0.059105571169555976 3.5894499219778786 5.312706410488011 0.05910557116954995 3.5894499219778764 1.9375965014966423 4.947126708501781" Properties=species:S:1:pos:R:3:spacegroup_kinds:I:1:forces:R:3 spacegroup="P 1" unit_cell=conventional occupancy="_JSON {\"0\": {\"In\": 1}, \"1\": {\"In\": 1}, \"2\": {\"In\": 1}, \"3\": {\"In\": 1}, \"4\": {\"O\": 1}, \"5\": {\"O\": 1}, \"6\": {\"O\": 1}, \"7\": {\"O\": 1}, \"8\": {\"O\": 1}, \"9\": {\"O\": 1}}" n_minim_iter=6 energy=-11285.219823832978 stress="0.11857552293248681 1.1242754898734823e-06 7.762968382520037e-07 1.1242754898734823e-06 0.11857404707076573 4.1904783077002336e-07 7.762968382520037e-07 4.1904783077002336e-07 0.11857372952942154" free_energy=-11285.219823832978 pbc="T T T"
+In      11.54277341       6.23082586       4.30229770        0       0.00002460       0.00001328       0.00000917
+In       8.84216432       4.77302847       3.29570909        1      -0.00002460      -0.00001328      -0.00000917
+In       4.74779417       2.56287442       1.76962877        2       0.00002460       0.00001328       0.00000917
+In       2.04718508       1.10507703       0.76304016        3      -0.00002460      -0.00001328      -0.00000917
+O        6.60301894       2.58117411       0.27573846        4      -0.00000000       0.00003440      -0.00004982
+O        7.80886332       5.62404611       1.32544004        5      -0.00002876       0.00005328       0.00000000
+O        8.98662448       2.45905516       2.74930181        6       0.00002876      -0.00001888      -0.00004982
+O        4.60333401       4.87684772       2.31603604        7      -0.00002876       0.00001888       0.00004982
+O        6.98693955       4.75472877       4.78959940        8       0.00000000      -0.00003440       0.00004982
+O        5.78109516       1.71185678       3.73989782        9       0.00002876      -0.00005328      -0.00000000
+INFO:lattice:Calculating elastic constants
+PreconLBFGS:   0  11:16:47   -11287.641018       0.1438
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:47   -11287.642387       0.1231
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:47   -11287.644536       0.0476
+PreconLBFGS:   0  11:16:47   -11287.673906       0.0666
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:47   -11287.674207       0.0575
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:47   -11287.674704       0.0222
+PreconLBFGS:   0  11:16:47   -11287.684535       0.0035
+PreconLBFGS:   0  11:16:48   -11287.674457       0.0565
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:48   -11287.674699       0.0495
+PreconLBFGS:   0  11:16:48   -11287.645075       0.1067
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:48   -11287.645962       0.0941
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:48   -11287.647763       0.0428
+PreconLBFGS:   0  11:16:48   -11287.631665       0.1868
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:48   -11287.634118       0.1471
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:48   -11287.638958       0.0801
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   3  11:16:48   -11287.639468       0.0660
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   4  11:16:49   -11287.640431       0.0281
+PreconLBFGS:   0  11:16:49   -11287.671339       0.0929
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:49   -11287.671932       0.0742
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:49   -11287.673168       0.0378
+PreconLBFGS:   0  11:16:49   -11287.684535       0.0035
+PreconLBFGS:   0  11:16:49   -11287.671052       0.0998
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:49   -11287.671695       0.0816
+INFO:ase.utils.linesearcharmijo:a1 = 0.457, suff_dec = True
+PreconLBFGS:   2  11:16:49   -11287.672706       0.0470
+PreconLBFGS:   0  11:16:50   -11287.631537       0.2095
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:50   -11287.634285       0.1734
+INFO:ase.utils.linesearcharmijo:a1 = 0.426, suff_dec = True
+PreconLBFGS:   2  11:16:50   -11287.638695       0.1057
+INFO:ase.utils.linesearcharmijo:a1 = 1.513, suff_dec = True
+PreconLBFGS:   3  11:16:50   -11287.641567       0.0945
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   4  11:16:50   -11287.642371       0.0569
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   5  11:16:50   -11287.642752       0.0308
+PreconLBFGS:   0  11:16:50   -11287.643644       0.1321
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:50   -11287.645087       0.1065
+INFO:ase.utils.linesearcharmijo:a1 = 0.450, suff_dec = True
+PreconLBFGS:   2  11:16:50   -11287.647354       0.0638
+INFO:ase.utils.linesearcharmijo:a1 = 1.840, suff_dec = False
+INFO:ase.utils.linesearcharmijo:a1 = 1.096, suff_dec = True
+PreconLBFGS:   3  11:16:51   -11287.648705       0.0434
+PreconLBFGS:   0  11:16:51   -11287.674282       0.0645
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:51   -11287.674625       0.0529
+INFO:ase.utils.linesearcharmijo:a1 = 0.425, suff_dec = True
+PreconLBFGS:   2  11:16:51   -11287.675172       0.0315
+PreconLBFGS:   0  11:16:51   -11287.684535       0.0035
+PreconLBFGS:   0  11:16:51   -11287.674012       0.0653
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:51   -11287.674361       0.0554
+INFO:ase.utils.linesearcharmijo:a1 = 0.373, suff_dec = True
+PreconLBFGS:   2  11:16:51   -11287.674933       0.0358
+PreconLBFGS:   0  11:16:52   -11287.643076       0.1355
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:52   -11287.644550       0.1170
+INFO:ase.utils.linesearcharmijo:a1 = 0.344, suff_dec = True
+PreconLBFGS:   2  11:16:52   -11287.647009       0.0799
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   3  11:16:52   -11287.649188       0.0375
+PreconLBFGS:   0  11:16:52   -11287.629335       0.2371
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:52   -11287.632262       0.1548
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:52   -11287.635390       0.0761
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   3  11:16:52   -11287.635925       0.0674
+INFO:ase.utils.linesearcharmijo:a1 = 0.488, suff_dec = True
+PreconLBFGS:   4  11:16:52   -11287.636793       0.0550
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   5  11:16:52   -11287.637588       0.0324
+PreconLBFGS:   0  11:16:53   -11287.671030       0.1113
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:53   -11287.671674       0.0774
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:53   -11287.672477       0.0368
+PreconLBFGS:   0  11:16:53   -11287.684535       0.0035
+PreconLBFGS:   0  11:16:53   -11287.671719       0.0937
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:53   -11287.672201       0.0711
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:53   -11287.672981       0.0328
+PreconLBFGS:   0  11:16:53   -11287.634454       0.1786
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   1  11:16:54   -11287.636172       0.1404
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   2  11:16:54   -11287.639424       0.0626
+INFO:ase.utils.linesearcharmijo:a1 = 1.000, suff_dec = True
+PreconLBFGS:   3  11:16:54   -11287.639692       0.0537
+INFO:ase.utils.linesearcharmijo:a1 = 0.381, suff_dec = True
+PreconLBFGS:   4  11:16:54   -11287.640131       0.0334
+Fitting C_13
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.65858139, -1.28321066, -0.00457857,  1.21959901,  2.33983887]) GPa
+Cij (gradient) / GPa    :     124.99650191932422
+Error in Cij / GPa      :     2.7631126973243116
+Correlation coefficient :     0.9992678238739974
+Setting C13 (8) to 0.780167 +/- 0.017246
+
+
+Fitting C_23
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.77619041, -1.34690937, -0.00594292,  1.23511865,  2.4777097 ]) GPa
+Cij (gradient) / GPa    :     130.89828250231866
+Error in Cij / GPa      :     2.379746993757353
+Correlation coefficient :     0.9995045930280769
+Updating C23 (8) with value 0.817003 +/- 0.014853
+
+
+Fitting C_33
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-4.94996342, -2.40265564, -0.00623647,  2.38771883,  4.35514226]) GPa
+Cij (gradient) / GPa    :     234.00585830574963
+Error in Cij / GPa      :     6.021202730330654
+Correlation coefficient :     0.9990083511254304
+Setting C33 (3) to 1.460550 +/- 0.037581
+
+
+Fitting C_11
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-4.22908994, -2.22036264, -0.00457857,  2.34291631,  4.02477765]) GPa
+Cij (gradient) / GPa    :     210.71014146611097
+Error in Cij / GPa      :     5.861468347391147
+Correlation coefficient :     0.9988412816578348
+Setting C11 (1) to 1.315149 +/- 0.036584
+
+
+Fitting C_21
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.61541794, -1.2768167 , -0.00594292,  1.24621634,  2.26496788]) GPa
+Cij (gradient) / GPa    :     122.83804680416208
+Error in Cij / GPa      :     3.4011447756674857
+Correlation coefficient :     0.9988520384001079
+Setting C21 (7) to 0.766695 +/- 0.021228
+
+
+Fitting C_31
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.51044653, -1.24761048, -0.00623647,  1.17544366,  2.19713042]) GPa
+Cij (gradient) / GPa    :     118.38208037989826
+Error in Cij / GPa      :     2.7662661283221075
+Correlation coefficient :     0.999181960862106
+Updating C31 (8) with value 0.738883 +/- 0.017266
+
+
+Fitting C_44
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-1.14074067e+00, -5.34652959e-01,  3.87384985e-04,  6.20443482e-01,
+        9.65464849e-01]) GPa
+Cij (gradient) / GPa    :     53.67507479395097
+Error in Cij / GPa      :     2.684173399290937
+Correlation coefficient :     0.9962698029780682
+Setting C44 (4) to 0.335013 +/- 0.016753
+
+
+Fitting C_11
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-4.32097151, -2.32464067, -0.00457857,  2.38777713,  4.2298452 ]) GPa
+Cij (gradient) / GPa    :     218.14051209211556
+Error in Cij / GPa      :     5.239110434687354
+Correlation coefficient :     0.9991358870668398
+Updating C11 (1) with value 1.361526 +/- 0.032700
+
+
+Fitting C_21
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.62078736, -1.26920698, -0.00594292,  1.19290989,  2.24685388]) GPa
+Cij (gradient) / GPa    :     121.97399352478872
+Error in Cij / GPa      :     3.243479893481633
+Correlation coefficient :     0.9989410172137041
+Updating C21 (7) with value 0.761302 +/- 0.020244
+
+
+Fitting C_31
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-2.62674332, -1.28358667, -0.00623647,  1.21389563,  2.30691527]) GPa
+Cij (gradient) / GPa    :     123.6479949099306
+Error in Cij / GPa      :     2.748554527173341
+Correlation coefficient :     0.9992596393862886
+Updating C31 (8) with value 0.771750 +/- 0.017155
+
+
+Fitting C_41
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([ 0.00785986,  0.01897634,  0.00038738, -0.0276941 , -0.07926077]) GPa
+Cij (gradient) / GPa    :     -2.2091170151052637
+Error in Cij / GPa      :     0.6632365488605101
+Correlation coefficient :     -0.8872137514387051      <----- WARNING
+Setting C41 (9) to -0.013788 +/- 0.004140
+
+
+Fitting C_51
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([ 0.04367429, -0.01342006,  0.00071764,  0.06136155,  0.01599579]) GPa
+Cij (gradient) / GPa    :     0.19424589997482683
+Error in Cij / GPa      :     1.1142092299697077
+Correlation coefficient :     0.10014647068752437      <----- WARNING
+Setting C51 (10) to 0.001212 +/- 0.006954
+
+
+Fitting C_33
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-4.62800541, -2.39434073, -0.00623647,  2.22865393,  4.28442673]) GPa
+Cij (gradient) / GPa    :     224.47858926935757
+Error in Cij / GPa      :     3.2023790086333785
+Correlation coefficient :     0.9996948677863513
+Updating C33 (3) with value 1.401085 +/- 0.019988
+
+
+Fitting C_44
+Strain array([-0.02, -0.01,  0.  ,  0.01,  0.02])
+Stress array([-1.05338504e+00, -5.56429412e-01,  3.87384985e-04,  5.50759682e-01,
+        1.08550150e+00]) GPa
+Cij (gradient) / GPa    :     53.84962173717267
+Error in Cij / GPa      :     0.5650491252556084
+Correlation coefficient :     0.9998348833819406
+Updating C44 (4) with value 0.336103 +/- 0.003527
+
+
+[[b C11 b C12 b C13 b C14 b C15 b    ]
+ [b C12 b C11 b C13 b     b-C14 b    ]
+ [b C13 b C13 b C33 b     b     b    ]
+ [b C14 b-C14 b     b C44 b     b    ]
+ [b C15 b     b     b     b C44 b    ]
+ [b     b     b     b     b     b C66]]
+
+ = 
+
+[[214.43 122.41 124.48  -2.21   0.19   0.  ]
+ [122.41 214.43 124.48   0.     2.21   0.  ]
+ [124.48 124.48 229.24   0.     0.     0.  ]
+ [ -2.21   2.21   0.    53.76   0.     0.  ]
+ [  0.19   0.     0.     0.    53.76   0.  ]
+ [  0.     0.     0.     0.     0.    46.01]]
+C_11 = 214.43 +/- 5.56 GPa
+C_12 = 122.41 +/- 3.32 GPa
+C_13 = 124.48 +/- 2.67 GPa
+C_14 = -2.21 +/- 0.66 GPa
+C_15 = 0.19 +/- 1.11 GPa
+C_33 = 229.24 +/- 4.82 GPa
+C_44 = 53.76 +/- 1.94 GPa
+C_66 = 46.01 +/- 6.48 GPa
+============================================================
+Property calculation output:
+
+
+Summary of computed properties:
+{'E_vs_V': [(9.932841132485589, -1128.1640189433688, [-0.474502783791299, -0.47449906412816395, -0.4744982638187924, -1.056136872137139e-06, -1.956522707099055e-06, -2.833545109078511e-06]), (10.263935836901815, -1128.3050933005109, [-0.37658173377657983, -0.37662212191038874, -0.3766308116702043, 1.1467551688494125e-05, 2.1243947504323258e-05, 3.0766661838431576e-05]), (10.595030541318026, -1128.4165618115082, [-0.29973032404928857, -0.29977745265628275, -0.29978759267053623, 1.3381397410119874e-05, 2.4789401922813488e-05, 3.590138486288105e-05]), (10.926125245734166, -1128.5068398504977, [-0.2520331877920354, -0.25203608578229997, -0.2520367093001382, 8.228374328175938e-07, 1.5243271487192633e-06, 2.2076140694140487e-06]), (11.25721995015038, -1128.5833430218202, [-0.208467163036893, -0.20750378060718067, -0.20729650283686304, -0.00027353671700268265, -0.0005067341682041469, -0.0007338804897919826]), (11.588314654566506, -1128.6448899510415, [-0.1638395384943069, -0.16391387711732297, -0.1639298715367233, 2.1107236709295668e-05, 3.910172952888641e-05, 5.662929048843414e-05]), (11.919409358982794, -1128.6922942930696, [-0.12339889082132113, -0.12346638647778599, -0.12348090859078156, 1.916429066197387e-05, 3.5502366905245654e-05, 5.14164912898729e-05]), (12.25050406339901, -1128.7272197324958, [-0.08811438875361925, -0.08799743060440275, -0.08797226632843995, -3.320835675248409e-05, -6.151937953124457e-05, -8.909577273074132e-05]), (12.581598767815127, -1128.7509206653992, [-0.05525079362024315, -0.05542366144979864, -0.055460855045989424, 4.908299893453979e-05, 9.092758249411909e-05, 0.0001316863626396305]), (12.912693472231386, -1128.7642307438077, [-0.025630358133891515, -0.02606722519448889, -0.026161219882462273, 0.00012404127291304728, 0.00022978981176620365, 0.00033279433385968764]), (13.24378817664751, -1128.7684535259984, [-2.85771790224663e-05, -3.709278370472475e-05, -3.892496921027489e-05, 2.417867447470709e-06, 4.4791653687547055e-06, 6.486973914500718e-06]), (13.574882881063692, -1128.7645504500083, [0.02276928458637472, 0.022770518262787684, 0.022770783695793727, -3.502816104488549e-07, -6.489072383083256e-07, -9.397830758836913e-07]), (13.9059775854798, -1128.7538472799765, [0.04180392897672876, 0.04231320590114254, 0.04242278002325438, -0.00014460087139115681, -0.00026787702392088895, -0.00038795434531959457]), (14.2370722898961, -1128.7373327620758, [0.056636784274959516, 0.05776912548330389, 0.058012755788504615, -0.0003215098034731742, -0.000595605607388121, -0.0008625890346211182]), (14.568166994312259, -1128.7164212037437, [0.0690432232363638, 0.06990729622003772, 0.07009320693444991, -0.0002453394198032429, -0.0004544979100960855, -0.0006582290516276409]), (14.89926169872848, -1128.6914218673462, [0.08123148733738635, 0.08157736102290943, 0.08165177791227317, -9.820518718996526e-05, -0.000181927765473919, -0.00026347786856782533]), (15.2303564031447, -1128.6627634170477, [0.09179476121257502, 0.09161455954628384, 0.09157578802877213, 5.1165322198209385e-05, 9.478514276895487e-05, 0.00013727309338335342]), (15.561451107560789, -1128.6308560153989, [0.10060404952698533, 0.10055794357792538, 0.10054802359316747, 1.30910315751641e-05, 2.4251489927540552e-05, 3.5122352054865315e-05]), (15.89254581197713, -1128.5964765899585, [0.10678766647148037, 0.106790337669027, 0.10679091239233747, -7.584423586041504e-07, -1.4050353115890241e-06, -2.0348492074749935e-06]), (16.223640516393154, -1128.5602099160565, [0.11207712596393545, 0.1123277506074892, 0.11238167407068331, -7.116077738037671e-05, -0.00013182726363608803, -0.00019091954575852093]), (16.55473522080943, -1128.5219823832979, [0.11857552293248681, 0.11857404707076573, 0.11857372952942154, 4.1904783077002336e-07, 7.762968382520037e-07, 1.1242754898734823e-06])], 'c11': 214.42532677911328, 'c33': 229.24222378755363, 'c12': 122.40602016447541, 'c13': 124.48121492786795, 'c44': 53.76234826556182, 'c14': -2.2091170151052637, 'c15': 0.19424589997482683, 'c25': 2.2091170151052637, 'c66': 46.00965330731893, 'B': 155.43453368823498}
+============================================================
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2021_7_21_0_10_20_55_82"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (6.0000000000000000) - increasing it now

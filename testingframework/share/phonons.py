@@ -4,7 +4,7 @@ Taken from the testing-framework: phonons.py
 """
 import sys
 
-from testingframework.share.utilities import *
+from testingframework.share.utilities import get_relaxed_bulk
 import numpy as np
 import phonopy
 import ase.units
@@ -12,8 +12,9 @@ import ase.io
 import ase
 import os
 
-from testingframework.share.utilities import run_root, evaluate
+from testingframework.share.utilities import evaluate
 
+run_root = os.getcwd()
 FILE_LABEL = "xyz"
 
 
@@ -33,11 +34,14 @@ def do_phonons(
         3. Record results in properties dir
 
     Args:
-        bulk_struct_tests (list): list of strings, containining the name of the bulk strucutre, such as 'bulk_In2O3_Ia3'
+        bulk_struct_tests (list): list of strings, containining the name of the bulk
+        strucutre, such as 'bulk_In2O3_Ia3'
         n_supercell (int): size of supercell, eg. 2 corresponds to [2 2 2] supercell
-        band_paths (list, optional): list of special points to use for band path. Defaults to None.
+        band_paths (list, optional): list of special points to use for band path.
+        Defaults to None.
         dx (float, optional): Size of displacements for phonopy. Defaults to 0.01.
-        args (dict, optional): which part of analysis to perform. Defaults to {"SETUP": True, "CALCULATE": True, "PROCESS": True}.
+        args (dict, optional): which part of analysis to perform. Defaults to {"SETUP":
+        True, "CALCULATE": True, "PROCESS": True}.
 
     Raises:
         RuntimeError:
@@ -61,8 +65,9 @@ def do_phonons(
 
         os.makedirs(to_dir, exist_ok=True)
         print(f"To Dir : {to_dir}")
-        at0 = get_relaxed_bulk(bulk_struct_test)
 
+        at0 = get_relaxed_bulk(bulk_struct_test)
+        print("got relaxed bulk")
         # magnetic moments could change the symmetry, ignored here for now
         phonopy_atoms = phonopy.structure.atoms.PhonopyAtoms(
             symbols=at0.get_chemical_symbols(),
@@ -153,7 +158,7 @@ def do_phonons(
                 to_fname = os.path.join(
                     to_dir, "CALC_DISPL_{}.{}".format(displ_i, FILE_LABEL)
                 )
-                print("To force calculated fname:")
+                print(f"To force calculated fname: {to_fname}")
                 ase.io.write(to_fname, at0_sc)
 
                 all_forces.append(f)
