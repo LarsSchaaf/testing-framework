@@ -1,6 +1,6 @@
 #!/bin/bash
-#$ -pe smp 16 # number of cores requested
-#$ -l h_rt=99:00:00  # time requested in HH:MM:SS format
+#$ -pe smp 32 # number of cores requested
+#$ -l h_rt=03:00:00  # time requested in HH:MM:SS format
 #$ -S /bin/bash      # shell to run the job ingit s
 #$ -N phon_ver           # name of job (will appear in output of qstat)
 #$ -o $JOB_NAME.o$JOB_ID
@@ -63,7 +63,7 @@ model=GAP_itC_1_d_3_a_train0.01_0.01
 model=GAP_itC_1_d_3_o_train0.01_0.001
 # model=GAP_itC_1_d_4_train0.01_0.1
 
-args='-f'
+args=''
 
 echo model: $model
 echo args: $args
@@ -76,7 +76,7 @@ echo Analysing Model@ $model
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonon_veryify_R3c
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_R3c
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c
-python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c_big_displ
+# python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/phonons_In2O3_R3c_big_displ
 # date +"%T" >> time.txt
 # python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../tests/In2O3/bulk_In2O3_Pbca
 # date +"%T" >> time.txt
@@ -108,3 +108,53 @@ python ../../../scripts/run-model-test.py  -Nl In2O3 $model $args ../../../../te
 
 #vacancy_In2O3_Ia3_111
 #vacancy_In2O3_R3c_222
+
+
+# MD Phonons
+
+
+
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.0 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.0 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.001 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.001 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.01 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.01 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.1 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.0001_m0.1 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.0 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.0 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.0 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.0 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.001 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.001 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.01 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.01 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.1 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.001_m0.1 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.0 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.0 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.001 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.001 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.01 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.01 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.1 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c0.01_m0.1 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.0 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.0 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.001 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.001 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.01 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.01 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.1 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-05_m0.1 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-06_m0.0 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-06_m0.0 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-06_m0.001 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-06_m0.001 $args ../../../../tests/In2O3/phonons_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-06_m0.01 $args ../../../../tests/In2O3/bulk_In2O3_R3c
+# python ../../../scripts/run-model-test.py  -Nl In2O3 GAP_itC_1_d_7_c1e-06_m0.01 $args ../../../../tests/In2O3/phonons_In2O3_R3c

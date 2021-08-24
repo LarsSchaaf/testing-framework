@@ -10,3 +10,4 @@ example_models/Si/models/GAP/*
 *.egg-info
 
 testingframework/example_models/In2O3/models/*
+testingframework/example_models/In2O3/run_dir/*
