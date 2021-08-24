@@ -34,32 +34,42 @@ def evaluate_all_xyz(dir, compare=False):
     to_dir = os.path.abspath(os.getcwd())
     print(f"To Dir: {to_dir}")
 
+    all_dfs = []
     for fname in fnames:
 
         name = os.path.splitext(os.path.split(fname)[-1])[0]
 
-        ats = ase.io.read(fname)
-        ats_org = ats.copy()
-        evaluate(ats)
+        traj = ase.io.read(fname, ":")
+        traj_n = []
 
-        fs = ats.get_forces()
-        pe = ats.get_potential_energy()
-        xyz = ats.get_positions()
+        for i, ats in enumerate(traj):
+            ats_org = ats.copy()
+            evaluate(ats)
 
-        properties[name] = {
-            "xyz": xyz.tolist(),
-            "PE": pe,
-            "all_forces": fs.tolist(),
-        }
-
-        ase.io.write(os.path.join(to_dir, name + ".xyz"), ats)
-
-        if compare:
-
-            df = np.linalg.norm(fs - ats_org.arrays["forces"], axis=1)
+            fs = ats.get_forces()
+            all_dfs.append(fs)
+            pe = ats.get_potential_energy()
+            xyz = ats.get_positions()
 
             properties[name].update(
-                {"df": df.tolist(), "dPE": pe - ats_org.info["energy"]}
+                {i: {"xyz": xyz.tolist(), "PE": pe, "all_forces": fs.tolist()}}
             )
+
+            if compare:
+
+                df = np.linalg.norm(fs - ats_org.arrays["forces"], axis=1)
+
+                properties[name].update(
+                    {i: {"df": df.tolist(), "dPE": pe - ats_org.info["energy"]}}
+                )
+
+            traj_n.append(ats)
+
+        # Write to file
+        ase.io.write(os.path.join(to_dir, name + ".xyz"), traj_n)
+
+        all_dfs = np.array(all_dfs)
+
+    properties.update({"total_f_rmse": np.sqrt(np.sum(all_dfs ** 2) / len(all_dfs))})
 
     return properties
