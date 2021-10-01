@@ -43,14 +43,15 @@ def evaluate_all_xyz(dir, compare=False):
         traj_n = []
 
         for i, ats in enumerate(traj):
+            print(f"{name} : {i}/{len(traj)}", end="\r")
             ats_org = ats.copy()
             evaluate(ats)
 
             fs = ats.get_forces()
-            all_dfs.append(fs)
             pe = ats.get_potential_energy()
             xyz = ats.get_positions()
 
+            properties[name] = {}
             properties[name].update(
                 {i: {"xyz": xyz.tolist(), "PE": pe, "all_forces": fs.tolist()}}
             )
@@ -62,13 +63,18 @@ def evaluate_all_xyz(dir, compare=False):
                 properties[name].update(
                     {i: {"df": df.tolist(), "dPE": pe - ats_org.info["energy"]}}
                 )
+                all_dfs.extend(df)
+                # print("all_dfs_shape", np.array(all_dfs).shape)
+                print(f"RMSE: {np.sqrt(np.sum(df ** 2) / len(df))} \t")
 
             traj_n.append(ats)
 
         # Write to file
         ase.io.write(os.path.join(to_dir, name + ".xyz"), traj_n)
 
-        all_dfs = np.array(all_dfs)
+    all_dfs = np.array(all_dfs).flatten()
+
+    print(f"All {all_dfs.shape}")
 
     properties.update({"total_f_rmse": np.sqrt(np.sum(all_dfs ** 2) / len(all_dfs))})
 
